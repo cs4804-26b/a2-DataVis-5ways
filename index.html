@@ -58,6 +58,13 @@
             .domain([2500, 6500])
             .range([height,0,]); //inverted coordinates for svg
         
+        //color scale for species
+        const colorScale = d3.scaleOrdinal(
+            ["Adelie", "Chinstrap", "Gentoo"],
+            ["#fa9037", "#9a3dca", "#378e8d"]
+        );
+
+        
         //add x and y axes
         svg.append("g")
             .attr("transform", `translate(0, ${height})`)
@@ -73,13 +80,15 @@
                 .attr("class", "dot")
                 .attr("cx", d => xScale(d.flipperLength))
                 .attr("cy", d => yScale(d.bodyMass))
+                .attr("fill", d => colorScale(d.species))
+                .attr("opacity", 0.8)
                 .attr("r", 6);
         
         //x-axis label
         svg.append("text")
             .attr("class", "axis-label")
             .attr("text-anchor", "end")
-            .attr("x", width)
+            .attr("x", width/2)
             .attr("y", height + 35)
             .text("Flipper Length (mm)");
 
