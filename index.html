@@ -91,7 +91,7 @@
         //x-axis label
         svg.append("text")
             .attr("class", "axis-label")
-            .attr("text-anchor", "end")
+            .attr("text-anchor", "middle")
             .attr("x", width/2)
             .attr("y", height + 35)
             .text("Flipper Length (mm)");
@@ -99,9 +99,9 @@
         //y-axis label
         svg.append("text")
             .attr("class", "axis-label")
-            .attr("text-anchor", "end")
+            .attr("text-anchor", "middle")
             .attr("transform", "rotate(-90)")
-            .attr("x", 0)
+            .attr("x", -150)
             .attr("y", -45)
             .text("Body Mass (g)");
         
