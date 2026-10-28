@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A2: Data Visualization, 5 Ways</title>
+</head>
+<body>
+  <div id="container"></div>
+  <div id="scatterplot"></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script>
+    console.log("d3 version", d3.version); // test that d3 loaded
+
+    //load data
+    //convert string numbers into numbers
+    //relevant data:
+        //body mass
+        //flipper length
+        //bill length
+        //species
+    d3.csv("penglings.csv", function(d){
+        //parse fields
+        const bodyMass = +d.body_mass_g;
+        const flipperLength = +d.flipper_length_mm;
+        const billLength = +d.bill_length_mm;
+        const species = d.species;
+        if (isNaN(bodyMass) || isNaN(flipperLength) || isNaN(billLength) || !species || species === "NA") {
+            return null; //drop row if return null 
+        }
+        return {
+            bodyMass: bodyMass,
+            flipperLength: flipperLength,
+            billLength: billLength,
+            species: species
+        };
+    }).then(function(penglingData) { //code to draw scatterplot
+        
+
+        //dimensions and margins
+        const margin = {top: 20, right: 30, bottom: 40, left: 60};
+        const width = 600 - margin.left - margin.right;
+        const height = 400 - margin.top - margin.bottom;
+
+        //append SVG element
+        const svg = d3.select("#scatterplot")
+            .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+                .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+        //set up scales
+        const xScale = d3.scaleLinear()
+            .domain([170,235])
+            .range([0, width]);
+
+        const yScale = d3.scaleLinear()
+            .domain([2500, 6500])
+            .range([height,0,]); //inverted coordinates for svg
+        
+        //add x and y axes
+        svg.append("g")
+            .attr("transform", `translate(0, ${height})`)
+            .call(d3.axisBottom(xScale));
+        
+        svg.append("g")
+            .call(d3.axisLeft(yScale));
+        
+        //data points (circle)
+        svg.selectAll("circle")
+            .data(penglingData)
+            .join("circle")
+                .attr("class", "dot")
+                .attr("cx", d => xScale(d.flipperLength))
+                .attr("cy", d => yScale(d.bodyMass))
+                .attr("r", 6);
+        
+        //x-axis label
+        svg.append("text")
+            .attr("class", "axis-label")
+            .attr("text-anchor", "end")
+            .attr("x", width)
+            .attr("y", height + 35)
+            .text("Flipper Length (mm)");
+
+        //y-axis label
+        svg.append("text")
+            .attr("class", "axis-label")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("x", 0)
+            .attr("y", -45)
+            .text("Body Mass (g)");
+        
+    });
+    
+  </script>
+</body>
+</html>
