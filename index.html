@@ -64,6 +64,10 @@
             ["#fa9037", "#9a3dca", "#378e8d"]
         );
 
+        //size scale for bill length
+        const radiusScale = d3.scaleSqrt()
+            .domain(d3.extent(penglingData, d => d.billLength))
+            .range([4,9]);
         
         //add x and y axes
         svg.append("g")
@@ -82,7 +86,7 @@
                 .attr("cy", d => yScale(d.bodyMass))
                 .attr("fill", d => colorScale(d.species))
                 .attr("opacity", 0.8)
-                .attr("r", 6);
+                .attr("r", d => radiusScale(d.billLength));
         
         //x-axis label
         svg.append("text")
