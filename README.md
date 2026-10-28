@@ -1,6 +1,11 @@
 Assignment 2 - Data Visualization, 5 Ways  
 ===
 
+# d3
+
+This was on the more difficult side just because I'm not experienced with d3.js, and I had to look up a lot of examples.
+The main requirements of the scatterplot were met.
+
 Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
 
 The goal of this project is to gain experience with as many data visualization libraries, languages, and tools as possible.
