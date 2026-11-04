@@ -15,4 +15,7 @@ Generally I found the process of working with d3.js tedious. While it seems to p
 # R + ggplot2
 
 ![Scatterplot made with ggplot2](img/ggplot2.png)
+With R and ggplot2, I used geom_point to create visualize the data with a scatterplot, and aes() to map visual properties to the points. I also created a vector with custom colors that correspond to each species.
+
+Personally, I found R and ggplot2 the most convenient method so far.
 
