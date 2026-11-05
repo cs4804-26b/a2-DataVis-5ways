@@ -19,3 +19,12 @@ With R and ggplot2, I used geom_point to create visualize the data with a scatte
 
 Personally, I found R and ggplot2 the most convenient method so far.
 
+# Vega-lite
+
+![Scatterplot made with Vega-lite](img/vegalite.png)
+
+Because I am using VScode as my IDE, I had to install the Vega Viewer extension to view my scatterplot. Vega-lite has a pretty different approach compared to the other methods I did so far, since I need to create my scatterplot using a .json file.
+
+The "encoding" was mainly where I customized the scatterplot. I found it fairly simple and quick to do so.
+
+The only notable adjustment I had to make was the offset between the numbers and symbols in the "bill_length_mm" section of the legend.
