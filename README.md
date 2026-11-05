@@ -28,3 +28,6 @@ Because I am using VScode as my IDE, I had to install the Vega Viewer extension 
 The "encoding" was mainly where I customized the scatterplot. I found it fairly simple and quick to do so.
 
 The only notable adjustment I had to make was the offset between the numbers and symbols in the "bill_length_mm" section of the legend.
+
+# Altair
+I had to install the Jupyter extension in VScode, as well as Altair, Pandas, and the Jupyter engine.
