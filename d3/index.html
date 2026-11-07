@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A2: 5 ways</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script>
+    console.log("d3 version", d3.version); // test that d3 loaded
+    // Declare the chart dimensions and margins.
+    const width = 1700;
+    const height = 1050;
+    const marginTop = 50;
+    const marginRight = 350;
+    const marginBottom = 100;
+    const marginLeft = 150;
+    const xWidth = width - marginLeft - marginRight;
+    const yHeight = height - marginTop - marginBottom;
+
+    // Declare the x (horizontal position) scale.
+    const x = d3.scaleLinear()
+        .domain([169, 234])
+        .range([marginLeft, width - marginRight]);
+
+    // Declare the y (vertical position) scale.
+    const y = d3.scaleLinear()
+        .domain([2501, 6499])
+        .range([height - marginBottom, marginTop]);
+
+    // Create the SVG container.
+    const svg = d3.create("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    // Add the nice gray background
+    svg.append("rect")
+        .attr("x", marginLeft)
+        .attr("y", marginTop)
+        .attr("width", xWidth)
+        .attr("height", yHeight)
+        .attr("fill", "#ebebeb");
+
+    //have to do .then to wait for data to load
+    d3.csv("../penglings.csv").then(function(data) {
+        // Add the x-axis.
+        svg.append("g")
+            .attr("transform", `translate(0,${height - marginBottom})`)
+            .attr("class", "axis_tick")
+            .call(d3.axisBottom(x)
+                .ticks(7));
+
+        // Add the y-axis.
+        svg.append("g")
+            .attr("transform", `translate(${marginLeft},0)`)
+            .attr("class", "axis_tick")
+            .call(d3.axisLeft(y)
+                .ticks(4));
+
+        //add grid lines!
+        svg.append("g")
+            .attr("class", "grid")
+            .attr("transform", `translate(${marginLeft}, 0)`)
+            .call(
+                d3.axisLeft(y)
+                    .tickSize(-xWidth)
+                    .tickFormat("")
+                    .ticks(4)
+            );
+
+        svg.append("g")
+            .attr("class", "grid")
+            .attr("transform", `translate(0, ${height - marginBottom})`)
+            .call(
+                d3.axisBottom(x)
+                    .tickSize(-yHeight)
+                    .tickFormat("")
+                    .ticks(7)
+            );
+
+        //can't forget minor grid lines!
+        svg.append("g")
+            .attr("class", "grid_minor")
+            .attr("transform", `translate(${marginLeft}, 0)`)
+            .call(
+                d3.axisLeft(y)
+                    .tickSize(-xWidth)
+                    .tickFormat("")
+            );
+
+        svg.append("g")
+            .attr("class", "grid_minor")
+            .attr("transform", `translate(0, ${height - marginBottom})`)
+            .call(
+                d3.axisBottom(x)
+                    .tickSize(-yHeight)
+                    .tickFormat("")
+            );
+
+        // X axis label
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("x", xWidth/2 + marginLeft)
+            .attr("y", yHeight + marginTop + 54)
+            .attr("class", "big_text")
+            .text("Flipper Length (mm)");
+
+        // Y axis label
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("y", 18 + 26)
+            .attr("x", -(marginTop + yHeight/2))
+            .attr("transform", "rotate(-90)")
+            .attr("class", "big_text")
+            .text("Body Mass (g)")
+
+        //color by species
+        var color = d3.scaleOrdinal()
+            .domain(["Adelie", "Chinstrap", "Gentoo"])
+            .range([ "#fc992f", "#9f3fce", "#219292"])
+
+        // Add the data!
+        svg.append('g')
+            .selectAll("dot")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("cx", function (d) { return x(d.flipper_length_mm); } )
+            .attr("cy", function (d) { return y(d.body_mass_g); } )
+            .attr("r", function (d) { return 0.4 * d.bill_length_mm})
+            .attr("stroke", function (d) { return color(d.species) } )
+            .attr("stroke-width", 2)
+            .attr("fill-opacity", 0.8)
+            .style("fill", function (d) { return color(d.species) } )
+
+        //legend
+        svg.append("text")
+            .attr("text-anchor", "left")
+            .attr("y", 250)
+            .attr("x", 1400)
+            .attr("class", "big_text")
+            .text("bill_length_mm")
+
+        svg.append("text")
+            .attr("text-anchor", "left")
+            .attr("y", 490)
+            .attr("x", 1400)
+            .attr("class", "big_text")
+            .text("species")
+
+        const square = 56; //length of each square in legend
+
+        //background rectangles for legend
+        svg.append("rect")
+            .attr("x", 1400)
+            .attr("y", 276)
+            .attr("width", `${square}`)
+            .attr("height", `${square * 2}`)
+            .attr("fill", "#ebebeb");
+
+        svg.append("rect")
+            .attr("x", 1400)
+            .attr("y", 516)
+            .attr("width", `${square}`)
+            .attr("height", `${square * 3}`)
+            .attr("fill", "#ebebeb");
+
+        //circles for legend
+        svg.append("circle")
+            .attr("cx", 1400 + square / 2)
+            .attr("cy", 276 + square / 2)
+            .attr("r", 0.4 * 40)
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("fill-opacity", 0.8)
+            .style("fill", "black")
+
+        svg.append("circle")
+            .attr("cx", 1400 + square / 2)
+            .attr("cy", 276 + square * 3/2)
+            .attr("r", 0.4 * 50)
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("fill-opacity", 0.8)
+            .style("fill", "black")
+
+        svg.append("circle")
+            .attr("cx", 1400 + square / 2)
+            .attr("cy", 516 + square / 2)
+            .attr("r", 8)
+            .attr("stroke", "#fc992f")
+            .attr("stroke-width", 2)
+            .attr("fill-opacity", 0.8)
+            .style("fill", "#fc992f")
+
+        svg.append("circle")
+            .attr("cx", 1400 + square / 2)
+            .attr("cy", 516 + square * 3/2)
+            .attr("r", 8)
+            .attr("stroke", "#9f3fce")
+            .attr("stroke-width", 2)
+            .attr("fill-opacity", 0.8)
+            .style("fill", "#9f3fce")
+    
+        svg.append("circle")
+            .attr("cx", 1400 + square / 2)
+            .attr("cy", 516 + square * 5/2)
+            .attr("r", 8)
+            .attr("stroke", "#219292")
+            .attr("stroke-width", 2)
+            .attr("fill-opacity", 0.8)
+            .style("fill", "#219292")
+
+        //legend labels!
+        svg.append("text")
+            .attr("text-anchor", "left")
+            .attr("y", 284 + square / 2)
+            .attr("x", 1400 + square * 3/2)
+            .attr("class", "small_text")
+            .text("40")
+
+        svg.append("text")
+            .attr("text-anchor", "left")
+            .attr("y", 284 + square * 3/2)
+            .attr("x", 1400 + square * 3/2)
+            .attr("class", "small_text")
+            .text("50")
+
+        svg.append("text")
+            .attr("text-anchor", "left")
+            .attr("y", 524 + square / 2)
+            .attr("x", 1400 + square * 3/2)
+            .attr("class", "small_text")
+            .text("Adelie")
+
+        svg.append("text")
+            .attr("text-anchor", "left")
+            .attr("y", 524 + square * 3/2)
+            .attr("x", 1400 + square * 3/2)
+            .attr("class", "small_text")
+            .text("Chinstrap")
+
+        svg.append("text")
+            .attr("text-anchor", "left")
+            .attr("y", 524 + square * 5/2)
+            .attr("x", 1400 + square * 3/2)
+            .attr("class", "small_text")
+            .text("Gentoo")
+    })
+
+    // Append the SVG element.
+    container.append(svg.node());
+  </script>
+</body>
+</html>

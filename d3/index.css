@@ -1,0 +1,42 @@
+.axis_tick {
+    font-family: Arial;
+    font-size: 21px;
+    color: #707070;
+    stroke-width: 2px;
+}
+
+.axis_tick path {
+    stroke: none; /* removes axis lines */
+}
+
+.axis_tick line {
+    stroke: black; /* tick lines */
+}
+
+.big_text {
+    font-family: Arial;
+    font-size: 26px;
+}
+
+.small_text {
+    font-family: Arial;
+    font-size: 21px;
+}
+
+.grid line {
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.grid path {
+    stroke: none; /* removes axis lines */
+}
+
+.grid_minor line {
+    stroke: white;
+    stroke-width: 1px;
+}
+
+.grid_minor path {
+    stroke: none;
+}
