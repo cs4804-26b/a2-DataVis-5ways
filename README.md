@@ -51,6 +51,7 @@ List of potential tech achievement I could do:
 - **Extra tools/libraries**: Could go above the 5 requested, also could maybe do something like three.js which would be really weird
 - **API Usage???**: idk how i would do this but it'd be an achievement!
 - **Fun Stuff in each tool**: some tools might have additional functionality that I could mess with
+- **Filters**: could make axes + sizing + coloring customizable - potentially very hard to do
 
 ### Design Achievements
 - **Consistent color choice**: Consistently used the same colors (purple #9f3fce = Chinstrap, orange #fc992f = Adelie, cyan #219292 = Gentoo), as picked from the original image in the assignment:
