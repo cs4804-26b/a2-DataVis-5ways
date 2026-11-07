@@ -12,29 +12,9 @@ import socketserver
 import altair as alt
 import polars as pl
 
-HOST = "localhost"
-
-def serve_html(html: str):
-    class ChartRequestHandler(http.server.SimpleHTTPRequestHandler):
-        def do_GET(self):
-            self.send_response(200, 'OK')
-            self.send_header("Content-Type", "text/html; charset=utf-8")
-            self.send_header("Cache-Control", "no-cache, must-revalidate, max-age=0")
-            self.end_headers()
-            self.wfile.write(bytes(html, encoding="utf-8"))
-
-    httpd = socketserver.TCPServer((HOST, 0), ChartRequestHandler)
-    print(f"Serving altair chart at http://localhost:{httpd.server_address[1]}")
-    print("Press Ctrl-C to stop the server")
-    try:
-        while True:
-            httpd.handle_request()
-    except KeyboardInterrupt:
-        print("\nServer stopped and socket unbound.")
-        httpd.server_close()
-
 def main() -> None:
-    csv_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "penglings.csv")
+    script_dir = os.path.realpath(os.path.dirname(__file__))
+    csv_path = os.path.join(os.path.dirname(script_dir), "penglings.csv")
 
     if not (os.path.exists(csv_path) and os.path.isfile(csv_path)):
         print("penglings.csv cannot be found in the directory above the one containing this script")
@@ -76,7 +56,9 @@ def main() -> None:
                 alt.Tooltip("species:N", title="Species"),
             ],
         )
-    serve_html(chart.to_html())
+
+    with open(os.path.join(script_dir, "index.html"), "w") as f:
+        f.write(chart.to_html())
 
 if __name__ == "__main__":
     main()
