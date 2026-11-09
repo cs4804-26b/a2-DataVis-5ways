@@ -38,86 +38,89 @@ const penguinsChart = (data) => {
     [4, 13],
   ).nice()
 
-  const legend = (x, y) => {
+  const legendNode = (x, y) => {
     const width = 200
-    const height = 380
+    const height = 280
     const subheadingOffset = 25
     const valueOffset = subheadingOffset + 95
     const lineSpacing = 20
 
-    const box = d3.create("svg:g")
+    const legend = d3.create("svg:g")
     .attr("transform", `translate(${x}, ${y})`)
 
-    box.append("svg:rect")
-    .attr("id", "legend")
+    legend.append("svg:rect")
+    .attr("class", "info-box")
     .attr("width", width)
     .attr("height", height)
 
 
-    box.append("svg:text")
+    legend.append("svg:text")
       .attr("class", "label main")
       .attr("x", width/2)
       .attr("y", width/5)
       .text("Legend")
 
     // Species description
-    box.append("svg:text")
+    legend.append("svg:text")
       .attr("x", subheadingOffset)
       .attr("y", 70)
       .attr("class", "label sub")
       .text("Species")
     species.forEach((name, i) => {
-      box.append("svg:text")
+      legend.append("svg:text")
         .attr("class", "label local")
         .attr("x", subheadingOffset)
         .attr("y", 90+i*lineSpacing)
         .text(name)
-      box.append("circle")
+      legend.append("circle")
         .attr("cx", valueOffset)
         .attr("cy", 86+i*lineSpacing)
         .attr("r", 5)
         .attr("fill", color(name))
     })
 
-    box.append("svg:text")
+    legend.append("svg:text")
       .attr("x", subheadingOffset)
       .attr("y", 170)
       .attr("class", "label sub")
       .text("Bill Length (mm)")
     const values = Array.from({length: 4}, (_, i) => 35+i*5)
-    console.log(values)
     values.forEach((rad, i) => {
-      box.append("svg:text")
+      legend.append("svg:text")
         .attr("class", "label local")
         .attr("x", subheadingOffset)
         .attr("y", 190+i*lineSpacing)
         .text(String(rad))
-      box.append("circle")
+      legend.append("circle")
         .attr("cx", valueOffset)
         .attr("cy", 186+i*lineSpacing)
         .attr("r", radius(rad))
         .attr("fill", "black")
     })
 
-    box.append("svg:text")
-      .attr("class", "label sub")
-      .attr("x", labelOffset)
-      .attr("y", 280)
-      .text("Values")
-    box.append("svg:text")
+    return legend.node()
+  }
+
+  const popupNode = (() => {
+    const sideLen = 207
+    const offset = 15
+    const popup = d3.create("svg:g")
+      .attr("id", "popup")
+      .style("display", "none")
+      .attr("transform", `translate(700, 800)`)
+
+      popup.append("svg:rect")
+      .attr("class", "info-box")
+      .attr("width", sideLen)
+      .attr("height", sideLen*4/9)
+    popup.append("svg:text")
       .attr("id", "hover-values")
       .attr("class", "label local")
-      .attr("x", labelOffset)
-      .attr("y", 280)
-      .text(`
-Flipper Length (mm)
-Body Mass (g)
-Species
-Bill Length (mm)
-`)
+      .attr("x", 10)
+      .attr("y", 5)
 
-    return box.node()
-  }
+    return popup.node()
+  })()
 
   const svg = d3
     .create("svg")
@@ -154,24 +157,22 @@ Bill Length (mm)
     .attr("cy", d => yPos(d.bodyMass))
     .attr("fill", d => color(d.species))
     .attr("r", d => radius(d.billLength))
-    .on("mouseover", function (event, d) {
-      d3.select("#hover-values")
-        .text(`
-Flipper Length: ${d.flipperLength} mm
-Body Mass: ${d.bodyMass} g
+    .on("mouseenter", function (event, d) {
+      const textValues = d3.select("#hover-values")
+      textValues.text(`
+Flipper Length (mm): ${d.flipperLength} mm
+Body Mass (g): ${d.bodyMass} g
 Species: ${d.species}
-Bill Length: ${d.billLength} mm
+Bill Length (mm): ${d.billLength} mm
 `)
+      d3.select("#popup").style("display", "block")
     }).on("mouseleave", function (event, d) {
-      d3.select("#hover-values").text(`
-Flipper Length
-Body Mass
-Species
-Bill Length
-`)
+      d3.select("#popup").style("display", "none")
     })
 
-  svg.append(() => legend(100, 60))
+
+  svg.append(() => legendNode(100, 60))
+  svg.append(() => popupNode)
 
   return svg.node()
 }
