@@ -32,11 +32,11 @@ I definitely would use this tool in the future, as it's pretty versatile and I h
 
 Description of Tool/Library 4
 
-I was somewhat expecting Altair to be easier, primarily because it's also Python, but it was probably the most difficult tool to get my specific goals across. Altair is very simple if I just want a nice, easy chart, but to get it to meet the design achievements I was going for took a ton of effort. I think the most annoying part was when I realized there were no minor gridlines available in Altair, so I ended up just making two separate charts for x-axis and y-axis minor gridlines. Other parts were less annoying, although I did still have to do a workaround to get the diameter of each circle to be what I wanted, slightly less involved with that than Matplotlib. This is also the only tool where I couldn't perfectly preserve all measurements I took of the original image, as the only size customization I can do in Altair is within the chart, not outside of the chart. Still, I was able to get a consistent text size & legend size, even if
+I was somewhat expecting Altair to be easier, primarily because it's also Python, but it was probably the most difficult tool overall. Altair is very simple if I just want a nice, easy chart, but to get it to meet the design achievements I was going for took a ton of effort. The worst part by far was trying to do the scaling properly, as looking for resources on this ended up suggesting a transformation on the data, but in Altair the legend is directly connected to the data so it would display inaccurately. I ended up figuring out how to use the scale to properly match the data to a quadratic area scaling, but I almost just gave up. I think another of the most annoying parts was when I realized there were no minor gridlines available in Altair, so I ended up just making two separate charts for x-axis and y-axis minor gridlines.  Padding the edges to create the correct image size was also annoying, but didn't take too long. I unfortunately was not able to preserve the nice gray background behind the circles in the legend, since Altair does not support drawing outside of the main chart. All things considered, I am pretty happy with what I was able to do in regards to the design achievements, as I was able to preserve nearly everything. 
 
-What was easy? Difficult? Where could you see the tool being useful in the future? Did you have to use any hacks or data manipulation to get the right chart?
+I could see this tool being useful in the future if you just wanted to make a simple chart and not attempt to design it to perfectly match another chart. If you're trying to do the latter like I was, avoid Altair. 
 
-![tool4](img/tool4.png)
+![Altair](img/altair.png)
 
 # Tool/Library 5
 
