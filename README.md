@@ -1,20 +1,19 @@
 # Assignment 2 fo CS4804 B26
 ### Param Amre
 
+## View Files
+For all library based visualizations, please run an http server at the root of the project, bound to localhost:8000. Run anything needed to generate the html file (see relevant section for directions), and naviage to localhost:8000/folder-name/ to see and interact with the graph.
 
-## R + ggplot2 + R Markdown
+## Javascript + d3
 
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
+Javascript is a scripting language primarily developed for the web. d3 is an data science industry standard that provides abstractions for creating visualizations.
+I started with the code from the [basic d3 scatter plot ecample](https://observablehq.com/@d3/scatterplot/2), and adjusted it for the dataset we were given.
+Using d3's documentation, I was also able to find the d3 way of adding hoverable interactivity, similar to my submission for assignment 1.
 
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
-
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
-
-## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
+### Technical Achievements
+- Hoverable interactivity: when a user hovers over a given point, then can look at the popup in the lower right of the graph to see the exact values that points represents
 
 ### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+- Legend: I manually created a legend in d3, using basic svg tag types. I wasn't able to find any automatic legend creation values in the docs, so I manually drew one out myself.
+
+
