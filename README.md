@@ -16,7 +16,7 @@ This tool was by far the easiest, although the syntax was quite confusing as I'd
 
 There's a good chance I'll use R in the future as it's common in computational biology, but I can't say I liked the format. It felt weird just building from a base plot and adding things to it. I didn't really have to use any hacks to get the right chart since the original chart was already made using R + ggplot2.
 
-![r](img/r.svg)
+![r](img/r.png)
 
 # Python + Jupyter + Matplotlib
 

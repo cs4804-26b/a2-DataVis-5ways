@@ -33,4 +33,4 @@ ggplot(penglings, aes(x=flipper_length_mm, y=body_mass_g, size=bill_length_mm, c
     ) 
 
 
-ggsave("img/r.svg", width=1700, height=1050, units="px")
+ggsave("img/r.png", width=1700, height=1050, units="px")
