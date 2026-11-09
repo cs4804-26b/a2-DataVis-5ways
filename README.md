@@ -12,9 +12,13 @@ While it takes time to find the correct documentation, these functions made the 
 ![ggplot2](img/ggplot2.png)
 
 # d3...
-
+![alt text](img/d3_plot.png)
 (And so on...)
+lots of lines
 
+# R + ggplot2
+![alt text](img/r_ggplot.png)
+easier to use than d3 - every element is just added on to the ggplot function
 
 ## Technical Achievements
 - **Proved P=NP**: Using a combination of...
