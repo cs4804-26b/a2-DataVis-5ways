@@ -5,10 +5,6 @@
 #     "polars>=2.1.0",
 # ]
 # ///
-import http.server
-import os
-import socketserver
-
 import altair as alt
 import polars as pl
 
@@ -27,7 +23,6 @@ def main() -> None:
          schema_overrides={"bill_length_mm": pl.Float64,},
          null_values=["NA"],
      ).drop_nulls().drop_nans()
-    print(df.schema)
 
     chart = alt.Chart(df).mark_point(
             filled=True,
