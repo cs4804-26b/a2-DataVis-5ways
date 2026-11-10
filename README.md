@@ -20,6 +20,9 @@ lots of lines
 ![alt text](img/r_ggplot.png)
 easier to use than d3 - every element is just added on to the ggplot function
 
+# Vega-lite
+![alt text](img/vegalite.png)
+
 ## Technical Achievements
 - **Proved P=NP**: Using a combination of...
 - **Solved AI Forever**: ...

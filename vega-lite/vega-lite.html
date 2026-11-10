@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <div id="vis"></div>
+    <script>
+        const spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {"url": "../penglings.csv"},
+            "width": 500,
+            "height": 350,
+            "config": {
+                "view": {"fill": "#e9e9e9"},
+                "axis": {
+                    "gridColor": "#ffffff",
+                    "domainColor": "#ffffff",
+                    "titleFontWeight": "normal"
+                },
+                "legend": {
+                    "titleFontWeight": "normal"
+                }
+            },
+            "mark": {"type":"point", "filled": true, "opacity": 0.7},
+            "encoding": {
+                "x": {"field": "flipper_length_mm", "type": "quantitative",
+                      "scale": {"zero": false}, "title": "Flipper Length (mm)"},
+                "y": {"field": "body_mass_g", "type": "quantitative",
+                      "scale": {"zero": false}, "title": "Body Mass (g)"},
+                "size": {"field": "bill_length_mm", "type" : "quantitative",
+                         "scale": {"zero": false, "range": [100, 350]},
+                         "legend": {"values": [40,50], "orient": "none",
+                         "legendX": 520, "legendY": 120,
+                         "symbolFillColor": "#000000"}
+                         },
+                "color": {"field": "species", "type":"nominal",
+                          "scale": {
+                              "domain": ["Adelie", "Chinstrap", "Gentoo"],
+                              "range": ["#ff941f", "#a83dcc", "#159995"]
+                          },
+                          "legend": {"orient":"none", "legendX": 520, "legendY":200}
+                },
+            }
+        };
+        vegaEmbed("#vis", spec);
+    </script>
+</body>
+</html>
