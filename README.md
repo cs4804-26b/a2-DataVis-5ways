@@ -1,4 +1,4 @@
-# Assignment 2 fo CS4804 B26
+# Assignment 2 of CS4804 B26
 ### Param Amre
 
 ## View Files
@@ -15,5 +15,18 @@ Using d3's documentation, I was also able to find the d3 way of adding hoverable
 
 ### Design Achievements
 - Legend: I manually created a legend in d3, using basic svg tag types. I wasn't able to find any automatic legend creation values in the docs, so I manually drew one out myself.
+
+
+## Excel
+
+Excel is a spreadsheet tool created by Microsoft. It is arguably the best tool for sharing data that people with many different skill sets need to work with, as it's very well known,
+and many non-technical people are much more likely to be famailar with it. Essentially, Excel is a established standard solution.
+To work with the data, I loaded it into a spreadsheet ([link to actual spreadsheet here](https://wpi0-my.sharepoint.com/:x:/g/personal/puamre_wpi_edu/IQAT3dWOI7AWRoLzHMaFFJQ5AfDUq31plc2k-7eGoXRrVoA?e=vuc8Bq))
+and formatted it into a table. This let me sort the columns, which let me easily delete rows with null values. I then used the sorting features to sort the data by species, which let me
+create a data series for each one. Excel doesn't natively let you color or size values by another value in a scatter chart, so I create 3 sets of data on the same graph to work around the
+color issues. I think this is reasonable because Excel is not primarily focused on creating visualizations, it's aimed at a non Computer/Data Science audience.
+
+### Technical Achievements
+- I found the work around for coloring points by their species on Stack Overflow, which let me get around the limit mentioned above
 
 
