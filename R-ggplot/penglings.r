@@ -1,0 +1,8 @@
+install.packages("ggplot2", repos = "https://cloud.r-project.org", type="binary")
+install.packages("ggiraph", repos = "https://cloud.r-project.org", type="binary")
+library(ggplot2)
+library(ggiraph)
+penguindata <- read.csv("penglings.csv", header=TRUE, sep=",")
+penguinplot <- ggplot(data=subset(penguindata, !is.na(flipper_length_mm) & !is.na(body_mass_g) & !is.na(bill_length_mm)),aes(x=flipper_length_mm, y=body_mass_g, color=species,size=bill_length_mm)) + geom_point_interactive(aes(tooltip=paste("Species:", species, "Flipper Length:", flipper_length_mm, "Body Mass:", body_mass_g, "Bill Length:", bill_length_mm)), alpha=.8) + labs(title = "Penguin Flipper Length vs Body Mass", x = "Flipper Length (mm)", y = "Body Mass (g)", color = "Species", size= "Bill Length (mm)") + scale_color_manual(values=c("Adelie" = "orange", "Chinstrap" = "purple", "Gentoo" = "darkturquoise")) + theme(legend.position = "right",axis.line = element_line(linewidth = 0.75), axis.line.x.bottom = element_line(colour = "blue"))
+print(girafe_options(girafe(ggobj = penguinplot), opts_zoom(min=.5, max=5)))
+ggsave("penguinggplot.png", plot = penguinplot, width = 10, height = 6)

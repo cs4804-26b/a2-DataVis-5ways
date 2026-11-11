@@ -48,16 +48,16 @@ Some may be difficult choices, like Matlab or SPSS, which require large installa
 
 I have marked a few that are strongly suggested.
 
-- R + ggplot2 `<- definitely worth trying`
+- R + ggplot2 `<- definitely worth trying` this one
 - Excel
-- d3 `<- since the rest of the class uses this, we're requiring it`
-- Altair `<- hugely popular python library. highly recommended `
+- d3 `<- since the rest of the class uses this, we're requiring it` this one
+- Altair `<- hugely popular python library. highly recommended ` this one
 - three.js `<- well, it's a 3d library. not really recommended, but could be interesting and fun`
 - p5js `<- good for playing around. not really a chart lib`
 - Tableau
 - PowerBI
-- Vega-lite `<- very interesting formal visualization model; might be the future of the field`
-- Flourish `<- popular in recent years`
+- Vega-lite `<- very interesting formal visualization model; might be the future of the field` this one
+- Flourish `<- popular in recent years` this one
 - DataWrapper `<- popular in recent years`
 - GNUplot `<- the former CS department head uses this all the time :)`
 - SAS/SPSS/Matlab
