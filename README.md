@@ -31,3 +31,5 @@ The only notable adjustment I had to make was the offset between the numbers and
 
 # Altair
 I had to install the Jupyter extension in VScode, as well as Altair, Pandas, and the Jupyter engine.
+
+Through this tool, I was able to easily add a tooltip that allows the user to hover over a point to view its data.
