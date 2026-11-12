@@ -11,25 +11,43 @@
     <div id="graph"></div>
 
     <script type="module">
-      const margin = { top: 10, right: 30, bottom: 30, left: 60 },
-        width = 460 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
-
       const svg = d3
         .select("#graph")
         .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr("width", 600)
+        .attr("height", 400);
 
-      const x = d3.scaleLinear().domain([170, 235]).range([0, width]);
+      const x = d3.scaleLinear().domain([170, 235]).range([60, 570]);
       svg
         .append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
-      const y = d3.scaleLinear().domain([2500, 8000]).range([height, 0]);
-      svg.append("g").call(d3.axisLeft(y));
+        .attr("transform", "translate(0,350)")
+        .call(d3.axisBottom(x).tickValues(d3.range(170, 231, 10)));
+
+      const y = d3.scaleLinear().domain([2500, 6500]).range([350, 10]);
+      svg
+        .append("g")
+        .attr("transform", "translate(60,0)")
+        .call(
+          d3
+            .axisLeft(y)
+            .tickValues(d3.range(3000, 6001, 1000))
+            .tickFormat(d3.format("d")),
+        );
+
+      svg
+        .append("text")
+        .attr("x", 315)
+        .attr("y", 392)
+        .attr("text-anchor", "middle")
+        .text("Flipper Length (mm)");
+
+      svg
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -180)
+        .attr("y", 18)
+        .attr("text-anchor", "middle")
+        .text("Body Mass (g)");
 
       const data = await d3.csv("../penglings.csv", (d) => ({
         flipper_length_mm: +d.flipper_length_mm,
@@ -52,7 +70,7 @@
 
       const size = d3
         .scaleSqrt()
-        .domain(d3.extent(data, (d) => d.bill_length_mm))
+        .domain(d3.extent(clean, (d) => d.bill_length_mm))
         .range([3, 12]);
 
       svg
@@ -65,7 +83,11 @@
         .attr("cy", (d) => y(d.body_mass_g))
         .attr("r", (d) => size(d.bill_length_mm))
         .style("fill", (d) => color(d.species))
-        .style("opacity", 0.8);
+        .style("opacity", 0.8)
+        .text(
+          (d) =>
+            `${d.species}\nFlipper: ${d.flipper_length_mm} mm\nMass: ${d.body_mass_g} g\nBill: ${d.bill_length_mm} mm`,
+        );
     </script>
   </body>
 </html>
