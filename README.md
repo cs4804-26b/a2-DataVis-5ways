@@ -7,6 +7,7 @@ d3 is a JavaScript library intended for data visualization. It is built to be lo
 I think the easiest part of this was just modifying to get the right properties after adding all of the elements. Once the data points were on the screen, it was pretty easy to change their sizes & opacity. I'd say the most difficult part was just learning how to add axes + gridlines. Also, I forgot about that d3 needs to wait for data to load, so I got confused for a while about why there weren't data points on my screen. I didn't really add the legend through any sort of legend tool, just added shapes to make up the legend - same with the background color. I could see using this tool in the future, potentially for my MQP as I will be making a data visualization tool.
 
 To run: navigate to the main directory and enter python -m http.server, then go to localhost:8000/d3/
+OR: go to https://kjhitt.github.io/a2-kjhitt-keagan-hitt/d3/
 
 ![d3](img/d3.png)
 
@@ -69,6 +70,7 @@ I somewhat thought this would be quite hard to do, as it's the one mentioned in 
 I would use this library for making things interactive in 3D, but a scatterplot is probably the worst use of this. It's kinda fun to mess around with, but the data is simply not presented in an effective manner. I also built off of an example with a camera effect, so that's there now making the data blurrier. The only real "hack" I had to do was just making rectangles for the axes and ticks, although that is to be expected since it's not like three.js has a built-in scatterplot tool. 
 
 To run: python -m http.server in the main a2-kjhitt-keagan-hitt folder, then go to http://localhost:8000/three.js/
+OR: go to https://kjhitt.github.io/a2-kjhitt-keagan-hitt/three.js/
 
 ![three.js](img/threejs.png)
 
