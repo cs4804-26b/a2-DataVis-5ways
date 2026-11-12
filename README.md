@@ -1,149 +1,65 @@
-Assignment 2 - Data Visualization, 5 Ways  
-===
+# Anna Towne
 
-Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
+## D3
+The graph in D3 was done entirely in javascript. It is a popular library that we had experince with last assignment. 
 
-The goal of this project is to gain experience with as many data visualization libraries, languages, and tools as possible.
+To visualize the dataset I used the svg that can be created with d3 and from there added axises, grad lines, the circles, and a legend by hand. I found that just straight d3 took the longest to use and was the most exact, I had a harder time with the axis labels on this one, they are there but very faint. This had the most customizaiton of all of them however you had to know the exact syntax and with trying not to use AI it wasn't always easy to find exactly what I was looking for. 
 
-I have provided a small dataset about penguins, `penglings.csv`.
-Each row contains a penguin observation and several variables about it, including bill length, flipper length, and more.
+I used a documentation and example code from 3 different sites but all were mainly used for understanding syntax. I decided that for this graph I wanted to be able to see the difference in bill length better so the difference in size of the circles is mapped to a larger span to allow viewers to see a more drastic comparison.
 
-Your goal is to use 5 different tools to make the following chart:
+![alt text](img/d3.png)
 
-![](img/ggplot2.png)
+## Altair
+It is a Python library that is pretty easy to use. Documentation is fairly good, when you want to change things from the basic it gets a little more complex with knowing what funcitons can go in what but overall it made customization pretty easy. 
 
-These features should be preserved as much as possible in your replication:
+Also it is super easy to add a hover to get the exact stats of the penguin you are looking at. You can even add things that arn't apart of the visualizaiton like male/female. As long as it is in the dataset. This was one of my favorties to work with for the graphing libraries. 
 
-- Data positioning: it should be an upward-trending scatterplot as shown.  Flipper Length should be on the x-axis and Body Mass on the y-axis.
-- Scales: Note the scales do not start at 0.
-- Axis ticks and labels: both axes are labeled and there are tick marks at a reasonable interval, e.g 10, 20, 30, etc.
-- Color mapping to species.
-- Size mapping to Bill Length.
-- Opacity of circles set to 0.8 or similar for a semi-transparent effect.
+![alt text](img/Altair.png)
 
-Other features are not required. This includes:
+## Flourish
+Flourish was not a library so much as a really easy to use website that makes graphing super simple. You pick from a much of different graph options, upload your csv, decide which data columns are which part of the diagram, and then can further customize from there.
 
-- The background grid.
-- The legends.
+This was the quickest one to make, no code which was sad but I can see why it is so popular. While there were a TON of customization things, font alignment, size, colors, shapes. And tons of templates for many different graphs, because it is a site and not code that the user can manipulate down to the pixel, there are limitations. For example, I couldnt put the legend on the side of the graph, had to be on top. And I couldnt get a legend for the bill length. I also couldn't excentuate the differnce in bill sizes like in D3. 
 
-Note that some software packages will make it **impossible** to perfectly preserve the above requirements. 
-Be sure to note where these deviate as you reflect on what a tool is good for.
+![alt text](img/flourish.png)
 
-Improvements are also welcome as part of Technical and Design achievements.
+## Plotly
+I have used plotly before but it made the graphing process super easy, the documentation is clear and there is a ton of overhead making it a little more complicated to customize. However it makes it really easy to just get a graph with the basics of what you want. It is all in python, and when working with python pandas makes it super easy to clean the data.
 
-Libraries, Tools, Languages
+Also, while custimization is a bit more complicated, their documentation is incredible and they have a search bar on the side for most things. And if you don't know the exact wording to look it up on the site, I found googling it with plotly documentation sends you to the right area to find the documentation you need. 
+
+Lastly, while there is not a legend on the side for bill length, they are size differently based on size. Also, when you hover over the points it will tell you the exact size.
+
+![alt text](img/plotly.png)
+
+## ggplot2 (R)
+This was done in R, honestly the hardest part of this grpah was downlaoding R and getting the kernal to connect to the jupyter notebook. Overall the data processing in R was super easy, and the graph creation with ggplot2 was simple. It was fairly simple and auto did a ton of features like background grid, truncating the axises, and the legend with both size and species was super quick. This was probably the easiest to do and get close to the original (which makes sense since it is in the same language and graphing library).
+
+![alt text](img/ggplot2.png)
+
 ---
+### Technical Achievements
+- some of my graphs like altair and plotly have hovers to show the exact data values
+- Got to play around with many different libraries and I worked with JS, Python, and R
 
-You are required to use 5 different tools or libraries.
-Of the 5 tools, you must use at least 3 libraries (libraries require code of some kind).
-This could be `Python, R, Javascript`, or `Java, Javascript, Matlab` or any other combination.
-Dedicated tools (i.e. Excel) do not count towards the language requirement.
+#### Design Achievements
+- made the difference in bill size more noticable to the viewer like in d3 and my ggplot2
+- on my plotly I decided to color the penguins differently, I feel like the vibes match better, can't explain just is
+- for the flourish graph I got to use a theme which changes background color, font theme, and overall mood of the graph
+    - This application would be super easy for anyone to figure out, especially if you arn't used to code you can still make visualizaitons to show your findings
 
-Otherwise, you should seek tools and libraries to fill out your 5.
-
-Below are a few ideas. Do not limit yourself to this list!
-There are new tools coming out every year and we may not have an exhaustive list of the latest and greatest.
-
-Some may be difficult choices, like Matlab or SPSS, which require large installations, licenses, and occasionally difficult UIs.
-
-I have marked a few that are strongly suggested.
-
-- R + ggplot2 `<- definitely worth trying`
-- Excel
-- d3 `<- since the rest of the class uses this, we're requiring it`
-- Altair `<- hugely popular python library. highly recommended `
-- three.js `<- well, it's a 3d library. not really recommended, but could be interesting and fun`
-- p5js `<- good for playing around. not really a chart lib`
-- Tableau
-- PowerBI
-- Vega-lite `<- very interesting formal visualization model; might be the future of the field`
-- Flourish `<- popular in recent years`
-- DataWrapper `<- popular in recent years`
-- GNUplot `<- the former CS department head uses this all the time :)`
-- SAS/SPSS/Matlab
-
-You may write everything from scratch, or start with demo programs from books or the web. 
-If you do start with code that you found, please identify the source of the code in your README and, most importantly, make non-trivial changes to the code to make it your own so you really learn what you're doing. 
-
-Tips
----
-
-- If you're using d3, key to this assignment is knowing how to load data.
-You will likely use the [`d3.json` or `d3.csv` functions](https://d3js.org/d3-dsv) to load the data you found.
-
-**Beware that these functions are *asynchronous*, meaning it's possible to "build" an empty visualization before the data actually loads. Figuring out how to do this properly can be a major hiccup if you haven't used async functions before. If this means you, start part of this project early so you don't end up in a rush!**
-
-- `penglings.csv` has a few rows with `NA` values (two have no measurements at all). Filter them out before you plot (in d3, converting `"NA"` to a number gives `NaN`, which breaks scales and circle positions).
-
-- *For web languages like d3* Don't forget to run a local webserver when you're debugging.
-Same as A1: run `python3 -m http.server` in your repo folder and visit http://localhost:8000.
-Being able to host a local webserver is an essential web development skill and very common in visualization design as well.
-
-Readme Requirements
----
-
-A good readme with screenshots and structured documentation is required for this project. 
-It should be possible to scroll through your readme to get an overview of all the tools and visualizations you produced.
-
-- Each visualization should start with a top-level heading (e.g. `# d3`)
-- Each visualization should include a screenshot. Put these in an `img` folder and link through the readme (markdown command: `![caption](img/<imgname>)`.
-- Write a paragraph for each visualization tool you use. What was easy? Difficult? Where could you see the tool being useful in the future? Did you have to use any hacks or data manipulation to get the right chart?
-
-Other Requirements
----
-
-0. Your code should be forked from the GitHub repo.
-1. Place all code, Excel sheets, etcetera in a named folder. For example, `r-ggplot, matlab, mathematica, excel` and so on.
-2. Your writeup (readme.md in the repo) should also contain the following:
-
-- Description of the Technical achievements you attempted with this visualization.
-  - Some ideas include interaction, such as mousing over to see more detail about the point selected.
-- Description of the Design achievements you attempted with this visualization.
-  - Some ideas include consistent color choice, font choice, element size (e.g. the size of the circles).
-
-GitHub Details
----
-
-- Fork the GitHub Repository. You now have a copy associated with your username.
-- Make changes to fulfill the project requirements. 
-- To submit, make a [Pull Request](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) on the original repository, and put the link to your pull request in the A2 assignment on Canvas.
-- Note: name your pull request using the following scheme: 
-```
-a2-your Gh username-your first name-your lastname
-```
-
-Grading
----
-
-Grades on a 120 point scale. 
-24 points will be based on your Technical and Design achievements, as explained in your readme. 
-
-Make sure you include the files necessary to reproduce your plots.
-You should structure these in folders if helpful.
-We will choose some at random to run and test.
-
-**NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
-
-# R + ggplot2 + R Markdown
-
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
-
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
-
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
-
-![ggplot2](img/ggplot2.png)
-
-# d3...
-
-(And so on...)
-
-
-## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
-
-### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+#### Resources Used
+- D3 documentaiton
+    - Used as base code for d3, overall basic syntax of graphing with d3 was learned from this / documentation
+    - https://observablehq.com/@d3/scatterplot-with-shapes
+    - https://d3js.org/what-is-d3
+    - https://d3-graph-gallery.com/graph/custom_legend.html
+- Plotly documentation
+    - https://plotly.com/python/line-and-scatter/
+- Altair documation
+    - https://altair-viz.github.io/user_guide/api.html
+- Flourish
+    - no documentation just their site
+    - https://app.flourish.studio/projects
+- ggplot2
+    - https://www.rdocumentation.org/packages/ggplot2/versions/0.9.0/topics/ggplot
