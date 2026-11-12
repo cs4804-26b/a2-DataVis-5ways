@@ -1,10 +1,12 @@
 # /// script
-# requires-python = ">=3.14"
+# requires-python = ">=3.13"
 # dependencies = [
 #     "altair>=6.3.0",
 #     "polars>=2.1.0",
 # ]
 # ///
+import os
+
 import altair as alt
 import polars as pl
 

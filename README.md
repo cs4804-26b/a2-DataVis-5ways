@@ -18,6 +18,18 @@ Using d3's documentation, I was also able to find the d3 way of adding hoverable
 ### Design Achievements
 - Legend: I manually created a legend in d3, using basic svg tag types. I wasn't able to find any automatic legend creation values in the docs, so I manually drew one out myself.
 
+## Python + Altair
+
+![altair-based visualization](./img/altair.png)
+
+Python is a general purpose high level programming language that has a variety of different applications, including in data science. Altair is a python package that is based on, and generates Vega-Lite definitions. Vega-lite itself a formal schema for defining visualizations (see below). Because of this, the altair packages is relatively low level in that it only provides several generic chart types to the user, where objects corresponding to Vega-Lite definitions are expted to be passed in to create the visualization.
+
+### Technical Achievements
+- The graph is interactive, and a user can over over each point to see a popup of the 4 values visible in the graph.
+- Visualization is rendered to html, making the visualization's generation independent of its display
+
+### Design Achievements
+By rendering to html, instead of directly displaying the visualization from the script, 
 
 ## Excel
 
