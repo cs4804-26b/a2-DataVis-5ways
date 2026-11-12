@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A2: Penglings 5 ways</title>
+  <style type="text/css">
+    
+    #container h1 { 
+      text-align: center; 
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1> Penguin Data </h1>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+            
+  <script type = "text/javascript">
+    console.log("d3 version", d3.version); // test that d3 loaded
+
+    const w = 1600, h = 900;
+
+    const margin = {
+            top: 50,
+            right: 50,
+            bottom: 100,
+            left: 100
+        };
+
+    // axes values with gaps
+    const axes_x ={
+        x_min: 165,
+        x_max: 235,
+        gap: 5
+    }
+    
+    const axes_y = {
+      y_min: 2500,
+      y_max: 6500,
+      gap: 500
+    }
+
+
+    var svg = d3.select("#container")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+    d3.csv("../penglings.csv").then(function(data) {
+      
+      // turn data into numbers for processing
+      data.forEach(
+        d => {
+          d.bill_length_mm = Number(d.bill_length_mm);
+          d.flipper_length_mm = Number(d.flipper_length_mm);
+          d.body_mass_g = Number(d.body_mass_g);
+        });
+     
+      // axes and scale
+
+      const x = d3.scaleLinear().domain([axes_x.x_min,axes_x.x_max]).range([margin.left, w - margin.right])
+
+      const y = d3.scaleLinear().domain([axes_y.y_min, axes_y.y_max]).range([h - margin.bottom, margin.top])
+
+      
+        
+			}).catch(function(error){
+        console.log("Error with Json", error)
+      })
+  </script>
+</body>
+</html>
