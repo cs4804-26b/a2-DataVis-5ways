@@ -8,6 +8,10 @@
     #container h1 { 
       text-align: center; 
     }
+
+    .tick text {
+      font-size: large;
+    }
   
   </style>
 </head>
@@ -67,7 +71,7 @@
       // species color
       const color = d3.scaleOrdinal()
           .domain(["Adelie", "Chinstrap", "Gentoo"])
-          .range(["#F56C27", "#88219E", "#1A5378"]);
+          .range(["#F56C27", "#88219E", "#685CE0"]);
 
       // circle magnitude
       const size = d3.scaleLinear()
@@ -89,6 +93,26 @@
               axes_y.gap
           )));
 
+
+      // Axes labels
+      svg.append("text")
+          .attr("x", w / 2)
+          .attr("y", h - 30)
+          .attr("text-anchor", "middle")
+          .style("font-weight", "Bold")
+          .style("font-size", "Large")
+          .text("Flipper Length (mm)");
+
+      svg.append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("x", -h / 2)
+          .attr("y", 30)
+          .attr("text-anchor", "middle")
+          .style("font-weight", "Bold")
+          .style("font-size", "Large")
+          .text("Body Mass (g)");
+
+
       // Scatterplot data dispaly
       svg.selectAll("circle")
           .data(data)
@@ -103,8 +127,14 @@
 
           .attr("fill", d => color(d.species))
           .attr("fill-opacity", 0.8)
-          .attr("stroke", "#333333")
-          .attr("stroke-width", 0.5)
+          .append("title")
+              .text(d =>
+                  "Species: " + d.species +
+                  "\nIsland: " + d.island +
+                  "\nFlipper Length: " + d.flipper_length_mm + " mm" +
+                  "\nBody Mass: " + d.body_mass_g + " g" +
+                  "\nBill Length: " + d.bill_length_mm + " mm"
+              );
         
 			}).catch(function(error){
         console.log("Error with Json", error)
