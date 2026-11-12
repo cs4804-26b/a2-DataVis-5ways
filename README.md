@@ -3,7 +3,7 @@
 ## D3
 The graph in D3 was done entirely in javascript. It is a popular library that we had experince with last assignment. 
 
-To visualize the dataset I used the svg that can be created with d3 and from there added axises, grad lines, the circles, and a legend by hand. 
+To visualize the dataset I used the svg that can be created with d3 and from there added axises, grad lines, the circles, and a legend by hand. I found that just straight d3 took the longest to use and was the most exact, I had a harder time with the axis labels on this one, they are there but very faint. This had the most customizaiton of all of them however you had to know the exact syntax and with trying not to use AI it wasn't always easy to find exactly what I was looking for. 
 
 I used a documentation and example code from 3 different sites but all were mainly used for understanding syntax. I decided that for this graph I wanted to be able to see the difference in bill length better so the difference in size of the circles is mapped to a larger span to allow viewers to see a more drastic comparison.
 
@@ -12,7 +12,7 @@ I used a documentation and example code from 3 different sites but all were main
 ## Altair
 It is a Python library that is pretty easy to use. Documentation is fairly good, when you want to change things from the basic it gets a little more complex with knowing what funcitons can go in what but overall it made customization pretty easy. 
 
-Also it is super easy to add a hover to get the exact stats of the penguin you are looking at. You can even add things that arn't apart of the visualizaiton like male/female. As long as it is in the dataset.
+Also it is super easy to add a hover to get the exact stats of the penguin you are looking at. You can even add things that arn't apart of the visualizaiton like male/female. As long as it is in the dataset. This was one of my favorties to work with for the graphing libraries. 
 
 ![alt text](img/Altair.png)
 
@@ -39,11 +39,14 @@ This was done in R, honestly the hardest part of this grpah was downlaoding R an
 
 ---
 ### Technical Achievements
-- words go here
-- hopefully more go here
+- some of my graphs like altair and plotly have hovers to show the exact data values
+- Got to play around with many different libraries and I worked with JS, Python, and R
 
 #### Design Achievements
-- made stuff a lot prettier by doing xyz
+- made the difference in bill size more noticable to the viewer like in d3 and my ggplot2
+- on my plotly I decided to color the penguins differently, I feel like the vibes match better, can't explain just is
+- for the flourish graph I got to use a theme which changes background color, font theme, and overall mood of the graph
+    - This application would be super easy for anyone to figure out, especially if you arn't used to code you can still make visualizaitons to show your findings
 
 #### Resources Used
 - D3 documentaiton
