@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f7f7f7;
+    color: #1d1d1d;
+}
+
+.page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+}
+
+h1 {
+    margin-bottom: 6px;
+    font-size: 2.2rem;
+}
+
+.subtitle {
+    margin: 0 0 24px;
+    color: #4d4d4d;
+}
+
+#chart {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    padding: 12px;
+}
+
+svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+}
+
+.axis text {
+    fill: #333;
+    font-size: 12px;
+}
+
+.axis path,
+.axis line {
+    stroke: #555;
+}
+
+.grid line {
+    stroke: rgba(0, 0, 0, 0.08);
+    stroke-dasharray: 3 3;
+}
+
+.grid path {
+    stroke: none;
+}
+
+.label {
+    font-size: 15px;
+    fill: #1b1b1b;
+    font-weight: 600;
+}
+
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    padding: 8px 10px;
+    background: rgba(17, 24, 39, 0.9);
+    color: white;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translate(-50%, -110%);
+    transition: opacity 120ms ease;
+    white-space: nowrap;
+}
+
+.legend-label {
+    font-size: 12px;
+    fill: #333;
+}
