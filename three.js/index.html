@@ -24,12 +24,30 @@
                 }
 			}
 		</script>
+        <script src="
+            https://cdn.jsdelivr.net/npm/papaparse@5.7.1/papaparse.min.js
+        "></script>
+        <link href="
+            https://cdn.jsdelivr.net/npm/papaparse@5.7.1/player/player.min.css
+        " rel="stylesheet">
 
 		<script type="module">
+            import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+            import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 
 			import * as THREE from 'three';
 
 			import { AnaglyphEffect } from 'three/addons/effects/AnaglyphEffect.js';
+
+            const penglingsFile = await fetch('../penglings.csv'); //asynchronous again unfortunately :(
+
+            var penglings = Papa.parse(await penglingsFile.text(), {
+                header: true
+            });
+
+            const fontLoader = new FontLoader();
+            const font = await fontLoader.loadAsync( 'https://threejs.org/examples/fonts/helvetiker_regular.typeface.json' );
+            //font for text. Would use Arial but I don't feel like finding that
 
 			let container, camera, scene, renderer, effect;
 
@@ -48,7 +66,7 @@
 			function init() {
 
 				container = document.createElement( 'div' );
-				document.body.appendChild( container );
+				document.body.appendChild( container ); 
 
 				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.01, 100 );
 				camera.position.z = 3;
@@ -67,17 +85,20 @@
 				scene.background = textureCube;
 
 				const geometry = new THREE.SphereGeometry( 0.1, 32, 16 );
-				const material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube } );
+				const adelie = new THREE.MeshBasicMaterial( { color: 0xfc992f, envMap: textureCube, transparent: true, opacity: 0.8, reflectivity: 0.75 } );
+                const chinstrap = new THREE.MeshBasicMaterial( { color: 0x9f3fce, envMap: textureCube, transparent: true, opacity: 0.8, reflectivity: 0.75 } );
+                const gentoo = new THREE.MeshBasicMaterial( { color: 0x219292, envMap: textureCube, transparent: true, opacity: 0.8, reflectivity: 0.75 } );
+                const colorMap = { Adelie: adelie, Chinstrap: chinstrap, Gentoo: gentoo };
 
-				for ( let i = 0; i < 500; i ++ ) {
+				for ( let i = 0; i < penglings.data.length; i ++ ) {
+                    
+					const mesh = new THREE.Mesh(geometry, colorMap[penglings.data[i].species]);
 
-					const mesh = new THREE.Mesh( geometry, material );
+					mesh.position.x = penglings.data[i].flipper_length_mm/10 - 20;
+					mesh.position.y = penglings.data[i].body_mass_g/1000 - 4;
+					mesh.position.z = -2;
 
-					mesh.position.x = Math.random() * 10 - 5;
-					mesh.position.y = Math.random() * 10 - 5;
-					mesh.position.z = Math.random() * 10 - 5;
-
-					mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 3 + 1;
+					mesh.scale.x = mesh.scale.y = mesh.scale.z = penglings.data[i].bill_length_mm/46.25;
 
 					scene.add( mesh );
 
@@ -85,7 +106,75 @@
 
 				}
 
-				//
+				//axes
+                const xBox = new THREE.BoxGeometry(6.5, 0.1, 0.1)
+                const xTick = new THREE.BoxGeometry(0.05, 0.2, 0.05)
+                const yBox = new THREE.BoxGeometry(0.1, 4, 0.1)
+                const yTick = new THREE.BoxGeometry(0.2, 0.05, 0.05)
+
+                const xMesh = new THREE.Mesh(xBox, new THREE.MeshBasicMaterial({ color: 0xffffff }));
+                xMesh.position.set(0.25, -1.5, -2);
+                const yMesh = new THREE.Mesh(yBox, new THREE.MeshBasicMaterial({ color: 0xffffff }));
+                yMesh.position.set(-3, 0.5, -2);
+                
+                //y ticks 
+                for (let i = 0; i < 4; i++) {
+                    const yTickMesh = new THREE.Mesh(yTick, new THREE.MeshBasicMaterial({ color: 0x000000 }));
+                    yTickMesh.position.set(-3.2, -1 + i, -2);
+                    scene.add(yTickMesh);
+
+                    //text
+                    const geometry = new TextGeometry( `${i * 1000 + 3000}`, {
+                        font: font,
+                        size: 0.2,
+                        depth: 0.1,
+                        curveSegments: 12
+                    });
+                    const textMesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x000000 }));
+                    textMesh.position.set(-4, -1.1 + i, -2);
+                    scene.add(textMesh);
+                }
+
+                //x ticks
+                for (let i = 0; i < 7; i++) {
+                    const xTickMesh = new THREE.Mesh(xTick, new THREE.MeshBasicMaterial({ color: 0x000000 }));
+                    xTickMesh.position.set(-3 + i, -1.6, -2);
+                    scene.add(xTickMesh);
+
+                    //text
+                    const geometry = new TextGeometry( `${i * 10 + 170}`, {
+                        font: font,
+                        size: 0.2,
+                        depth: 0.1,
+                        curveSegments: 12
+                    });
+                    const textMesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x000000 }));
+                    textMesh.position.set(-3.25 + i, -2, -2);
+                    scene.add(textMesh);
+                }
+                scene.add(xMesh, yMesh);
+
+                //axis labels
+                const xLabel = new TextGeometry("Flipper Length (mm)", {
+                    font: font,
+                    size: 0.3,
+                    depth: 0.1,
+                    curveSegments: 12
+                });
+                const xLabelMesh = new THREE.Mesh(xLabel, new THREE.MeshBasicMaterial({ color: 0x000000 }));
+                xLabelMesh.position.set(-1.75, -2.5, -2);
+                scene.add(xLabelMesh);
+                
+                const yLabel = new TextGeometry("Body Mass (g)", {
+                    font: font,
+                    size: 0.3,
+                    depth: 0.1,
+                    curveSegments: 12
+                });
+                const yLabelMesh = new THREE.Mesh(yLabel, new THREE.MeshBasicMaterial({ color: 0x000000 }));
+                yLabelMesh.position.set(-4.5, -1.1, -2);
+                yLabelMesh.rotation.z = Math.PI / 2;
+                scene.add(yLabelMesh);
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
@@ -146,14 +235,14 @@
 
 				camera.lookAt( scene.position );
 
-				for ( let i = 0, il = spheres.length; i < il; i ++ ) {
+				/*for ( let i = 0, il = spheres.length; i < il; i ++ ) {
 
 					const sphere = spheres[ i ];
 
 					sphere.position.x = 5 * Math.cos( timer + i );
 					sphere.position.y = 5 * Math.sin( timer + i * 1.1 );
 
-				}
+				}*/ //ORIGINAL PURPOSE OF THIS: sphere movement
 
 				effect.render( scene, camera );
 
