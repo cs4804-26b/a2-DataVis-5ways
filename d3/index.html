@@ -121,6 +121,53 @@
             .domain(["Adelie", "Chinstrap", "Gentoo"])
             .range(["#fc992f", "#9f3fce", "#219292"])
 
+        // Initial tooltip creation
+        var Tooltip = d3.select("#container")
+            .append("div")
+            .style("opacity", 0)
+            .attr("class", "tooltip")
+            .style("position", "absolute")
+            .style("background-color", "white")
+            .style("border", "solid")
+            .style("border-width", "2px")
+            .style("border-radius", "5px")
+            .style("padding", "5px")
+            .style("pointer-events", "none") //don't want mouseover on the tooltip
+
+        // Tooltip prep functions
+        var mouseover = function(event, d) {
+            Tooltip
+                .style("opacity", 1) //make visible
+            d3.select(this)
+                .style("stroke", "black")
+                .style("fill-opacity", 0) //also decreases opacity of dot to highlight it
+        }
+
+        var mousemove = function(event, d) {
+            Tooltip
+                .html(
+                    "Flipper Length: " + d.flipper_length_mm
+                    + "<br>Body Mass: " + d.body_mass_g
+                    + "<br>Species: " + d.species
+                    + "<br>Bill Length: " + d.bill_length_mm
+                    + "<br>Bill Depth: " + d.bill_depth_mm
+                    + "<br>Sex: " + d.sex
+                    + "<br>Year: " + d.year
+                    + "<br>Island: " + d.island
+                )
+                .attr("class", "tooltip")
+                .style("left", (d3.pointer(event, this)[0] + 20) + "px")
+                .style("top", (d3.pointer(event, this)[1]) + "px")
+        }
+
+        var mouseleave = function(event, d) {
+            Tooltip
+                .style("opacity", 0) //hide tooltip
+            d3.select(this)
+                .style("stroke", function (d) { return color(d.species) } )
+                .style("fill-opacity", 0.8) //sets opacity back to 80%
+        }
+
         // Add the data!
         svg.append('g')
             .selectAll("dot")
@@ -129,11 +176,14 @@
             .append("circle")
             .attr("cx", function (d) { return x(d.flipper_length_mm); } )
             .attr("cy", function (d) { return y(d.body_mass_g); } )
-            .attr("r", function (d) { return 0.4 * d.bill_length_mm})
+            .attr("r", function (d) { return 0.4 * d.bill_length_mm}) //this does cause errors in the console but doesn't affect visualization!
             .attr("stroke", function (d) { return color(d.species) } )
             .attr("stroke-width", 2)
             .attr("fill-opacity", 0.8)
             .style("fill", function (d) { return color(d.species) } )
+            .on("mouseover", mouseover)
+            .on("mousemove", mousemove)
+            .on("mouseleave", mouseleave)
 
         //legend
         svg.append("text")
