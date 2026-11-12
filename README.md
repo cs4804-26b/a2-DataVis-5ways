@@ -158,7 +158,18 @@ doing. The one thing I messed up when I was creating the chart was filtering out
 entries with `NaN` because I wasn't properly mapping species data to numbers,
 and `"Gentoo"` is actually `NaN` in JS :(
 
-(I mean this literally, `isNaN("Gentoo")` returns true)
+(I mean this literally, `isNaN("Gentoo")` returns `true`)
+
+# matplotlib
+
+![Kind o fhte target in matplotlib](img/matplotlib.png)
+
+It took way longer than it should have to get the legend to work than it should
+have for a library which supposedly supports legends. I could not figure out how
+to make the folor legend function with custom colors, so instead I just set it
+up to use to built-in `cool` gradient which looks better than the others I
+tried. Other than that, it was pretty easy for me to work with because like d3,
+I already know how matplotlib and python work.
 
 # Technical Achievements
 
