@@ -20,7 +20,7 @@
   <script type = "text/javascript">
     console.log("d3 version", d3.version); // test that d3 loaded
 
-    const w = 1600, h = 900;
+    const w = 1200, h = 900;
 
     const margin = {
             top: 50,
@@ -64,7 +64,47 @@
 
       const y = d3.scaleLinear().domain([axes_y.y_min, axes_y.y_max]).range([h - margin.bottom, margin.top])
 
-      
+      // species color
+      const color = d3.scaleOrdinal()
+          .domain(["Adelie", "Chinstrap", "Gentoo"])
+          .range(["#F56C27", "#88219E", "#1A5378"]);
+
+      // circle magnitude
+      const size = d3.scaleLinear()
+          .domain(d3.extent(data, d => d.bill_length_mm))
+          .range([8, 24]);
+
+      // x-axis gap and pull the x-axis down to bottom
+      svg.append("g")
+          .attr("transform",`translate(0,${h - margin.bottom})`)
+          .call(d3.axisBottom(x).tickValues(d3.range(axes_x.x_min + axes_x.gap,axes_y.y_max, 10)));
+
+      // y axis gap and place y correctly
+      svg.append("g")
+          .attr("transform",`translate(${margin.left},0)`)
+          .call(d3.axisLeft(y).tickValues(
+            d3.range(
+              axes_y.y_min + axes_y.gap,
+              axes_y.y_max,
+              axes_y.gap
+          )));
+
+      // Scatterplot data dispaly
+      svg.selectAll("circle")
+          .data(data)
+          .enter()
+          .append("circle")
+
+          .attr("cx", d => x(d.flipper_length_mm))
+          .attr("cy", d => y(d.body_mass_g))
+
+          // size magnitude 
+          .attr("r", d => size(d.bill_length_mm))
+
+          .attr("fill", d => color(d.species))
+          .attr("fill-opacity", 0.8)
+          .attr("stroke", "#333333")
+          .attr("stroke-width", 0.5)
         
 			}).catch(function(error){
         console.log("Error with Json", error)
