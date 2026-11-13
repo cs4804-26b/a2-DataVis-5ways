@@ -19,8 +19,15 @@ ggplot(data = data)
 ggplot(data, mapping = aes(x=flipper_length_mm, y=body_mass_g))
 
 #color mapping
-ggplot(data, aes(flipper_length_mm, body_mass_g, size = bill_length_mm, color = species)) +
-  geom_point(alpha = 0.7) +
+chart <- ggplot(data, aes(flipper_length_mm, body_mass_g, size = bill_length_mm, color = species)) +
+  geom_point_interactive(
+    aes(tooltip = paste0(species,
+                         "\nFlipper: ", flipper_length_mm, " mm",
+                         "\nMass: ", body_mass_g, " g",
+                         "\nBill: ", bill_length_mm, " mm"),
+        data_id = id),
+    alpha = 0.7
+  ) +
   scale_color_manual(values = c("Adelie"= "#ff941f",
                                 "Chinstrap"= "#a83dcc",
                                 "Gentoo"= "#159995")) +
@@ -30,6 +37,7 @@ ggplot(data, aes(flipper_length_mm, body_mass_g, size = bill_length_mm, color = 
     color = guide_legend(order = 2)
   ) +
   labs ( #renaming axes
+    title = "Penguin Body Mass vs. Flipper Length",
     x = "Flipper Length (mm)",
     y = "Body Mass (g)"
   )+
@@ -37,4 +45,3 @@ ggplot(data, aes(flipper_length_mm, body_mass_g, size = bill_length_mm, color = 
   theme(
     legend.position = "right"
   )
-

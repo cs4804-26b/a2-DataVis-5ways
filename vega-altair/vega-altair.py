@@ -21,10 +21,17 @@ chart = alt.Chart(data).mark_point(filled=True, opacity=0.7).encode(
             range=['#ff941f', '#a83dcc', '#159995']
         ),
         legend=alt.Legend(orient='none', legendX=520, legendY=170, titleFontWeight='normal')
-    )
+    ),
+    tooltip=[
+        alt.Tooltip('flipper_length_mm:Q', title='Flipper Length (mm)'),
+        alt.Tooltip('body_mass_g:Q', title='Body Mass (g)'),
+        alt.Tooltip('bill_length_mm:Q', title='Bill Length (mm)'),
+        alt.Tooltip('species:N', title='Species')
+    ]
 ).properties(
     width=500,
-    height=350
+    height=350,
+    title='Penguin Body Mass vs. Flipper Length'
 ).configure_view(
     fill='#E9E9E9'
 ).configure_axis(

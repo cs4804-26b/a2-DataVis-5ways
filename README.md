@@ -35,22 +35,34 @@ This graph differs because the x-axis shows increments of 5 instead of 10. The x
 <br>
 
 # Python + Vega-Altair
- Vega-Altair is a Python visualization library that is built on Vega-Lite. Similar to Vega-Lite, each attribute of the graph is controlled by assigning it equal to data. 
+ Vega-Altair is a Python visualization library that is built on Vega-Lite. 
  
- The graph is rendered as an .html file and displayed on a webpage. The program has to be run after every 
- have to run the program every time to update html
+ Similar to Vega-Lite, each attribute of the graph is controlled by assigning it equal to data. I followed a similar workflow to Vega-Lite when creating this graph. The data had to be transformed into a DataFrame in order to create the graph, so I used pandas to do so.
+ 
+ The graph is rendered as an .html file and displayed on a webpage. The program has to be run after every edit in order to update the .html file, which prolonged the process a bit.
 
 <img src="img/vegaaltair.png" alt="Vega-Altair Plot" width="600">
 
 <br>
 
-# Tableau
-njsnj
+# Datawrapper
+Datawrapper is a browser-based data-visualizatio platform that turns data into graphics without coding. It supports multiple charts, maps, and tables. 
+
+Using this website allowed me to create the following graph in less than five minutes. No code was required. The website prompts you to make a visualization through five steps. First, I uploaded the data as a csv. The next step allowed me to check and describe the data. The third step built the graph. You can select what column goes on the horizontal and vertical axes, customize the point color, change the opacity and map the size to bill length. However, there was less customization available. I couldn't change the background color of the chart or position the legend to the right. The circle sizes look quite similar and there is no option to change the scaling. The axes labels are at the edges of the chart and you cannot change boldness. 
+
+<img src="img/data_wrapper.png" alt="Datawrapper Plot" width="600">
 
 ## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
+- **Interactive Element**: When you hover over points, the body mass, flipper length, and bill length is displayed (see below). I was able to do this in d3, Vega-Altair, and Vega-Lite, but Datawrapper did not have this feature and the library needed for this task in R was not downloading.
+
+<br>
+
+<img src="img/d3_interactive.png" alt="interactive element" width="600">
+
+- **Mapped Data to Visual Properties**: Encoded flipper length and body mass as axes, species as color, and bill length as circle size
+- **Configured Legends**: Altered legends so bill length displayed only 40 and 50mm circle sizes and arranged it above the species legend. 
 
 ### Design Achievements
-- **Added Graph Title**:
-- **Interactive Element**: 
+- **Added Graph Title**: I added a title, 'Penguin Body Mass vs. Flipper Length' to the chart 
+- **Used a Consistent Color Palette**: Used the same colors across all graphs for Adelie, Chinstrap and Gentoo penguins.
+- **Plot Background Styling**: Changed the plot background color to light gray and added white gridlines.
