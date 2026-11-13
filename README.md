@@ -28,12 +28,27 @@ One thing I especially appreciate about this was that a legend was automatically
 
 ![R](img/r.png)
 
+# D3.js
+D3.js is a framework for creating SVG graphics in javascript. 
+Unlike the other frameworks, it does not have a built-in scatterplot function and all graphical components must be manually placed. 
+This significantly increases flexibility and creative freedom, but also makes it take much longer to create charts. 
+To experience more of the upsides of using D3 without  the downsides, Agentic/AI coding could be very nice as it would be significantly faster to iterate than with manual coding while maintaining the increased freedom over the easier to use but more restrictive Python and R libraries.  
+For my chart, I filtered out rows NA values in the four target columns then used various SVG elements to draw the elements in the chart, manually setting the scales of the x axis, y axis, and dot sizes.
+
+Expanded on approach outlined in https://d3-graph-gallery.com/graph/scatter_basic.html 
+
+![d3](img/d3.png)
+
 ## Technical Achievements
 - **Excel**: Used Filter functions to manually created seperate columns of data for each penguin species with NA values filtered out so that those columns could be used as different groups within a Bubble Plot.
 - **Python**: Used Pandas to convert the CSV into data for Matplotlib to visualize.
 - **R**: Used built-in R functionality to convert the CSV into data for ggplot to visualize.
+- **d3**: Asynchronous filtered out rows with NA values in target columns with d3.csv, used configurable constants for width and height of the entire graphic, and margins for the graph itself to allow for extra elements such as axis labels to be displayed outside of the chart.
 
-### Design Achievements
+## Design Achievements
 - **Excel**: Manually set X and Y range and scale so as to not start each axis at 0. Changed bubble size from area to radius to diameter to make size differences more visible.
 - **Python**: Created custom dot size function to make the differences in dot size more visible, changed alpha value of dots to make them semitransparent.
 - **R**: Changed alpha value of dots to make them semitransparent.
+- **d3**: Manually set domain and range values for x-axis, y-axis, and dot size, and set dot transparency.
+
+AI Use: Used AI similar to a search engine to help with setting up environments and finding/understanding the libraries and functions used to make the plots.
