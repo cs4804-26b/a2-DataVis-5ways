@@ -5,6 +5,8 @@ import pandas as pd
 df = pd.read_csv("../penglings.csv")
 penguins = df.dropna(subset = ["flipper_length_mm", "body_mass_g", "bill_length_mm"])
 
+# tooltop allows to hover over each dot/penguin
+# .interactive() allows for zooming in and out of visualiation
 chart = alt.Chart(penguins).mark_circle(opacity = 0.8).encode(
     alt.X("flipper_length_mm", title = "Flipper Length (mm)").scale(zero=False),
     alt.Y("body_mass_g", title = "Body Mass (g)").scale(zero=False, padding=1),
@@ -13,8 +15,8 @@ chart = alt.Chart(penguins).mark_circle(opacity = 0.8).encode(
     tooltip=["species", "island", "flipper_length_mm", "body_mass_g", "bill_length_mm"]
 ).interactive()
 
+
+
+# save to html file to view visualization
 chart.save("penguins.html")
 
-
-
-#  look into .interactive 
