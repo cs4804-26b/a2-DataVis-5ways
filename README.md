@@ -1,149 +1,58 @@
-Assignment 2 - Data Visualization, 5 Ways  
-===
+# Python + pyplot
 
-Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
+Matplotlib.pyplot is a python library that can create many types of plots with customization.
 
-The goal of this project is to gain experience with as many data visualization libraries, languages, and tools as possible.
+To visualize the penguins dataset, I made use of pyplot's `scatter()` function, specifying the body mass as the y axis, flipper length as the x axis, and bill length as the size. Additionally, I customized the color, opacity, and labels, as well as showed gridlines and the legend.
 
-I have provided a small dataset about penguins, `penglings.csv`.
-Each row contains a penguin observation and several variables about it, including bill length, flipper length, and more.
+Pyplot takes more programming than some other tools to create plots. However, it provides more control than others, since you have to format the data to be plotted anyways. I think it's great for when you already have to use python to format data.
 
-Your goal is to use 5 different tools to make the following chart:
+![pyplot](img/pyplot_vis.png)
 
-![](img/ggplot2.png)
+# Python + altair
 
-These features should be preserved as much as possible in your replication:
+Altair is a python library that can create charts based on tables of data. It provides a simple way to link data columns to parts of the visualization.
 
-- Data positioning: it should be an upward-trending scatterplot as shown.  Flipper Length should be on the x-axis and Body Mass on the y-axis.
-- Scales: Note the scales do not start at 0.
-- Axis ticks and labels: both axes are labeled and there are tick marks at a reasonable interval, e.g 10, 20, 30, etc.
-- Color mapping to species.
-- Size mapping to Bill Length.
-- Opacity of circles set to 0.8 or similar for a semi-transparent effect.
+To visualize the penguins dataset, I made use of altair's `Chart()` function, linking the flipper length column to the X axis, the body mass column to the Y axis, the color to the species column, and the size to bill length.
 
-Other features are not required. This includes:
+Altair makes it very simple to create a basic plot based on a table. However, since almost all the setup is included in the `Chart.encode()` function, it is harder to further customize. I think it's great for when you have all your data in a clean table and just want to visualize some of it.
 
-- The background grid.
-- The legends.
+![altair](img/altair_vis.png)
 
-Note that some software packages will make it **impossible** to perfectly preserve the above requirements. 
-Be sure to note where these deviate as you reflect on what a tool is good for.
+# Python + plotly
 
-Improvements are also welcome as part of Technical and Design achievements.
+Plotly is a python library that, similar to Altair, can create plots based on a table of data. It provides a simple way to link data columns to parts of the visualization.
 
-Libraries, Tools, Languages
----
+To visualize the penguins dataset, I made use of plotly's `scatter()` function, with flipper length as x, body mass as y, species as color, and bill length as size.
 
-You are required to use 5 different tools or libraries.
-Of the 5 tools, you must use at least 3 libraries (libraries require code of some kind).
-This could be `Python, R, Javascript`, or `Java, Javascript, Matlab` or any other combination.
-Dedicated tools (i.e. Excel) do not count towards the language requirement.
+Plotly makes it very simple to create a basic plot based on a table. I found it to be a more intuitive way to create a chart than altair, but it still has the simplicity of quickly creating charts based on data.
 
-Otherwise, you should seek tools and libraries to fill out your 5.
+I think it's great for when you have all your data in a clean table and just want to visualize some of it, just like Altair. However, I think it has a more standard format of use than Altair, meaning it may be easier for people who may be used to other similar python libraries.
 
-Below are a few ideas. Do not limit yourself to this list!
-There are new tools coming out every year and we may not have an exhaustive list of the latest and greatest.
+![plotly](img/plotly_vis.png)
 
-Some may be difficult choices, like Matlab or SPSS, which require large installations, licenses, and occasionally difficult UIs.
+# Matlab
 
-I have marked a few that are strongly suggested.
+Matlab is often used in scientific and engineering fields and is an alternative to Python or R.
 
-- R + ggplot2 `<- definitely worth trying`
-- Excel
-- d3 `<- since the rest of the class uses this, we're requiring it`
-- Altair `<- hugely popular python library. highly recommended `
-- three.js `<- well, it's a 3d library. not really recommended, but could be interesting and fun`
-- p5js `<- good for playing around. not really a chart lib`
-- Tableau
-- PowerBI
-- Vega-lite `<- very interesting formal visualization model; might be the future of the field`
-- Flourish `<- popular in recent years`
-- DataWrapper `<- popular in recent years`
-- GNUplot `<- the former CS department head uses this all the time :)`
-- SAS/SPSS/Matlab
+To visualize the penguins dataset, I made use of matlab's `scatter()` function, with flipper length as x, body mass as y, species as color, and bill length as size. I think Matlab is more complicated than other tools and languages/libraries if you are used to any other ones. However, I think it is able to make nice, clean visualizations.
 
-You may write everything from scratch, or start with demo programs from books or the web. 
-If you do start with code that you found, please identify the source of the code in your README and, most importantly, make non-trivial changes to the code to make it your own so you really learn what you're doing. 
+I think Matlab is great for people already used to working in Matlab. It provides clean graphs with a lot of customizability, and I think it would be particularly good for clean figures for research papers.
 
-Tips
----
+![matlab](img/matlab_vis.png)
 
-- If you're using d3, key to this assignment is knowing how to load data.
-You will likely use the [`d3.json` or `d3.csv` functions](https://d3js.org/d3-dsv) to load the data you found.
+# D3
 
-**Beware that these functions are *asynchronous*, meaning it's possible to "build" an empty visualization before the data actually loads. Figuring out how to do this properly can be a major hiccup if you haven't used async functions before. If this means you, start part of this project early so you don't end up in a rush!**
+D3 provides web-based visualizations. To visualize the penguins dataset, I created an svg scatterplot, with flipper length as x, body mass as y, species as color, and bill length as size. I think d3 is great for 
 
-- `penglings.csv` has a few rows with `NA` values (two have no measurements at all). Filter them out before you plot (in d3, converting `"NA"` to a number gives `NaN`, which breaks scales and circle positions).
+![d3](img/d3_vis.png)
 
-- *For web languages like d3* Don't forget to run a local webserver when you're debugging.
-Same as A1: run `python3 -m http.server` in your repo folder and visit http://localhost:8000.
-Being able to host a local webserver is an essential web development skill and very common in visualization design as well.
+# Technical Achievements
+I wanted to challenge myself to use programming for all 5 graphs. Additionally, I wanted to add some interactivity, which I did in my D3 plot.
 
-Readme Requirements
----
+In the D3 plot, you can hover over points to see more details. This makes it easier to see what the values compared to comparing the value to the axis tick marks, and it provides additional data that isn't shown, such as the island or year.
 
-A good readme with screenshots and structured documentation is required for this project. 
-It should be possible to scroll through your readme to get an overview of all the tools and visualizations you produced.
+# Design Achievements
+The bill length of the penguins ranges from 32 mm to 60 mm. However, just plotting this makes it hard to tell the difference between circle sizes. Often, a difference of 10 mm shows up as just a few pixels. To make it easier to see, I scaled the circle sizes so that 32 to 60 becomes 28 to 140, which is much easier to see.
 
-- Each visualization should start with a top-level heading (e.g. `# d3`)
-- Each visualization should include a screenshot. Put these in an `img` folder and link through the readme (markdown command: `![caption](img/<imgname>)`.
-- Write a paragraph for each visualization tool you use. What was easy? Difficult? Where could you see the tool being useful in the future? Did you have to use any hacks or data manipulation to get the right chart?
+Additionally, to better compare the different visualizations, I used the same color palette across all 5 visualizations.
 
-Other Requirements
----
-
-0. Your code should be forked from the GitHub repo.
-1. Place all code, Excel sheets, etcetera in a named folder. For example, `r-ggplot, matlab, mathematica, excel` and so on.
-2. Your writeup (readme.md in the repo) should also contain the following:
-
-- Description of the Technical achievements you attempted with this visualization.
-  - Some ideas include interaction, such as mousing over to see more detail about the point selected.
-- Description of the Design achievements you attempted with this visualization.
-  - Some ideas include consistent color choice, font choice, element size (e.g. the size of the circles).
-
-GitHub Details
----
-
-- Fork the GitHub Repository. You now have a copy associated with your username.
-- Make changes to fulfill the project requirements. 
-- To submit, make a [Pull Request](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) on the original repository, and put the link to your pull request in the A2 assignment on Canvas.
-- Note: name your pull request using the following scheme: 
-```
-a2-your Gh username-your first name-your lastname
-```
-
-Grading
----
-
-Grades on a 120 point scale. 
-24 points will be based on your Technical and Design achievements, as explained in your readme. 
-
-Make sure you include the files necessary to reproduce your plots.
-You should structure these in folders if helpful.
-We will choose some at random to run and test.
-
-**NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
-
-# R + ggplot2 + R Markdown
-
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
-
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
-
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
-
-![ggplot2](img/ggplot2.png)
-
-# d3...
-
-(And so on...)
-
-
-## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
-
-### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
