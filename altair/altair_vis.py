@@ -92,6 +92,14 @@ chart = alt.Chart(data).mark_circle(
         alt.value(0.8),
         alt.value(0.05)
     ),
+
+    tooltip=[
+        alt.Tooltip("species:N", title="Species"),
+        alt.Tooltip("island:N", title="Island"),
+        alt.Tooltip("flipper_length_mm:Q", title="Flipper Length"),
+        alt.Tooltip("body_mass_g:Q", title="Body Mass"),
+        alt.Tooltip("bill_length_mm:Q", title="Bill Length")
+    ]
 ).add_params(
     species_selection
 ).properties(
