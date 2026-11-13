@@ -1,0 +1,11 @@
+# API tokens and environment variables
+.env
+.env.*
+
+# Python generated files
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/

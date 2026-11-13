@@ -1,0 +1,60 @@
+---
+title: "R & ggplot2 penguin data"
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: "#>"
+description: |
+  Assignment A2 penglings graph in R.
+author: "Jim Murcia Calderon"
+output: html_document
+---
+
+R setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(ggplot2)
+library(plotly)
+```
+
+
+Read CSV, then plot using ggplot, geom_point for opacity
+```{r}
+penguin_data <- read.csv("../penglings.csv")
+
+
+penguinPlot <-  ggplot(penguin_data, aes(
+    x = flipper_length_mm,
+    y = body_mass_g,
+    color = species,
+    size = bill_length_mm,
+    #> text variable is for tooltips/technical advancement
+    text = paste0(
+      "Species: ", species,
+      "<br>Island: ", island,
+      "<br>Bill Length: ", bill_length_mm, " mm",
+      "<br>Flipper Length: ", flipper_length_mm, " mm",
+      "<br>Body Mass: ", body_mass_g, " g",
+      "<br>Sex: ", sex,
+      "<br>Year: ", year
+    ))) +
+    geom_point(alpha = 0.8) +
+    scale_size_continuous(
+      name = "Bill Length (mm)",
+    ) +
+    labs(
+      title = "Penguin Data using R/ggplot2",
+      x = "Flipper Length (mm)",
+      y = "Body Mass (g)",
+      color = "Species"
+    ) +
+    theme_dark()
+```
+
+Adding tooltips
+```{r}
+ggplotly(penguinPlot, tooltip = "text")
+
+```
+
