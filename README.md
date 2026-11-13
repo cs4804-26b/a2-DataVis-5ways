@@ -10,7 +10,7 @@ To organize the data for the chart, I made a new sheet with the 3 data columns f
 
 ![excel](img/excel.png)
 
-# Python
+# Python + Pandas + Matplotlib
 Python is a coding language that is easy to begin development in and contains many useful libraries. 
 Many of these libraries are useful for processing and visualizing data. 
 Because of that, creating a basic chart only takes a few lines of code when using these libraries, creating a low barrier to entry. 
@@ -20,7 +20,7 @@ Then, I used Matplotlib's scatter function to create the graph, and used its bui
 
 ![python](img/python.png)
 
-# R
+# R + ggplot
 R is another coding language, although it is less flexible than Python being focused mainly on data and statistics. 
 I used a regular R file in RStudio with the output going directly to the "plots" tab in RStudio.   
 I used R's built-in read.csv function to convert the CSV to a dataframe, then I used ggplot's geom_point function to create the scatterplot. 
