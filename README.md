@@ -33,3 +33,7 @@ Vega-Lite itself was not hard to write, but figuring out how to display the spec
 - Added hover details to the D3 and Altair charts.
 
 ## Design Achievements
+
+## AI Usage
+
+AI was used to debug d3 code, help figure out how to display the Vega-Lite chart.
