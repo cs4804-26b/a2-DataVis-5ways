@@ -41,7 +41,7 @@ def main() -> None:
     ax = scatter.axes
     if ax:
         ax.set_xlabel("Flipper Length (mm)")
-        ax.set_ylabel("Body Mass (mm)")
+        ax.set_ylabel("Body Mass (g)")
 
         s, _ = scatter.legend_elements(prop="sizes")
         sv = np.arange(minbill, maxbill, (maxbill - minbill - 0.00001) / len(s))
