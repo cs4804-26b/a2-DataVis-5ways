@@ -9,7 +9,7 @@ The scatterplots would use the 'penglings.csv' dataset, which contains some data
 There are others, but these are the primary fields that will be used in these plots.
 
 # R + ggplot2
-![Penguins Plotted in R](Plots/R_Penguin_Plot.png)
+![Penguins Plotted in R](Plots/ggplot2_Penguin_Plot.png)
 
 This plot was created in R using the ggplot2 library. This one took a me a little bit, as R is a somewhat unique language. However, ggplot2 made creating this plot _very_ easy. As I'll describe later, a language like d3 offers a ton of customizability and unique functions, but it is super bulky and takes time to write properly. ggplot2 on the other hand was very short, only requiring 21 lines of code. Since R is so popular in statistics and math fields, I will probably use this one in the future.
 
