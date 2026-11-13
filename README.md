@@ -61,3 +61,17 @@ had to manually set the size mode (area to diamter) of the size markers. Even th
 
 ### Design Achievments
 - None, as all graph design features were provided by the library
+
+## DataWrapper
+[View the visualization here](https://datawrapper.dwcdn.net/A7lFx/1/)
+
+![DataWrapper visualization](./img/DataWrapper.png)
+
+DataWrapper is a platform for visualizaing and sharing data. It's intended goal seems to be making it easy for anyone to create visualizations. Notably, the site doesn't have any features for cleaning data, so
+I had to clean it manually and generate a clean file ("penglings_clean.csv").
+
+Technical Achievements
+- None, everything was provided by the tool
+
+Design Achievements
+- None, everything was provided by the tool
