@@ -41,6 +41,9 @@ Alternatively, just look at the image above.
 # GNUPlot
 ![Penguins Plotted in JSON](Plots/GNUPlot_Penguin_Plot.png)
 
-GNUPlot is probably my favorite one on this list, saved for last as always. It uses it's own scripting language to make plots, and it is very specialized to do so. If I didn't color code the penguins I could have written it in only 9 lines. Additionally, it was super easy to make a 3d rotatable plot, so I totally recommend booting this one up yourself. Super simple, super straightforward, super great result.
+GNUPlot is probably my favorite one on this list, saved for last as always. It uses it's own scripting language to make plots, and it is very specialized to do so. If I didn't color code the penguins I could have written it in only 8 lines. Additionally, it was super easy to make a 3d rotatable plot, so I totally recommend booting this one up yourself. Super simple, super straightforward, super great result.
 
 To view this plot, type `gnuplot -persist gnuplotPlot.gp` into the terminal. A window will open with the 3d plot, which you can drag inside to rotate.
+
+## Design Achievements
+- Color Choice: I used the generic RGB colorscheme for all my plots because they are easily recognizable. I am slightly colorblind and when I was making the first plot, R + ggplot2, the default colors were cyan, red, and orange. The shades of red and yellow were near indistinguishable to me, so I chose colors that greatly contrasted each other. When removing the rgb values (Which you can do in the GNUPlot window) each of the colors can still be clearly seen in greyscale.
