@@ -12,6 +12,7 @@ for species, i in data.groupby("species"):
                c=colors.get(species), alpha=0.8, label=species)
 ax.set_xlabel("Flipper Length (mm)")
 ax.set_ylabel("Body Mass (g)")
+ax.grid(alpha=0.2)
 ax.legend(title="Species")
 plt.tight_layout()
 
