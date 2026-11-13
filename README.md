@@ -9,7 +9,7 @@ To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer,
 
 ggplot2 provides a significant amount of build in functions that make building graphs really simple. ggplot also allows you to pass in a size field natively, so it made scaling by bill length super easy. I think starting with this was a good option for me, as I was already familiar with R and ggplot2 in particular. I already use it pretty frequently, and I definitely see myself continuing to use it, as it is very convenient to save images from as well, unlike some where I just had to screenshot. One other thing I noticed is how simple it was to add the background and legends.
 
-![ggplot2](img/ggplot2-penguins.png)
+![ggplot2](img/ggplot-penguins.png)
 
 # Excel
 
@@ -44,11 +44,26 @@ To me, this was the hardest to do, even with the D3 experience from last assignm
 
 ![d3](img/d3-penguins.png)
 
-## Technical Achievements
+# PowerBi
 
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
+Power BI was the sixth tool I used to recreate the graph. Like Excel, it has a graphical interface, but I had to spend some time figuring out how it handles the data. Initially, it wanted to sum the measurements together, so I added the unique penguin ID to make each penguin appear as its own point. Once that was working, I could assign species to color and bill length to bubble size, then adjust the axes and formatting. I also added a species slicer, which lets users filter the graph without changing the underlying data. I could see Power BI being useful for dashboards where users want to explore the data through filters and multiple charts.
+
+![PowerBI](img/powerbi-penguins.png)
+
+## Achievements
+
+### Technical Achievements
+
+- Additional tools: I recreated the graph using six different tools, exceeding the requirement of five. These were R + ggplot2, Excel, Altair, Vega-Lite, D3.js, and Power BI.
+
+- Interactivity: I added interactive features to the Altair visualizations, allowing users to hover and get more information.
+
+- Responsive visualization: The D3 chart scales with the browser width while preserving the proportions of the graph, labels, and legends.
+
+- Power BI filtering: I added a slicer in Power BI that allows users to filter the graph by species. This makes it easier to examine each species individually and reduces overlapping points.
 
 ### Design Achievements
 
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+- Cool color scheme: I used blue, purple, and teal in the D3 visualization to create a palette made entirely of cool colors, which I feel fits penguins better.
+
+- Custom legends: I added species and bill-length legends to D3 and R using the same color and size scales as the plotted points.

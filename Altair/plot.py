@@ -4,11 +4,15 @@ import altair as alt
 import pandas as pd
 
 here = Path(__file__).parent
-# Works whether the folder is next to penglings.csv or inside the repo root
-csv = next(p for p in (here / "penglings.csv", here.parent / "penglings.csv") if p.exists())
+root = here.parent
 
-df = pd.read_csv(csv, na_values=["NA", ""])
-df = df.dropna(subset=["flipper_length_mm", "body_mass_g", "bill_length_mm", "species"])
+df = pd.read_csv(root / "penglings.csv", na_values=["NA", ""])
+df = df.dropna(subset=[
+    "flipper_length_mm",
+    "body_mass_g",
+    "bill_length_mm",
+    "species",
+])
 
 species_colors = alt.Scale(
     domain=["Adelie", "Chinstrap", "Gentoo"],
@@ -29,18 +33,46 @@ chart = (
             "body_mass_g:Q",
             title="Body Mass (g)",
             scale=alt.Scale(domain=[2500, 6500], zero=False),
-            axis=alt.Axis(values=list(range(3000, 6001, 1000)), format="d"),
+            axis=alt.Axis(
+                values=list(range(3000, 6001, 1000)),
+                format="d",
+            ),
         ),
-        color=alt.Color("species:N", title="Species", scale=species_colors),
+        color=alt.Color(
+            "species:N",
+            title="Species",
+            scale=species_colors,
+        ),
         size=alt.Size(
             "bill_length_mm:Q",
             title="Bill Length (mm)",
             scale=alt.Scale(zero=False, range=[20, 250]),
             legend=alt.Legend(values=[40, 50]),
         ),
+        tooltip=[
+            alt.Tooltip("species:N", title="Species"),
+            alt.Tooltip("flipper_length_mm:Q", title="Flipper Length (mm)"),
+            alt.Tooltip("body_mass_g:Q", title="Body Mass (g)"),
+            alt.Tooltip("bill_length_mm:Q", title="Bill Length (mm)"),
+        ],
     )
     .properties(width=600, height=400)
 )
 
-chart.save(here / "altair-penguins.png", scale_factor=2)
+(root / "img").mkdir(exist_ok=True)
+chart.save(root / "img" / "altair-penguins.png", scale_factor=2)
+
+selection = alt.selection_point(fields=["species"], bind="legend")
+
+interactive_chart = (
+    chart
+    .add_params(selection)
+    .encode(
+        opacity=alt.condition(selection, alt.value(0.8), alt.value(0.1))
+    )
+    .interactive()
+)
+
+interactive_chart.save(here / "altair-penguins.html")
+
 print(f"Plotted {len(df)} penguins")
