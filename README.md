@@ -67,3 +67,11 @@ Power BI was the sixth tool I used to recreate the graph. Like Excel, it has a g
 - Cool color scheme: I used blue, purple, and teal in the D3 visualization to create a palette made entirely of cool colors, which I feel fits penguins better.
 
 - Custom legends: I added species and bill-length legends to D3 and R using the same color and size scales as the plotted points.
+
+## To Run the Web Pages
+
+python -m http.server 8000
+
+- **D3.js:** http://localhost:8000/D3-js/
+- **Vega-Lite:** http://localhost:8000/Vega-Lite/
+- **Altair:** http://localhost:8000/Altair/altair-penguins.html
