@@ -1,1 +1,4 @@
-altair/index.html
+.gitignore
+*/index.html
+shell.nix
+

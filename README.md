@@ -2,7 +2,7 @@
 ### Param Amre
 
 ## View Files
-For all library based visualizations, please run an http server at the root of the project. Run anything needed to generate the html file (see relevant section for directions), and navigate to localhost:8000/folder-name/ to see and interact with the graph.
+For all library based visualizations, please run an http server at the root of the project. Run anything needed to generate the html file (see relevant section for directions), and navigate to [server-url]/folder-name/ to see and interact with the graph.
 
 ## Javascript + d3
 Navigate to [server-url]/d3/.
@@ -50,7 +50,9 @@ color issues. I think this is reasonable because Excel is not primarily focused 
 - The workaround for displaying colors of multiple types on mentioned above
 
 ## Python + Plotly
-To view the page, run altair/main.py with any [PEP 723](https://peps.python.org/pep-0723/) compatible tool, and navigate to [server-url]/altair/
+To view the page, run plotly/main.py with any [PEP 723](https://peps.python.org/pep-0723/) compatible tool, and navigate to [server-url]/plotly/
+
+![plotly-based visualization](./img/plotly.png)
 
 Plotly is a python package written for creating interactive visualizations. I specificaly used the express subpackage, which is a very high level way of creating graphs. In writing the graph this way,
 I was able to get several features, such as graph interactvitiy (zooming in and out, hovering over data points for popups with information, export) without having to write any code. However, to do things outside the scope of the high level API, workarounds have to be used, or you have the use the alternate lower level API. For example, the API doesn't let the user seperate the scale from values plotted, so I
@@ -67,8 +69,8 @@ had to manually set the size mode (area to diamter) of the size markers. Even th
 
 ![DataWrapper visualization](./img/DataWrapper.png)
 
-DataWrapper is a platform for visualizaing and sharing data. It's intended goal seems to be making it easy for anyone to create visualizations. Notably, the site doesn't have any features for cleaning data, so
-I had to clean it manually and generate a clean file ("penglings_clean.csv").
+DataWrapper is a platform for visualizing and sharing data. It's intended goal seems to be making it easy for anyone to create visualizations. Notably, the site doesn't have any features for cleaning data, so
+I had to clean it manually and generate a clean file ("penglings_clean.csv"). I was able to generate every requested feature from the site's functions. The visualization page also has interactivity, dynamic filtering, and exporting functoins, all provided by DataWrapper.
 
 Technical Achievements
 - None, everything was provided by the tool
