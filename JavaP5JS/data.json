@@ -1,0 +1,2738 @@
+[
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 39.1,
+    "flipper_length_mm": 181,
+    "body_mass_g": 3750,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 39.5,
+    "flipper_length_mm": 186,
+    "body_mass_g": 3800,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 40.3,
+    "flipper_length_mm": 195,
+    "body_mass_g": 3250,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 36.7,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3450,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 39.3,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3650,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 38.9,
+    "flipper_length_mm": 181,
+    "body_mass_g": 3625,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 39.2,
+    "flipper_length_mm": 195,
+    "body_mass_g": 4675,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 34.1,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3475,
+    "sex": "NA"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 42,
+    "flipper_length_mm": 190,
+    "body_mass_g": 4250,
+    "sex": "NA"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 37.8,
+    "flipper_length_mm": 186,
+    "body_mass_g": 3300,
+    "sex": "NA"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 37.8,
+    "flipper_length_mm": 180,
+    "body_mass_g": 3700,
+    "sex": "NA"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 41.1,
+    "flipper_length_mm": 182,
+    "body_mass_g": 3200,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 38.6,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3800,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 34.6,
+    "flipper_length_mm": 198,
+    "body_mass_g": 4400,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 36.6,
+    "flipper_length_mm": 185,
+    "body_mass_g": 3700,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 38.7,
+    "flipper_length_mm": 195,
+    "body_mass_g": 3450,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 42.5,
+    "flipper_length_mm": 197,
+    "body_mass_g": 4500,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 34.4,
+    "flipper_length_mm": 184,
+    "body_mass_g": 3325,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 46,
+    "flipper_length_mm": 194,
+    "body_mass_g": 4200,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 37.8,
+    "flipper_length_mm": 174,
+    "body_mass_g": 3400,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 37.7,
+    "flipper_length_mm": 180,
+    "body_mass_g": 3600,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 35.9,
+    "flipper_length_mm": 189,
+    "body_mass_g": 3800,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 38.2,
+    "flipper_length_mm": 185,
+    "body_mass_g": 3950,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 38.8,
+    "flipper_length_mm": 180,
+    "body_mass_g": 3800,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 35.3,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3800,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 40.6,
+    "flipper_length_mm": 183,
+    "body_mass_g": 3550,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 40.5,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3200,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 37.9,
+    "flipper_length_mm": 172,
+    "body_mass_g": 3150,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 40.5,
+    "flipper_length_mm": 180,
+    "body_mass_g": 3950,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 39.5,
+    "flipper_length_mm": 178,
+    "body_mass_g": 3250,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 37.2,
+    "flipper_length_mm": 178,
+    "body_mass_g": 3900,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 39.5,
+    "flipper_length_mm": 188,
+    "body_mass_g": 3300,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 40.9,
+    "flipper_length_mm": 184,
+    "body_mass_g": 3900,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36.4,
+    "flipper_length_mm": 195,
+    "body_mass_g": 3325,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 39.2,
+    "flipper_length_mm": 196,
+    "body_mass_g": 4150,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 38.8,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3950,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 42.2,
+    "flipper_length_mm": 180,
+    "body_mass_g": 3550,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 37.6,
+    "flipper_length_mm": 181,
+    "body_mass_g": 3300,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 39.8,
+    "flipper_length_mm": 184,
+    "body_mass_g": 4650,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36.5,
+    "flipper_length_mm": 182,
+    "body_mass_g": 3150,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 40.8,
+    "flipper_length_mm": 195,
+    "body_mass_g": 3900,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36,
+    "flipper_length_mm": 186,
+    "body_mass_g": 3100,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 44.1,
+    "flipper_length_mm": 196,
+    "body_mass_g": 4400,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 37,
+    "flipper_length_mm": 185,
+    "body_mass_g": 3000,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 39.6,
+    "flipper_length_mm": 190,
+    "body_mass_g": 4600,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 41.1,
+    "flipper_length_mm": 182,
+    "body_mass_g": 3425,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 37.5,
+    "flipper_length_mm": 179,
+    "body_mass_g": 2975,
+    "sex": "NA"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3450,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 42.3,
+    "flipper_length_mm": 191,
+    "body_mass_g": 4150,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 39.6,
+    "flipper_length_mm": 186,
+    "body_mass_g": 3500,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 40.1,
+    "flipper_length_mm": 188,
+    "body_mass_g": 4300,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 35,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3450,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 42,
+    "flipper_length_mm": 200,
+    "body_mass_g": 4050,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 34.5,
+    "flipper_length_mm": 187,
+    "body_mass_g": 2900,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 41.4,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3700,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 39,
+    "flipper_length_mm": 186,
+    "body_mass_g": 3550,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 40.6,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3800,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 36.5,
+    "flipper_length_mm": 181,
+    "body_mass_g": 2850,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 37.6,
+    "flipper_length_mm": 194,
+    "body_mass_g": 3750,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 35.7,
+    "flipper_length_mm": 185,
+    "body_mass_g": 3150,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 41.3,
+    "flipper_length_mm": 195,
+    "body_mass_g": 4400,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 37.6,
+    "flipper_length_mm": 185,
+    "body_mass_g": 3600,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 41.1,
+    "flipper_length_mm": 192,
+    "body_mass_g": 4050,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 36.4,
+    "flipper_length_mm": 184,
+    "body_mass_g": 2850,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 41.6,
+    "flipper_length_mm": 192,
+    "body_mass_g": 3950,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 35.5,
+    "flipper_length_mm": 195,
+    "body_mass_g": 3350,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 41.1,
+    "flipper_length_mm": 188,
+    "body_mass_g": 4100,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 35.9,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3050,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 41.8,
+    "flipper_length_mm": 198,
+    "body_mass_g": 4450,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 33.5,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3600,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 39.7,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3900,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 39.6,
+    "flipper_length_mm": 196,
+    "body_mass_g": 3550,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 45.8,
+    "flipper_length_mm": 197,
+    "body_mass_g": 4150,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 35.5,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3700,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 42.8,
+    "flipper_length_mm": 195,
+    "body_mass_g": 4250,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 40.9,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3700,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 37.2,
+    "flipper_length_mm": 184,
+    "body_mass_g": 3900,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 36.2,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3550,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 42.1,
+    "flipper_length_mm": 195,
+    "body_mass_g": 4000,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 34.6,
+    "flipper_length_mm": 189,
+    "body_mass_g": 3200,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 42.9,
+    "flipper_length_mm": 196,
+    "body_mass_g": 4700,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 36.7,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3800,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 35.1,
+    "flipper_length_mm": 193,
+    "body_mass_g": 4200,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 37.3,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3350,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 41.3,
+    "flipper_length_mm": 194,
+    "body_mass_g": 3550,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36.3,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3800,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36.9,
+    "flipper_length_mm": 189,
+    "body_mass_g": 3500,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 38.3,
+    "flipper_length_mm": 189,
+    "body_mass_g": 3950,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 38.9,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3600,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 35.7,
+    "flipper_length_mm": 202,
+    "body_mass_g": 3550,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 41.1,
+    "flipper_length_mm": 205,
+    "body_mass_g": 4300,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 34,
+    "flipper_length_mm": 185,
+    "body_mass_g": 3400,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 39.6,
+    "flipper_length_mm": 186,
+    "body_mass_g": 4450,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36.2,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3300,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 40.8,
+    "flipper_length_mm": 208,
+    "body_mass_g": 4300,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 38.1,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3700,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 40.3,
+    "flipper_length_mm": 196,
+    "body_mass_g": 4350,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 33.1,
+    "flipper_length_mm": 178,
+    "body_mass_g": 2900,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 43.2,
+    "flipper_length_mm": 192,
+    "body_mass_g": 4100,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 35,
+    "flipper_length_mm": 192,
+    "body_mass_g": 3725,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 41,
+    "flipper_length_mm": 203,
+    "body_mass_g": 4725,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 37.7,
+    "flipper_length_mm": 183,
+    "body_mass_g": 3075,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 37.8,
+    "flipper_length_mm": 190,
+    "body_mass_g": 4250,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 37.9,
+    "flipper_length_mm": 193,
+    "body_mass_g": 2925,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 39.7,
+    "flipper_length_mm": 184,
+    "body_mass_g": 3550,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 38.6,
+    "flipper_length_mm": 199,
+    "body_mass_g": 3750,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 38.2,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3900,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 38.1,
+    "flipper_length_mm": 181,
+    "body_mass_g": 3175,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 43.2,
+    "flipper_length_mm": 197,
+    "body_mass_g": 4775,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 38.1,
+    "flipper_length_mm": 198,
+    "body_mass_g": 3825,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 45.6,
+    "flipper_length_mm": 191,
+    "body_mass_g": 4600,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 39.7,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3200,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 42.2,
+    "flipper_length_mm": 197,
+    "body_mass_g": 4275,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 39.6,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3900,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Biscoe",
+    "bill_length_mm": 42.7,
+    "flipper_length_mm": 196,
+    "body_mass_g": 4075,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 38.6,
+    "flipper_length_mm": 188,
+    "body_mass_g": 2900,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 37.3,
+    "flipper_length_mm": 199,
+    "body_mass_g": 3775,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 35.7,
+    "flipper_length_mm": 189,
+    "body_mass_g": 3350,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 41.1,
+    "flipper_length_mm": 189,
+    "body_mass_g": 3325,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 36.2,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3150,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 37.7,
+    "flipper_length_mm": 198,
+    "body_mass_g": 3500,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 40.2,
+    "flipper_length_mm": 176,
+    "body_mass_g": 3450,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 41.4,
+    "flipper_length_mm": 202,
+    "body_mass_g": 3875,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 35.2,
+    "flipper_length_mm": 186,
+    "body_mass_g": 3050,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 40.6,
+    "flipper_length_mm": 199,
+    "body_mass_g": 4000,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 38.8,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3275,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 41.5,
+    "flipper_length_mm": 195,
+    "body_mass_g": 4300,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 39,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3050,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 44.1,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4000,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 38.5,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3325,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Torgersen",
+    "bill_length_mm": 43.1,
+    "flipper_length_mm": 197,
+    "body_mass_g": 3500,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36.8,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3500,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 37.5,
+    "flipper_length_mm": 199,
+    "body_mass_g": 4475,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 38.1,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3425,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 41.1,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3900,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 35.6,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3175,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 40.2,
+    "flipper_length_mm": 200,
+    "body_mass_g": 3975,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 37,
+    "flipper_length_mm": 185,
+    "body_mass_g": 3400,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 39.7,
+    "flipper_length_mm": 193,
+    "body_mass_g": 4250,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 40.2,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3400,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 40.6,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3475,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 32.1,
+    "flipper_length_mm": 188,
+    "body_mass_g": 3050,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 40.7,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3725,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 37.3,
+    "flipper_length_mm": 192,
+    "body_mass_g": 3000,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 39,
+    "flipper_length_mm": 185,
+    "body_mass_g": 3650,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 39.2,
+    "flipper_length_mm": 190,
+    "body_mass_g": 4250,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36.6,
+    "flipper_length_mm": 184,
+    "body_mass_g": 3475,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36,
+    "flipper_length_mm": 195,
+    "body_mass_g": 3450,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 37.8,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3750,
+    "sex": "male"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 36,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3700,
+    "sex": "female"
+  },
+  {
+    "species": "Adelie",
+    "island": "Dream",
+    "bill_length_mm": 41.5,
+    "flipper_length_mm": 201,
+    "body_mass_g": 4000,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.1,
+    "flipper_length_mm": 211,
+    "body_mass_g": 4500,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50,
+    "flipper_length_mm": 230,
+    "body_mass_g": 5700,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.7,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4450,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50,
+    "flipper_length_mm": 218,
+    "body_mass_g": 5700,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.6,
+    "flipper_length_mm": 215,
+    "body_mass_g": 5400,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.5,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4550,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.4,
+    "flipper_length_mm": 211,
+    "body_mass_g": 4800,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.7,
+    "flipper_length_mm": 219,
+    "body_mass_g": 5200,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 43.3,
+    "flipper_length_mm": 209,
+    "body_mass_g": 4400,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.8,
+    "flipper_length_mm": 215,
+    "body_mass_g": 5150,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 40.9,
+    "flipper_length_mm": 214,
+    "body_mass_g": 4650,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49,
+    "flipper_length_mm": 216,
+    "body_mass_g": 5550,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.5,
+    "flipper_length_mm": 214,
+    "body_mass_g": 4650,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.4,
+    "flipper_length_mm": 213,
+    "body_mass_g": 5850,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.8,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4200,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.3,
+    "flipper_length_mm": 217,
+    "body_mass_g": 5850,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 42,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4150,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.2,
+    "flipper_length_mm": 221,
+    "body_mass_g": 6300,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.2,
+    "flipper_length_mm": 209,
+    "body_mass_g": 4800,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.7,
+    "flipper_length_mm": 222,
+    "body_mass_g": 5350,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50.2,
+    "flipper_length_mm": 218,
+    "body_mass_g": 5700,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.1,
+    "flipper_length_mm": 215,
+    "body_mass_g": 5000,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.5,
+    "flipper_length_mm": 213,
+    "body_mass_g": 4400,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.3,
+    "flipper_length_mm": 215,
+    "body_mass_g": 5050,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 42.9,
+    "flipper_length_mm": 215,
+    "body_mass_g": 5000,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.1,
+    "flipper_length_mm": 215,
+    "body_mass_g": 5100,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 44.5,
+    "flipper_length_mm": 216,
+    "body_mass_g": 4100,
+    "sex": "NA"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.8,
+    "flipper_length_mm": 215,
+    "body_mass_g": 5650,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.2,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4600,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50,
+    "flipper_length_mm": 220,
+    "body_mass_g": 5550,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.3,
+    "flipper_length_mm": 222,
+    "body_mass_g": 5250,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 42.8,
+    "flipper_length_mm": 209,
+    "body_mass_g": 4700,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.1,
+    "flipper_length_mm": 207,
+    "body_mass_g": 5050,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 59.6,
+    "flipper_length_mm": 230,
+    "body_mass_g": 6050,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.1,
+    "flipper_length_mm": 220,
+    "body_mass_g": 5150,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.4,
+    "flipper_length_mm": 220,
+    "body_mass_g": 5400,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 42.6,
+    "flipper_length_mm": 213,
+    "body_mass_g": 4950,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 44.4,
+    "flipper_length_mm": 219,
+    "body_mass_g": 5250,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 44,
+    "flipper_length_mm": 208,
+    "body_mass_g": 4350,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.7,
+    "flipper_length_mm": 208,
+    "body_mass_g": 5350,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 42.7,
+    "flipper_length_mm": 208,
+    "body_mass_g": 3950,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.6,
+    "flipper_length_mm": 225,
+    "body_mass_g": 5700,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.3,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4300,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.6,
+    "flipper_length_mm": 216,
+    "body_mass_g": 4750,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50.5,
+    "flipper_length_mm": 222,
+    "body_mass_g": 5550,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 43.6,
+    "flipper_length_mm": 217,
+    "body_mass_g": 4900,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.5,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4200,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50.5,
+    "flipper_length_mm": 225,
+    "body_mass_g": 5400,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 44.9,
+    "flipper_length_mm": 213,
+    "body_mass_g": 5100,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.2,
+    "flipper_length_mm": 215,
+    "body_mass_g": 5300,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.6,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4850,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.5,
+    "flipper_length_mm": 220,
+    "body_mass_g": 5300,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.1,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4400,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50.1,
+    "flipper_length_mm": 225,
+    "body_mass_g": 5000,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.5,
+    "flipper_length_mm": 217,
+    "body_mass_g": 4900,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45,
+    "flipper_length_mm": 220,
+    "body_mass_g": 5050,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 43.8,
+    "flipper_length_mm": 208,
+    "body_mass_g": 4300,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.5,
+    "flipper_length_mm": 220,
+    "body_mass_g": 5000,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 43.2,
+    "flipper_length_mm": 208,
+    "body_mass_g": 4450,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50.4,
+    "flipper_length_mm": 224,
+    "body_mass_g": 5550,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.3,
+    "flipper_length_mm": 208,
+    "body_mass_g": 4200,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.2,
+    "flipper_length_mm": 221,
+    "body_mass_g": 5300,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.7,
+    "flipper_length_mm": 214,
+    "body_mass_g": 4400,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 54.3,
+    "flipper_length_mm": 231,
+    "body_mass_g": 5650,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.8,
+    "flipper_length_mm": 219,
+    "body_mass_g": 4700,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.8,
+    "flipper_length_mm": 230,
+    "body_mass_g": 5700,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.2,
+    "flipper_length_mm": 214,
+    "body_mass_g": 4650,
+    "sex": "NA"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.5,
+    "flipper_length_mm": 229,
+    "body_mass_g": 5800,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 43.5,
+    "flipper_length_mm": 220,
+    "body_mass_g": 4700,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50.7,
+    "flipper_length_mm": 223,
+    "body_mass_g": 5550,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.7,
+    "flipper_length_mm": 216,
+    "body_mass_g": 4750,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.4,
+    "flipper_length_mm": 221,
+    "body_mass_g": 5000,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.2,
+    "flipper_length_mm": 221,
+    "body_mass_g": 5100,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.5,
+    "flipper_length_mm": 217,
+    "body_mass_g": 5200,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.4,
+    "flipper_length_mm": 216,
+    "body_mass_g": 4700,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.6,
+    "flipper_length_mm": 230,
+    "body_mass_g": 5800,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.5,
+    "flipper_length_mm": 209,
+    "body_mass_g": 4600,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 51.1,
+    "flipper_length_mm": 220,
+    "body_mass_g": 6000,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.2,
+    "flipper_length_mm": 215,
+    "body_mass_g": 4750,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.2,
+    "flipper_length_mm": 223,
+    "body_mass_g": 5950,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.1,
+    "flipper_length_mm": 212,
+    "body_mass_g": 4625,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 52.5,
+    "flipper_length_mm": 221,
+    "body_mass_g": 5450,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.4,
+    "flipper_length_mm": 212,
+    "body_mass_g": 4725,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50,
+    "flipper_length_mm": 224,
+    "body_mass_g": 5350,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 44.9,
+    "flipper_length_mm": 212,
+    "body_mass_g": 4750,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50.8,
+    "flipper_length_mm": 228,
+    "body_mass_g": 5600,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 43.4,
+    "flipper_length_mm": 218,
+    "body_mass_g": 4600,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 51.3,
+    "flipper_length_mm": 218,
+    "body_mass_g": 5300,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.5,
+    "flipper_length_mm": 212,
+    "body_mass_g": 4875,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 52.1,
+    "flipper_length_mm": 230,
+    "body_mass_g": 5550,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.5,
+    "flipper_length_mm": 218,
+    "body_mass_g": 4950,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 52.2,
+    "flipper_length_mm": 228,
+    "body_mass_g": 5400,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.5,
+    "flipper_length_mm": 212,
+    "body_mass_g": 4750,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.5,
+    "flipper_length_mm": 224,
+    "body_mass_g": 5650,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 44.5,
+    "flipper_length_mm": 214,
+    "body_mass_g": 4850,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50.8,
+    "flipper_length_mm": 226,
+    "body_mass_g": 5200,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.4,
+    "flipper_length_mm": 216,
+    "body_mass_g": 4925,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.9,
+    "flipper_length_mm": 222,
+    "body_mass_g": 4875,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.4,
+    "flipper_length_mm": 203,
+    "body_mass_g": 4625,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 51.1,
+    "flipper_length_mm": 225,
+    "body_mass_g": 5250,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.5,
+    "flipper_length_mm": 219,
+    "body_mass_g": 4850,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 55.9,
+    "flipper_length_mm": 228,
+    "body_mass_g": 5600,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.2,
+    "flipper_length_mm": 215,
+    "body_mass_g": 4975,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.1,
+    "flipper_length_mm": 228,
+    "body_mass_g": 5500,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.3,
+    "flipper_length_mm": 216,
+    "body_mass_g": 4725,
+    "sex": "NA"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.8,
+    "flipper_length_mm": 215,
+    "body_mass_g": 5500,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 41.7,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4700,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 53.4,
+    "flipper_length_mm": 219,
+    "body_mass_g": 5500,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 43.3,
+    "flipper_length_mm": 208,
+    "body_mass_g": 4575,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.1,
+    "flipper_length_mm": 209,
+    "body_mass_g": 5500,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50.5,
+    "flipper_length_mm": 216,
+    "body_mass_g": 5000,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.8,
+    "flipper_length_mm": 229,
+    "body_mass_g": 5950,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 43.5,
+    "flipper_length_mm": 213,
+    "body_mass_g": 4650,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 51.5,
+    "flipper_length_mm": 230,
+    "body_mass_g": 5500,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.2,
+    "flipper_length_mm": 217,
+    "body_mass_g": 4375,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 55.1,
+    "flipper_length_mm": 230,
+    "body_mass_g": 5850,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 44.5,
+    "flipper_length_mm": 217,
+    "body_mass_g": 4875,
+    "sex": "NA"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 48.8,
+    "flipper_length_mm": 222,
+    "body_mass_g": 6000,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 47.2,
+    "flipper_length_mm": 214,
+    "body_mass_g": 4925,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 46.8,
+    "flipper_length_mm": 215,
+    "body_mass_g": 4850,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 50.4,
+    "flipper_length_mm": 222,
+    "body_mass_g": 5750,
+    "sex": "male"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 45.2,
+    "flipper_length_mm": 212,
+    "body_mass_g": 5200,
+    "sex": "female"
+  },
+  {
+    "species": "Gentoo",
+    "island": "Biscoe",
+    "bill_length_mm": 49.9,
+    "flipper_length_mm": 213,
+    "body_mass_g": 5400,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 46.5,
+    "flipper_length_mm": 192,
+    "body_mass_g": 3500,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50,
+    "flipper_length_mm": 196,
+    "body_mass_g": 3900,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 51.3,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3650,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 45.4,
+    "flipper_length_mm": 188,
+    "body_mass_g": 3525,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 52.7,
+    "flipper_length_mm": 197,
+    "body_mass_g": 3725,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 45.2,
+    "flipper_length_mm": 198,
+    "body_mass_g": 3950,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 46.1,
+    "flipper_length_mm": 178,
+    "body_mass_g": 3250,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 51.3,
+    "flipper_length_mm": 197,
+    "body_mass_g": 3750,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 46,
+    "flipper_length_mm": 195,
+    "body_mass_g": 4150,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 51.3,
+    "flipper_length_mm": 198,
+    "body_mass_g": 3700,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 46.6,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3800,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 51.7,
+    "flipper_length_mm": 194,
+    "body_mass_g": 3775,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 47,
+    "flipper_length_mm": 185,
+    "body_mass_g": 3700,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 52,
+    "flipper_length_mm": 201,
+    "body_mass_g": 4050,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 45.9,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3575,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.5,
+    "flipper_length_mm": 201,
+    "body_mass_g": 4050,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.3,
+    "flipper_length_mm": 197,
+    "body_mass_g": 3300,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 58,
+    "flipper_length_mm": 181,
+    "body_mass_g": 3700,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 46.4,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3450,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 49.2,
+    "flipper_length_mm": 195,
+    "body_mass_g": 4400,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 42.4,
+    "flipper_length_mm": 181,
+    "body_mass_g": 3600,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 48.5,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3400,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 43.2,
+    "flipper_length_mm": 187,
+    "body_mass_g": 2900,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.6,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3800,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 46.7,
+    "flipper_length_mm": 195,
+    "body_mass_g": 3300,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 52,
+    "flipper_length_mm": 197,
+    "body_mass_g": 4150,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.5,
+    "flipper_length_mm": 200,
+    "body_mass_g": 3400,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 49.5,
+    "flipper_length_mm": 200,
+    "body_mass_g": 3800,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 46.4,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3700,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 52.8,
+    "flipper_length_mm": 205,
+    "body_mass_g": 4550,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 40.9,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3200,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 54.2,
+    "flipper_length_mm": 201,
+    "body_mass_g": 4300,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 42.5,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3350,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 51,
+    "flipper_length_mm": 203,
+    "body_mass_g": 4100,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 49.7,
+    "flipper_length_mm": 195,
+    "body_mass_g": 3600,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 47.5,
+    "flipper_length_mm": 199,
+    "body_mass_g": 3900,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 47.6,
+    "flipper_length_mm": 195,
+    "body_mass_g": 3850,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 52,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4800,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 46.9,
+    "flipper_length_mm": 192,
+    "body_mass_g": 2700,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 53.5,
+    "flipper_length_mm": 205,
+    "body_mass_g": 4500,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 49,
+    "flipper_length_mm": 210,
+    "body_mass_g": 3950,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 46.2,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3650,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.9,
+    "flipper_length_mm": 196,
+    "body_mass_g": 3550,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 45.5,
+    "flipper_length_mm": 196,
+    "body_mass_g": 3500,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.9,
+    "flipper_length_mm": 196,
+    "body_mass_g": 3675,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.8,
+    "flipper_length_mm": 201,
+    "body_mass_g": 4450,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.1,
+    "flipper_length_mm": 190,
+    "body_mass_g": 3400,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 49,
+    "flipper_length_mm": 212,
+    "body_mass_g": 4300,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 51.5,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3250,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 49.8,
+    "flipper_length_mm": 198,
+    "body_mass_g": 3675,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 48.1,
+    "flipper_length_mm": 199,
+    "body_mass_g": 3325,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 51.4,
+    "flipper_length_mm": 201,
+    "body_mass_g": 3950,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 45.7,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3600,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.7,
+    "flipper_length_mm": 203,
+    "body_mass_g": 4050,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 42.5,
+    "flipper_length_mm": 187,
+    "body_mass_g": 3350,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 52.2,
+    "flipper_length_mm": 197,
+    "body_mass_g": 3450,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 45.2,
+    "flipper_length_mm": 191,
+    "body_mass_g": 3250,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 49.3,
+    "flipper_length_mm": 203,
+    "body_mass_g": 4050,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.2,
+    "flipper_length_mm": 202,
+    "body_mass_g": 3800,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 45.6,
+    "flipper_length_mm": 194,
+    "body_mass_g": 3525,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 51.9,
+    "flipper_length_mm": 206,
+    "body_mass_g": 3950,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 46.8,
+    "flipper_length_mm": 189,
+    "body_mass_g": 3650,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 45.7,
+    "flipper_length_mm": 195,
+    "body_mass_g": 3650,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 55.8,
+    "flipper_length_mm": 207,
+    "body_mass_g": 4000,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 43.5,
+    "flipper_length_mm": 202,
+    "body_mass_g": 3400,
+    "sex": "female"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 49.6,
+    "flipper_length_mm": 193,
+    "body_mass_g": 3775,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.8,
+    "flipper_length_mm": 210,
+    "body_mass_g": 4100,
+    "sex": "male"
+  },
+  {
+    "species": "Chinstrap",
+    "island": "Dream",
+    "bill_length_mm": 50.2,
+    "flipper_length_mm": 198,
+    "body_mass_g": 3775,
+    "sex": "female"
+  }
+]

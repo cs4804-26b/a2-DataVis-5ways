@@ -1,0 +1,99 @@
+:root {
+  --ink: #1d1d1d;
+  --muted: #5c5c5c;
+  --panel: #f5f5f5;
+  --grid: #ffffff;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #fbfbfb;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+main {
+  width: min(1080px, 96vw);
+  padding: 28px 8px 40px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+#chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--panel);
+  border-radius: 2px;
+}
+
+.grid line {
+  stroke: var(--grid);
+  stroke-width: 1.5;
+}
+
+.axis .domain { stroke: #c9c9c9; }
+.axis .tick line { stroke: #c9c9c9; }
+.axis .tick text {
+  fill: #444;
+  font-size: 12px;
+}
+.axis-label {
+  fill: #111;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.legend-title {
+  fill: #111;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.point {
+  stroke: none;
+  opacity: 0.8;
+  transition: opacity 120ms ease;
+}
+
+.point.hovered {
+  opacity: 1;
+  stroke: #1d1d1d;
+  stroke-width: 1.5;
+}
+
+#tooltip {
+  position: fixed;
+  z-index: 10;
+  pointer-events: none;
+  padding: 8px 10px;
+  background: rgba(28, 28, 28, 0.94);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 1.45;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  transform: translate(-50%, -115%);
+  transition: opacity 90ms ease;
+}
+
+#tooltip.visible { opacity: 1; }
+#tooltip b { font-weight: 650; }

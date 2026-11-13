@@ -1,0 +1,54 @@
+name: Validate project
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Regenerate the static chart data
+        run: python3 scripts/build_static_data.py
+
+      - name: Check that the committed data snapshots are current
+        run: git diff --exit-code -- JavaD3/data.json JavaP5JS/data.json
+
+      - name: Compile the Java helpers
+        run: |
+          javac JavaD3/PenguinServer.java
+          javac JavaP5JS/PrepareData.java
+
+      - name: Check the browser JavaScript syntax
+        run: |
+          node --check JavaD3/main.js
+          node --check JavaP5JS/sketch.js
+
+      - name: Check the Python syntax
+        run: |
+          python3 -m py_compile \
+            PythonAltair/penguins_altair.py \
+            Excel/build_excel.py \
+            scripts/build_static_data.py
