@@ -43,6 +43,8 @@ Expanded on approach outlined in https://d3-graph-gallery.com/graph/scatter_basi
 Power BI is a data visualization tool. For users that don't want to deal with code, I found it to be a much more powerful and intuitive tool for visualization than Excel. Despite having more experience in Excel and none in PowerBI, I found it faster to both create the initial graph and to iterate on the design. Of course, flexibility is lost compared to the code-based options, a trade-off for the time and convenience of creating the graphics.  
 For my chart, I had to transform the data columns to be decimal / whole number types since it orignally classified all the columns as text type. From there, it was simple to add a scatterplot and drag the data into the X-axis, Y-axis, Size, and Legend value fields of the graph. From there, I configured settings to make the graph more readable, such as changing the axis labels and changing the size multiplier on the markers.
 
+![power_bi](img/powerbi.png)
+
 ## Technical Achievements
 - **Excel**: Used Filter functions to manually created seperate columns of data for each penguin species with NA values filtered out so that those columns could be used as different groups within a Bubble Plot.
 - **Python**: Used Pandas to convert the CSV into data for Matplotlib to visualize.
