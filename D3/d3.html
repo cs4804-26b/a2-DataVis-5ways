@@ -41,6 +41,11 @@
         d.body_mass_g = Number(d.body_mass_g);
       });
 
+      //remove NA rows
+      data.filter(function(d) {
+        return !isNaN(d.bill_length_mm) && !isNaN(d.flipper_length_mm) && !isNaN(d.body_mass_g);
+      });
+
       // Add X axis
       var x = d3.scaleLinear()
         .domain([170, 235])
