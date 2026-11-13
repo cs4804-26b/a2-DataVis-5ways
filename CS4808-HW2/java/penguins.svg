@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="560" viewBox="0 0 860 560">
+<style>
+  text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; fill: #222; }
+  .grid { stroke: #ececec; stroke-width: 1; }
+  .axis { stroke: #888; stroke-width: 1; }
+  .tick { stroke: #888; stroke-width: 1; }
+  circle.pt { stroke: transparent; stroke-width: 1.5; }
+  circle.pt:hover { stroke: #222; }
+</style>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="72" y="28" font-size="16" font-weight="600">Flipper length and body mass of Palmer penguins</text>
+<line x1="72.00" y1="448.00" x2="720.00" y2="448.00" class="grid"/>
+<line x1="72.00" y1="448.00" x2="66.00" y2="448.00" class="tick"/>
+<text x="62.00" y="452.00" text-anchor="end" font-size="12">3,000</text>
+<line x1="72.00" y1="392.00" x2="720.00" y2="392.00" class="grid"/>
+<line x1="72.00" y1="392.00" x2="66.00" y2="392.00" class="tick"/>
+<text x="62.00" y="396.00" text-anchor="end" font-size="12">3,500</text>
+<line x1="72.00" y1="336.00" x2="720.00" y2="336.00" class="grid"/>
+<line x1="72.00" y1="336.00" x2="66.00" y2="336.00" class="tick"/>
+<text x="62.00" y="340.00" text-anchor="end" font-size="12">4,000</text>
+<line x1="72.00" y1="280.00" x2="720.00" y2="280.00" class="grid"/>
+<line x1="72.00" y1="280.00" x2="66.00" y2="280.00" class="tick"/>
+<text x="62.00" y="284.00" text-anchor="end" font-size="12">4,500</text>
+<line x1="72.00" y1="224.00" x2="720.00" y2="224.00" class="grid"/>
+<line x1="72.00" y1="224.00" x2="66.00" y2="224.00" class="tick"/>
+<text x="62.00" y="228.00" text-anchor="end" font-size="12">5,000</text>
+<line x1="72.00" y1="168.00" x2="720.00" y2="168.00" class="grid"/>
+<line x1="72.00" y1="168.00" x2="66.00" y2="168.00" class="tick"/>
+<text x="62.00" y="172.00" text-anchor="end" font-size="12">5,500</text>
+<line x1="72.00" y1="112.00" x2="720.00" y2="112.00" class="grid"/>
+<line x1="72.00" y1="112.00" x2="66.00" y2="112.00" class="tick"/>
+<text x="62.00" y="116.00" text-anchor="end" font-size="12">6,000</text>
+<line x1="118.29" y1="56.00" x2="118.29" y2="504.00" class="grid"/>
+<line x1="118.29" y1="504.00" x2="118.29" y2="510.00" class="tick"/>
+<text x="118.29" y="526.00" text-anchor="middle" font-size="12">170</text>
+<line x1="210.86" y1="56.00" x2="210.86" y2="504.00" class="grid"/>
+<line x1="210.86" y1="504.00" x2="210.86" y2="510.00" class="tick"/>
+<text x="210.86" y="526.00" text-anchor="middle" font-size="12">180</text>
+<line x1="303.43" y1="56.00" x2="303.43" y2="504.00" class="grid"/>
+<line x1="303.43" y1="504.00" x2="303.43" y2="510.00" class="tick"/>
+<text x="303.43" y="526.00" text-anchor="middle" font-size="12">190</text>
+<line x1="396.00" y1="56.00" x2="396.00" y2="504.00" class="grid"/>
+<line x1="396.00" y1="504.00" x2="396.00" y2="510.00" class="tick"/>
+<text x="396.00" y="526.00" text-anchor="middle" font-size="12">200</text>
+<line x1="488.57" y1="56.00" x2="488.57" y2="504.00" class="grid"/>
+<line x1="488.57" y1="504.00" x2="488.57" y2="510.00" class="tick"/>
+<text x="488.57" y="526.00" text-anchor="middle" font-size="12">210</text>
+<line x1="581.14" y1="56.00" x2="581.14" y2="504.00" class="grid"/>
+<line x1="581.14" y1="504.00" x2="581.14" y2="510.00" class="tick"/>
+<text x="581.14" y="526.00" text-anchor="middle" font-size="12">220</text>
+<line x1="673.71" y1="56.00" x2="673.71" y2="504.00" class="grid"/>
+<line x1="673.71" y1="504.00" x2="673.71" y2="510.00" class="tick"/>
+<text x="673.71" y="526.00" text-anchor="middle" font-size="12">230</text>
+<line x1="72.00" y1="56.00" x2="72.00" y2="504.00" class="axis"/>
+<line x1="72.00" y1="504.00" x2="720.00" y2="504.00" class="axis"/>
+<text text-anchor="middle" font-size="13" transform="translate(18, 280.0) rotate(-90)">Body Mass (g)</text>
+<text x="396.00" y="548.00" text-anchor="middle" font-size="13">Flipper Length (mm)</text>
+<circle class="pt" cx="220.11" cy="364.00" r="6.55" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 181 mm · mass 3750 g · bill 39.1 mm</title></circle>
+<circle class="pt" cx="266.40" cy="358.40" r="6.69" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 186 mm · mass 3800 g · bill 39.5 mm</title></circle>
+<circle class="pt" cx="349.71" cy="420.00" r="6.98" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 195 mm · mass 3250 g · bill 40.3 mm</title></circle>
+<circle class="pt" cx="331.20" cy="397.60" r="5.67" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 193 mm · mass 3450 g · bill 36.7 mm</title></circle>
+<circle class="pt" cx="303.43" cy="375.20" r="6.62" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 190 mm · mass 3650 g · bill 39.3 mm</title></circle>
+<circle class="pt" cx="220.11" cy="378.00" r="6.47" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 181 mm · mass 3625 g · bill 38.9 mm</title></circle>
+<circle class="pt" cx="349.71" cy="260.40" r="6.58" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 195 mm · mass 4675 g · bill 39.2 mm</title></circle>
+<circle class="pt" cx="331.20" cy="394.80" r="4.73" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · unknown · flipper 193 mm · mass 3475 g · bill 34.1 mm</title></circle>
+<circle class="pt" cx="303.43" cy="308.00" r="7.60" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · unknown · flipper 190 mm · mass 4250 g · bill 42.0 mm</title></circle>
+<circle class="pt" cx="266.40" cy="414.40" r="6.07" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · unknown · flipper 186 mm · mass 3300 g · bill 37.8 mm</title></circle>
+<circle class="pt" cx="210.86" cy="369.60" r="6.07" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · unknown · flipper 180 mm · mass 3700 g · bill 37.8 mm</title></circle>
+<circle class="pt" cx="229.37" cy="425.60" r="7.27" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 182 mm · mass 3200 g · bill 41.1 mm</title></circle>
+<circle class="pt" cx="312.69" cy="358.40" r="6.36" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 191 mm · mass 3800 g · bill 38.6 mm</title></circle>
+<circle class="pt" cx="377.49" cy="291.20" r="4.91" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 198 mm · mass 4400 g · bill 34.6 mm</title></circle>
+<circle class="pt" cx="257.14" cy="369.60" r="5.64" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 185 mm · mass 3700 g · bill 36.6 mm</title></circle>
+<circle class="pt" cx="349.71" cy="397.60" r="6.40" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 195 mm · mass 3450 g · bill 38.7 mm</title></circle>
+<circle class="pt" cx="368.23" cy="280.00" r="7.78" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 197 mm · mass 4500 g · bill 42.5 mm</title></circle>
+<circle class="pt" cx="247.89" cy="411.60" r="4.84" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 184 mm · mass 3325 g · bill 34.4 mm</title></circle>
+<circle class="pt" cx="340.46" cy="313.60" r="9.05" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 194 mm · mass 4200 g · bill 46.0 mm</title></circle>
+<circle class="pt" cx="155.31" cy="403.20" r="6.07" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 174 mm · mass 3400 g · bill 37.8 mm</title></circle>
+<circle class="pt" cx="210.86" cy="380.80" r="6.04" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 180 mm · mass 3600 g · bill 37.7 mm</title></circle>
+<circle class="pt" cx="294.17" cy="358.40" r="5.38" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 189 mm · mass 3800 g · bill 35.9 mm</title></circle>
+<circle class="pt" cx="257.14" cy="341.60" r="6.22" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 185 mm · mass 3950 g · bill 38.2 mm</title></circle>
+<circle class="pt" cx="210.86" cy="358.40" r="6.44" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 180 mm · mass 3800 g · bill 38.8 mm</title></circle>
+<circle class="pt" cx="275.66" cy="358.40" r="5.16" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 187 mm · mass 3800 g · bill 35.3 mm</title></circle>
+<circle class="pt" cx="238.63" cy="386.40" r="7.09" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 183 mm · mass 3550 g · bill 40.6 mm</title></circle>
+<circle class="pt" cx="275.66" cy="425.60" r="7.05" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 187 mm · mass 3200 g · bill 40.5 mm</title></circle>
+<circle class="pt" cx="136.80" cy="431.20" r="6.11" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 172 mm · mass 3150 g · bill 37.9 mm</title></circle>
+<circle class="pt" cx="210.86" cy="341.60" r="7.05" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 180 mm · mass 3950 g · bill 40.5 mm</title></circle>
+<circle class="pt" cx="192.34" cy="420.00" r="6.69" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 178 mm · mass 3250 g · bill 39.5 mm</title></circle>
+<circle class="pt" cx="192.34" cy="347.20" r="5.85" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 178 mm · mass 3900 g · bill 37.2 mm</title></circle>
+<circle class="pt" cx="284.91" cy="414.40" r="6.69" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 188 mm · mass 3300 g · bill 39.5 mm</title></circle>
+<circle class="pt" cx="247.89" cy="347.20" r="7.20" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 184 mm · mass 3900 g · bill 40.9 mm</title></circle>
+<circle class="pt" cx="349.71" cy="411.60" r="5.56" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 195 mm · mass 3325 g · bill 36.4 mm</title></circle>
+<circle class="pt" cx="358.97" cy="319.20" r="6.58" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 196 mm · mass 4150 g · bill 39.2 mm</title></circle>
+<circle class="pt" cx="303.43" cy="341.60" r="6.44" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 190 mm · mass 3950 g · bill 38.8 mm</title></circle>
+<circle class="pt" cx="210.86" cy="386.40" r="7.67" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 180 mm · mass 3550 g · bill 42.2 mm</title></circle>
+<circle class="pt" cx="220.11" cy="414.40" r="6.00" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 181 mm · mass 3300 g · bill 37.6 mm</title></circle>
+<circle class="pt" cx="247.89" cy="263.20" r="6.80" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 184 mm · mass 4650 g · bill 39.8 mm</title></circle>
+<circle class="pt" cx="229.37" cy="431.20" r="5.60" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 182 mm · mass 3150 g · bill 36.5 mm</title></circle>
+<circle class="pt" cx="349.71" cy="347.20" r="7.16" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 195 mm · mass 3900 g · bill 40.8 mm</title></circle>
+<circle class="pt" cx="266.40" cy="436.80" r="5.42" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 186 mm · mass 3100 g · bill 36.0 mm</title></circle>
+<circle class="pt" cx="358.97" cy="291.20" r="8.36" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 196 mm · mass 4400 g · bill 44.1 mm</title></circle>
+<circle class="pt" cx="257.14" cy="448.00" r="5.78" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 185 mm · mass 3000 g · bill 37.0 mm</title></circle>
+<circle class="pt" cx="303.43" cy="268.80" r="6.73" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 190 mm · mass 4600 g · bill 39.6 mm</title></circle>
+<circle class="pt" cx="229.37" cy="400.40" r="7.27" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 182 mm · mass 3425 g · bill 41.1 mm</title></circle>
+<circle class="pt" cx="201.60" cy="450.80" r="5.96" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · unknown · flipper 179 mm · mass 2975 g · bill 37.5 mm</title></circle>
+<circle class="pt" cx="303.43" cy="397.60" r="5.42" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 190 mm · mass 3450 g · bill 36.0 mm</title></circle>
+<circle class="pt" cx="312.69" cy="319.20" r="7.71" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 191 mm · mass 4150 g · bill 42.3 mm</title></circle>
+<circle class="pt" cx="266.40" cy="392.00" r="6.73" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 186 mm · mass 3500 g · bill 39.6 mm</title></circle>
+<circle class="pt" cx="284.91" cy="302.40" r="6.91" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 188 mm · mass 4300 g · bill 40.1 mm</title></circle>
+<circle class="pt" cx="303.43" cy="397.60" r="5.05" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 190 mm · mass 3450 g · bill 35.0 mm</title></circle>
+<circle class="pt" cx="396.00" cy="330.40" r="7.60" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 200 mm · mass 4050 g · bill 42.0 mm</title></circle>
+<circle class="pt" cx="275.66" cy="459.20" r="4.87" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 187 mm · mass 2900 g · bill 34.5 mm</title></circle>
+<circle class="pt" cx="312.69" cy="369.60" r="7.38" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 191 mm · mass 3700 g · bill 41.4 mm</title></circle>
+<circle class="pt" cx="266.40" cy="386.40" r="6.51" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 186 mm · mass 3550 g · bill 39.0 mm</title></circle>
+<circle class="pt" cx="331.20" cy="358.40" r="7.09" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 193 mm · mass 3800 g · bill 40.6 mm</title></circle>
+<circle class="pt" cx="220.11" cy="464.80" r="5.60" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 181 mm · mass 2850 g · bill 36.5 mm</title></circle>
+<circle class="pt" cx="340.46" cy="364.00" r="6.00" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 194 mm · mass 3750 g · bill 37.6 mm</title></circle>
+<circle class="pt" cx="257.14" cy="431.20" r="5.31" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 185 mm · mass 3150 g · bill 35.7 mm</title></circle>
+<circle class="pt" cx="349.71" cy="291.20" r="7.35" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 195 mm · mass 4400 g · bill 41.3 mm</title></circle>
+<circle class="pt" cx="257.14" cy="380.80" r="6.00" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 185 mm · mass 3600 g · bill 37.6 mm</title></circle>
+<circle class="pt" cx="321.94" cy="330.40" r="7.27" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 192 mm · mass 4050 g · bill 41.1 mm</title></circle>
+<circle class="pt" cx="247.89" cy="464.80" r="5.56" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 184 mm · mass 2850 g · bill 36.4 mm</title></circle>
+<circle class="pt" cx="321.94" cy="341.60" r="7.45" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 192 mm · mass 3950 g · bill 41.6 mm</title></circle>
+<circle class="pt" cx="349.71" cy="408.80" r="5.24" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 195 mm · mass 3350 g · bill 35.5 mm</title></circle>
+<circle class="pt" cx="284.91" cy="324.80" r="7.27" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 188 mm · mass 4100 g · bill 41.1 mm</title></circle>
+<circle class="pt" cx="303.43" cy="442.40" r="5.38" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 190 mm · mass 3050 g · bill 35.9 mm</title></circle>
+<circle class="pt" cx="377.49" cy="285.60" r="7.53" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 198 mm · mass 4450 g · bill 41.8 mm</title></circle>
+<circle class="pt" cx="303.43" cy="380.80" r="4.51" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 190 mm · mass 3600 g · bill 33.5 mm</title></circle>
+<circle class="pt" cx="303.43" cy="347.20" r="6.76" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 190 mm · mass 3900 g · bill 39.7 mm</title></circle>
+<circle class="pt" cx="358.97" cy="386.40" r="6.73" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 196 mm · mass 3550 g · bill 39.6 mm</title></circle>
+<circle class="pt" cx="368.23" cy="319.20" r="8.98" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 197 mm · mass 4150 g · bill 45.8 mm</title></circle>
+<circle class="pt" cx="303.43" cy="369.60" r="5.24" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 190 mm · mass 3700 g · bill 35.5 mm</title></circle>
+<circle class="pt" cx="349.71" cy="308.00" r="7.89" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 195 mm · mass 4250 g · bill 42.8 mm</title></circle>
+<circle class="pt" cx="312.69" cy="369.60" r="7.20" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 191 mm · mass 3700 g · bill 40.9 mm</title></circle>
+<circle class="pt" cx="247.89" cy="347.20" r="5.85" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 184 mm · mass 3900 g · bill 37.2 mm</title></circle>
+<circle class="pt" cx="275.66" cy="386.40" r="5.49" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 187 mm · mass 3550 g · bill 36.2 mm</title></circle>
+<circle class="pt" cx="349.71" cy="336.00" r="7.64" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 195 mm · mass 4000 g · bill 42.1 mm</title></circle>
+<circle class="pt" cx="294.17" cy="425.60" r="4.91" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 189 mm · mass 3200 g · bill 34.6 mm</title></circle>
+<circle class="pt" cx="358.97" cy="257.60" r="7.93" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 196 mm · mass 4700 g · bill 42.9 mm</title></circle>
+<circle class="pt" cx="275.66" cy="358.40" r="5.67" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 187 mm · mass 3800 g · bill 36.7 mm</title></circle>
+<circle class="pt" cx="331.20" cy="313.60" r="5.09" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 193 mm · mass 4200 g · bill 35.1 mm</title></circle>
+<circle class="pt" cx="312.69" cy="408.80" r="5.89" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 191 mm · mass 3350 g · bill 37.3 mm</title></circle>
+<circle class="pt" cx="340.46" cy="386.40" r="7.35" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 194 mm · mass 3550 g · bill 41.3 mm</title></circle>
+<circle class="pt" cx="303.43" cy="358.40" r="5.53" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 190 mm · mass 3800 g · bill 36.3 mm</title></circle>
+<circle class="pt" cx="294.17" cy="392.00" r="5.75" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 189 mm · mass 3500 g · bill 36.9 mm</title></circle>
+<circle class="pt" cx="294.17" cy="341.60" r="6.25" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 189 mm · mass 3950 g · bill 38.3 mm</title></circle>
+<circle class="pt" cx="303.43" cy="380.80" r="6.47" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 190 mm · mass 3600 g · bill 38.9 mm</title></circle>
+<circle class="pt" cx="414.51" cy="386.40" r="5.31" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 202 mm · mass 3550 g · bill 35.7 mm</title></circle>
+<circle class="pt" cx="442.29" cy="302.40" r="7.27" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 205 mm · mass 4300 g · bill 41.1 mm</title></circle>
+<circle class="pt" cx="257.14" cy="403.20" r="4.69" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 185 mm · mass 3400 g · bill 34.0 mm</title></circle>
+<circle class="pt" cx="266.40" cy="285.60" r="6.73" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 186 mm · mass 4450 g · bill 39.6 mm</title></circle>
+<circle class="pt" cx="275.66" cy="414.40" r="5.49" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 187 mm · mass 3300 g · bill 36.2 mm</title></circle>
+<circle class="pt" cx="470.06" cy="302.40" r="7.16" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 208 mm · mass 4300 g · bill 40.8 mm</title></circle>
+<circle class="pt" cx="303.43" cy="369.60" r="6.18" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 190 mm · mass 3700 g · bill 38.1 mm</title></circle>
+<circle class="pt" cx="358.97" cy="296.80" r="6.98" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 196 mm · mass 4350 g · bill 40.3 mm</title></circle>
+<circle class="pt" cx="192.34" cy="459.20" r="4.36" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 178 mm · mass 2900 g · bill 33.1 mm</title></circle>
+<circle class="pt" cx="321.94" cy="324.80" r="8.04" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 192 mm · mass 4100 g · bill 43.2 mm</title></circle>
+<circle class="pt" cx="321.94" cy="366.80" r="5.05" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 192 mm · mass 3725 g · bill 35.0 mm</title></circle>
+<circle class="pt" cx="423.77" cy="254.80" r="7.24" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 203 mm · mass 4725 g · bill 41.0 mm</title></circle>
+<circle class="pt" cx="238.63" cy="439.60" r="6.04" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 183 mm · mass 3075 g · bill 37.7 mm</title></circle>
+<circle class="pt" cx="303.43" cy="308.00" r="6.07" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 190 mm · mass 4250 g · bill 37.8 mm</title></circle>
+<circle class="pt" cx="331.20" cy="456.40" r="6.11" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 193 mm · mass 2925 g · bill 37.9 mm</title></circle>
+<circle class="pt" cx="247.89" cy="386.40" r="6.76" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 184 mm · mass 3550 g · bill 39.7 mm</title></circle>
+<circle class="pt" cx="386.74" cy="364.00" r="6.36" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 199 mm · mass 3750 g · bill 38.6 mm</title></circle>
+<circle class="pt" cx="303.43" cy="347.20" r="6.22" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 190 mm · mass 3900 g · bill 38.2 mm</title></circle>
+<circle class="pt" cx="220.11" cy="428.40" r="6.18" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 181 mm · mass 3175 g · bill 38.1 mm</title></circle>
+<circle class="pt" cx="368.23" cy="249.20" r="8.04" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 197 mm · mass 4775 g · bill 43.2 mm</title></circle>
+<circle class="pt" cx="377.49" cy="355.60" r="6.18" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 198 mm · mass 3825 g · bill 38.1 mm</title></circle>
+<circle class="pt" cx="312.69" cy="268.80" r="8.91" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 191 mm · mass 4600 g · bill 45.6 mm</title></circle>
+<circle class="pt" cx="331.20" cy="425.60" r="6.76" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 193 mm · mass 3200 g · bill 39.7 mm</title></circle>
+<circle class="pt" cx="368.23" cy="305.20" r="7.67" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 197 mm · mass 4275 g · bill 42.2 mm</title></circle>
+<circle class="pt" cx="312.69" cy="347.20" r="6.73" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · female · flipper 191 mm · mass 3900 g · bill 39.6 mm</title></circle>
+<circle class="pt" cx="358.97" cy="327.60" r="7.85" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Biscoe · male · flipper 196 mm · mass 4075 g · bill 42.7 mm</title></circle>
+<circle class="pt" cx="284.91" cy="459.20" r="6.36" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 188 mm · mass 2900 g · bill 38.6 mm</title></circle>
+<circle class="pt" cx="386.74" cy="361.20" r="5.89" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 199 mm · mass 3775 g · bill 37.3 mm</title></circle>
+<circle class="pt" cx="294.17" cy="408.80" r="5.31" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 189 mm · mass 3350 g · bill 35.7 mm</title></circle>
+<circle class="pt" cx="294.17" cy="411.60" r="7.27" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 189 mm · mass 3325 g · bill 41.1 mm</title></circle>
+<circle class="pt" cx="275.66" cy="431.20" r="5.49" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 187 mm · mass 3150 g · bill 36.2 mm</title></circle>
+<circle class="pt" cx="377.49" cy="392.00" r="6.04" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 198 mm · mass 3500 g · bill 37.7 mm</title></circle>
+<circle class="pt" cx="173.83" cy="397.60" r="6.95" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 176 mm · mass 3450 g · bill 40.2 mm</title></circle>
+<circle class="pt" cx="414.51" cy="350.00" r="7.38" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 202 mm · mass 3875 g · bill 41.4 mm</title></circle>
+<circle class="pt" cx="266.40" cy="442.40" r="5.13" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 186 mm · mass 3050 g · bill 35.2 mm</title></circle>
+<circle class="pt" cx="386.74" cy="336.00" r="7.09" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 199 mm · mass 4000 g · bill 40.6 mm</title></circle>
+<circle class="pt" cx="312.69" cy="417.20" r="6.44" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 191 mm · mass 3275 g · bill 38.8 mm</title></circle>
+<circle class="pt" cx="349.71" cy="302.40" r="7.42" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 195 mm · mass 4300 g · bill 41.5 mm</title></circle>
+<circle class="pt" cx="312.69" cy="442.40" r="6.51" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 191 mm · mass 3050 g · bill 39.0 mm</title></circle>
+<circle class="pt" cx="488.57" cy="336.00" r="8.36" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 210 mm · mass 4000 g · bill 44.1 mm</title></circle>
+<circle class="pt" cx="303.43" cy="411.60" r="6.33" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · female · flipper 190 mm · mass 3325 g · bill 38.5 mm</title></circle>
+<circle class="pt" cx="368.23" cy="392.00" r="8.00" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Torgersen · male · flipper 197 mm · mass 3500 g · bill 43.1 mm</title></circle>
+<circle class="pt" cx="331.20" cy="392.00" r="5.71" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 193 mm · mass 3500 g · bill 36.8 mm</title></circle>
+<circle class="pt" cx="386.74" cy="282.80" r="5.96" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 199 mm · mass 4475 g · bill 37.5 mm</title></circle>
+<circle class="pt" cx="275.66" cy="400.40" r="6.18" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 187 mm · mass 3425 g · bill 38.1 mm</title></circle>
+<circle class="pt" cx="303.43" cy="347.20" r="7.27" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 190 mm · mass 3900 g · bill 41.1 mm</title></circle>
+<circle class="pt" cx="312.69" cy="428.40" r="5.27" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 191 mm · mass 3175 g · bill 35.6 mm</title></circle>
+<circle class="pt" cx="396.00" cy="338.80" r="6.95" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 200 mm · mass 3975 g · bill 40.2 mm</title></circle>
+<circle class="pt" cx="257.14" cy="403.20" r="5.78" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 185 mm · mass 3400 g · bill 37.0 mm</title></circle>
+<circle class="pt" cx="331.20" cy="308.00" r="6.76" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 193 mm · mass 4250 g · bill 39.7 mm</title></circle>
+<circle class="pt" cx="331.20" cy="403.20" r="6.95" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 193 mm · mass 3400 g · bill 40.2 mm</title></circle>
+<circle class="pt" cx="275.66" cy="394.80" r="7.09" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 187 mm · mass 3475 g · bill 40.6 mm</title></circle>
+<circle class="pt" cx="284.91" cy="442.40" r="4.00" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 188 mm · mass 3050 g · bill 32.1 mm</title></circle>
+<circle class="pt" cx="303.43" cy="366.80" r="7.13" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 190 mm · mass 3725 g · bill 40.7 mm</title></circle>
+<circle class="pt" cx="321.94" cy="448.00" r="5.89" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 192 mm · mass 3000 g · bill 37.3 mm</title></circle>
+<circle class="pt" cx="257.14" cy="375.20" r="6.51" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 185 mm · mass 3650 g · bill 39.0 mm</title></circle>
+<circle class="pt" cx="303.43" cy="308.00" r="6.58" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 190 mm · mass 4250 g · bill 39.2 mm</title></circle>
+<circle class="pt" cx="247.89" cy="394.80" r="5.64" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 184 mm · mass 3475 g · bill 36.6 mm</title></circle>
+<circle class="pt" cx="349.71" cy="397.60" r="5.42" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 195 mm · mass 3450 g · bill 36.0 mm</title></circle>
+<circle class="pt" cx="331.20" cy="364.00" r="6.07" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 193 mm · mass 3750 g · bill 37.8 mm</title></circle>
+<circle class="pt" cx="275.66" cy="369.60" r="5.42" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · female · flipper 187 mm · mass 3700 g · bill 36.0 mm</title></circle>
+<circle class="pt" cx="405.26" cy="336.00" r="7.42" fill="#FB7708" fill-opacity="0.8"><title>Adelie · Dream · male · flipper 201 mm · mass 4000 g · bill 41.5 mm</title></circle>
+<circle class="pt" cx="497.83" cy="280.00" r="9.09" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 211 mm · mass 4500 g · bill 46.1 mm</title></circle>
+<circle class="pt" cx="673.71" cy="145.60" r="10.51" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 230 mm · mass 5700 g · bill 50.0 mm</title></circle>
+<circle class="pt" cx="488.57" cy="285.60" r="10.04" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 210 mm · mass 4450 g · bill 48.7 mm</title></circle>
+<circle class="pt" cx="562.63" cy="145.60" r="10.51" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 218 mm · mass 5700 g · bill 50.0 mm</title></circle>
+<circle class="pt" cx="534.86" cy="179.20" r="9.64" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 215 mm · mass 5400 g · bill 47.6 mm</title></circle>
+<circle class="pt" cx="488.57" cy="274.40" r="9.24" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 210 mm · mass 4550 g · bill 46.5 mm</title></circle>
+<circle class="pt" cx="497.83" cy="246.40" r="8.84" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 211 mm · mass 4800 g · bill 45.4 mm</title></circle>
+<circle class="pt" cx="571.89" cy="201.60" r="9.31" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 219 mm · mass 5200 g · bill 46.7 mm</title></circle>
+<circle class="pt" cx="479.31" cy="291.20" r="8.07" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 209 mm · mass 4400 g · bill 43.3 mm</title></circle>
+<circle class="pt" cx="534.86" cy="207.20" r="9.35" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 215 mm · mass 5150 g · bill 46.8 mm</title></circle>
+<circle class="pt" cx="525.60" cy="263.20" r="7.20" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 214 mm · mass 4650 g · bill 40.9 mm</title></circle>
+<circle class="pt" cx="544.11" cy="162.40" r="10.15" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 216 mm · mass 5550 g · bill 49.0 mm</title></circle>
+<circle class="pt" cx="525.60" cy="263.20" r="8.87" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 214 mm · mass 4650 g · bill 45.5 mm</title></circle>
+<circle class="pt" cx="516.34" cy="128.80" r="9.93" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 213 mm · mass 5850 g · bill 48.4 mm</title></circle>
+<circle class="pt" cx="488.57" cy="313.60" r="8.98" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 210 mm · mass 4200 g · bill 45.8 mm</title></circle>
+<circle class="pt" cx="553.37" cy="128.80" r="10.25" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 217 mm · mass 5850 g · bill 49.3 mm</title></circle>
+<circle class="pt" cx="488.57" cy="319.20" r="7.60" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 210 mm · mass 4150 g · bill 42.0 mm</title></circle>
+<circle class="pt" cx="590.40" cy="78.40" r="10.22" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 221 mm · mass 6300 g · bill 49.2 mm</title></circle>
+<circle class="pt" cx="479.31" cy="246.40" r="9.13" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 209 mm · mass 4800 g · bill 46.2 mm</title></circle>
+<circle class="pt" cx="599.66" cy="184.80" r="10.04" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 222 mm · mass 5350 g · bill 48.7 mm</title></circle>
+<circle class="pt" cx="562.63" cy="145.60" r="10.58" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 218 mm · mass 5700 g · bill 50.2 mm</title></circle>
+<circle class="pt" cx="534.86" cy="224.00" r="8.73" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 215 mm · mass 5000 g · bill 45.1 mm</title></circle>
+<circle class="pt" cx="516.34" cy="291.20" r="9.24" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 213 mm · mass 4400 g · bill 46.5 mm</title></circle>
+<circle class="pt" cx="534.86" cy="218.40" r="9.16" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 215 mm · mass 5050 g · bill 46.3 mm</title></circle>
+<circle class="pt" cx="534.86" cy="224.00" r="7.93" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 215 mm · mass 5000 g · bill 42.9 mm</title></circle>
+<circle class="pt" cx="534.86" cy="212.80" r="9.09" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 215 mm · mass 5100 g · bill 46.1 mm</title></circle>
+<circle class="pt" cx="544.11" cy="324.80" r="8.51" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · unknown · flipper 216 mm · mass 4100 g · bill 44.5 mm</title></circle>
+<circle class="pt" cx="534.86" cy="151.20" r="9.71" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 215 mm · mass 5650 g · bill 47.8 mm</title></circle>
+<circle class="pt" cx="488.57" cy="268.80" r="9.85" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 210 mm · mass 4600 g · bill 48.2 mm</title></circle>
+<circle class="pt" cx="581.14" cy="162.40" r="10.51" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 220 mm · mass 5550 g · bill 50.0 mm</title></circle>
+<circle class="pt" cx="599.66" cy="196.00" r="9.53" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 222 mm · mass 5250 g · bill 47.3 mm</title></circle>
+<circle class="pt" cx="479.31" cy="257.60" r="7.89" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 209 mm · mass 4700 g · bill 42.8 mm</title></circle>
+<circle class="pt" cx="460.80" cy="218.40" r="8.73" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 207 mm · mass 5050 g · bill 45.1 mm</title></circle>
+<circle class="pt" cx="673.71" cy="106.40" r="14.00" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 230 mm · mass 6050 g · bill 59.6 mm</title></circle>
+<circle class="pt" cx="581.14" cy="207.20" r="10.18" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 220 mm · mass 5150 g · bill 49.1 mm</title></circle>
+<circle class="pt" cx="581.14" cy="179.20" r="9.93" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 220 mm · mass 5400 g · bill 48.4 mm</title></circle>
+<circle class="pt" cx="516.34" cy="229.60" r="7.82" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 213 mm · mass 4950 g · bill 42.6 mm</title></circle>
+<circle class="pt" cx="571.89" cy="196.00" r="8.47" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 219 mm · mass 5250 g · bill 44.4 mm</title></circle>
+<circle class="pt" cx="470.06" cy="296.80" r="8.33" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 208 mm · mass 4350 g · bill 44.0 mm</title></circle>
+<circle class="pt" cx="470.06" cy="184.80" r="10.04" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 208 mm · mass 5350 g · bill 48.7 mm</title></circle>
+<circle class="pt" cx="470.06" cy="341.60" r="7.85" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 208 mm · mass 3950 g · bill 42.7 mm</title></circle>
+<circle class="pt" cx="627.43" cy="145.60" r="10.36" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 225 mm · mass 5700 g · bill 49.6 mm</title></circle>
+<circle class="pt" cx="488.57" cy="302.40" r="8.80" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 210 mm · mass 4300 g · bill 45.3 mm</title></circle>
+<circle class="pt" cx="544.11" cy="252.00" r="10.36" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 216 mm · mass 4750 g · bill 49.6 mm</title></circle>
+<circle class="pt" cx="599.66" cy="162.40" r="10.69" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 222 mm · mass 5550 g · bill 50.5 mm</title></circle>
+<circle class="pt" cx="553.37" cy="235.20" r="8.18" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 217 mm · mass 4900 g · bill 43.6 mm</title></circle>
+<circle class="pt" cx="488.57" cy="313.60" r="8.87" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 210 mm · mass 4200 g · bill 45.5 mm</title></circle>
+<circle class="pt" cx="627.43" cy="179.20" r="10.69" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 225 mm · mass 5400 g · bill 50.5 mm</title></circle>
+<circle class="pt" cx="516.34" cy="212.80" r="8.65" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 213 mm · mass 5100 g · bill 44.9 mm</title></circle>
+<circle class="pt" cx="534.86" cy="190.40" r="8.76" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 215 mm · mass 5300 g · bill 45.2 mm</title></circle>
+<circle class="pt" cx="488.57" cy="240.80" r="9.27" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 210 mm · mass 4850 g · bill 46.6 mm</title></circle>
+<circle class="pt" cx="581.14" cy="190.40" r="9.96" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 220 mm · mass 5300 g · bill 48.5 mm</title></circle>
+<circle class="pt" cx="488.57" cy="291.20" r="8.73" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 210 mm · mass 4400 g · bill 45.1 mm</title></circle>
+<circle class="pt" cx="627.43" cy="224.00" r="10.55" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 225 mm · mass 5000 g · bill 50.1 mm</title></circle>
+<circle class="pt" cx="553.37" cy="235.20" r="9.24" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 217 mm · mass 4900 g · bill 46.5 mm</title></circle>
+<circle class="pt" cx="581.14" cy="218.40" r="8.69" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 220 mm · mass 5050 g · bill 45.0 mm</title></circle>
+<circle class="pt" cx="470.06" cy="302.40" r="8.25" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 208 mm · mass 4300 g · bill 43.8 mm</title></circle>
+<circle class="pt" cx="581.14" cy="224.00" r="8.87" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 220 mm · mass 5000 g · bill 45.5 mm</title></circle>
+<circle class="pt" cx="470.06" cy="285.60" r="8.04" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 208 mm · mass 4450 g · bill 43.2 mm</title></circle>
+<circle class="pt" cx="618.17" cy="162.40" r="10.65" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 224 mm · mass 5550 g · bill 50.4 mm</title></circle>
+<circle class="pt" cx="470.06" cy="313.60" r="8.80" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 208 mm · mass 4200 g · bill 45.3 mm</title></circle>
+<circle class="pt" cx="590.40" cy="190.40" r="9.13" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 221 mm · mass 5300 g · bill 46.2 mm</title></circle>
+<circle class="pt" cx="525.60" cy="291.20" r="8.95" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 214 mm · mass 4400 g · bill 45.7 mm</title></circle>
+<circle class="pt" cx="682.97" cy="151.20" r="12.07" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 231 mm · mass 5650 g · bill 54.3 mm</title></circle>
+<circle class="pt" cx="571.89" cy="257.60" r="8.98" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 219 mm · mass 4700 g · bill 45.8 mm</title></circle>
+<circle class="pt" cx="673.71" cy="145.60" r="10.44" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 230 mm · mass 5700 g · bill 49.8 mm</title></circle>
+<circle class="pt" cx="525.60" cy="263.20" r="9.13" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · unknown · flipper 214 mm · mass 4650 g · bill 46.2 mm</title></circle>
+<circle class="pt" cx="664.46" cy="134.40" r="10.33" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 229 mm · mass 5800 g · bill 49.5 mm</title></circle>
+<circle class="pt" cx="581.14" cy="257.60" r="8.15" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 220 mm · mass 4700 g · bill 43.5 mm</title></circle>
+<circle class="pt" cx="608.91" cy="162.40" r="10.76" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 223 mm · mass 5550 g · bill 50.7 mm</title></circle>
+<circle class="pt" cx="544.11" cy="252.00" r="9.67" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 216 mm · mass 4750 g · bill 47.7 mm</title></circle>
+<circle class="pt" cx="590.40" cy="224.00" r="9.20" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 221 mm · mass 5000 g · bill 46.4 mm</title></circle>
+<circle class="pt" cx="590.40" cy="212.80" r="9.85" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 221 mm · mass 5100 g · bill 48.2 mm</title></circle>
+<circle class="pt" cx="553.37" cy="201.60" r="9.24" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 217 mm · mass 5200 g · bill 46.5 mm</title></circle>
+<circle class="pt" cx="544.11" cy="257.60" r="9.20" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 216 mm · mass 4700 g · bill 46.4 mm</title></circle>
+<circle class="pt" cx="673.71" cy="134.40" r="10.00" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 230 mm · mass 5800 g · bill 48.6 mm</title></circle>
+<circle class="pt" cx="479.31" cy="268.80" r="9.60" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 209 mm · mass 4600 g · bill 47.5 mm</title></circle>
+<circle class="pt" cx="581.14" cy="112.00" r="10.91" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 220 mm · mass 6000 g · bill 51.1 mm</title></circle>
+<circle class="pt" cx="534.86" cy="252.00" r="8.76" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 215 mm · mass 4750 g · bill 45.2 mm</title></circle>
+<circle class="pt" cx="608.91" cy="117.60" r="8.76" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 223 mm · mass 5950 g · bill 45.2 mm</title></circle>
+<circle class="pt" cx="507.09" cy="266.00" r="10.18" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 212 mm · mass 4625 g · bill 49.1 mm</title></circle>
+<circle class="pt" cx="590.40" cy="173.60" r="11.42" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 221 mm · mass 5450 g · bill 52.5 mm</title></circle>
+<circle class="pt" cx="507.09" cy="254.80" r="9.56" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 212 mm · mass 4725 g · bill 47.4 mm</title></circle>
+<circle class="pt" cx="618.17" cy="184.80" r="10.51" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 224 mm · mass 5350 g · bill 50.0 mm</title></circle>
+<circle class="pt" cx="507.09" cy="252.00" r="8.65" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 212 mm · mass 4750 g · bill 44.9 mm</title></circle>
+<circle class="pt" cx="655.20" cy="156.80" r="10.80" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 228 mm · mass 5600 g · bill 50.8 mm</title></circle>
+<circle class="pt" cx="562.63" cy="268.80" r="8.11" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 218 mm · mass 4600 g · bill 43.4 mm</title></circle>
+<circle class="pt" cx="562.63" cy="190.40" r="10.98" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 218 mm · mass 5300 g · bill 51.3 mm</title></circle>
+<circle class="pt" cx="507.09" cy="238.00" r="9.60" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 212 mm · mass 4875 g · bill 47.5 mm</title></circle>
+<circle class="pt" cx="673.71" cy="162.40" r="11.27" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 230 mm · mass 5550 g · bill 52.1 mm</title></circle>
+<circle class="pt" cx="562.63" cy="229.60" r="9.60" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 218 mm · mass 4950 g · bill 47.5 mm</title></circle>
+<circle class="pt" cx="655.20" cy="179.20" r="11.31" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 228 mm · mass 5400 g · bill 52.2 mm</title></circle>
+<circle class="pt" cx="507.09" cy="252.00" r="8.87" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 212 mm · mass 4750 g · bill 45.5 mm</title></circle>
+<circle class="pt" cx="618.17" cy="151.20" r="10.33" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 224 mm · mass 5650 g · bill 49.5 mm</title></circle>
+<circle class="pt" cx="525.60" cy="240.80" r="8.51" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 214 mm · mass 4850 g · bill 44.5 mm</title></circle>
+<circle class="pt" cx="636.69" cy="201.60" r="10.80" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 226 mm · mass 5200 g · bill 50.8 mm</title></circle>
+<circle class="pt" cx="544.11" cy="232.40" r="10.29" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 216 mm · mass 4925 g · bill 49.4 mm</title></circle>
+<circle class="pt" cx="599.66" cy="238.00" r="9.38" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 222 mm · mass 4875 g · bill 46.9 mm</title></circle>
+<circle class="pt" cx="423.77" cy="266.00" r="9.93" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 203 mm · mass 4625 g · bill 48.4 mm</title></circle>
+<circle class="pt" cx="627.43" cy="196.00" r="10.91" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 225 mm · mass 5250 g · bill 51.1 mm</title></circle>
+<circle class="pt" cx="571.89" cy="240.80" r="9.96" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 219 mm · mass 4850 g · bill 48.5 mm</title></circle>
+<circle class="pt" cx="655.20" cy="156.80" r="12.65" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 228 mm · mass 5600 g · bill 55.9 mm</title></circle>
+<circle class="pt" cx="534.86" cy="226.80" r="9.49" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 215 mm · mass 4975 g · bill 47.2 mm</title></circle>
+<circle class="pt" cx="655.20" cy="168.00" r="10.18" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 228 mm · mass 5500 g · bill 49.1 mm</title></circle>
+<circle class="pt" cx="544.11" cy="254.80" r="9.53" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · unknown · flipper 216 mm · mass 4725 g · bill 47.3 mm</title></circle>
+<circle class="pt" cx="534.86" cy="168.00" r="9.35" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 215 mm · mass 5500 g · bill 46.8 mm</title></circle>
+<circle class="pt" cx="488.57" cy="257.60" r="7.49" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 210 mm · mass 4700 g · bill 41.7 mm</title></circle>
+<circle class="pt" cx="571.89" cy="168.00" r="11.75" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 219 mm · mass 5500 g · bill 53.4 mm</title></circle>
+<circle class="pt" cx="470.06" cy="271.60" r="8.07" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 208 mm · mass 4575 g · bill 43.3 mm</title></circle>
+<circle class="pt" cx="479.31" cy="168.00" r="9.82" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 209 mm · mass 5500 g · bill 48.1 mm</title></circle>
+<circle class="pt" cx="544.11" cy="224.00" r="10.69" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 216 mm · mass 5000 g · bill 50.5 mm</title></circle>
+<circle class="pt" cx="664.46" cy="117.60" r="10.44" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 229 mm · mass 5950 g · bill 49.8 mm</title></circle>
+<circle class="pt" cx="516.34" cy="263.20" r="8.15" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 213 mm · mass 4650 g · bill 43.5 mm</title></circle>
+<circle class="pt" cx="673.71" cy="168.00" r="11.05" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 230 mm · mass 5500 g · bill 51.5 mm</title></circle>
+<circle class="pt" cx="553.37" cy="294.00" r="9.13" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 217 mm · mass 4375 g · bill 46.2 mm</title></circle>
+<circle class="pt" cx="673.71" cy="128.80" r="12.36" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 230 mm · mass 5850 g · bill 55.1 mm</title></circle>
+<circle class="pt" cx="553.37" cy="238.00" r="8.51" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · unknown · flipper 217 mm · mass 4875 g · bill 44.5 mm</title></circle>
+<circle class="pt" cx="599.66" cy="112.00" r="10.07" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 222 mm · mass 6000 g · bill 48.8 mm</title></circle>
+<circle class="pt" cx="525.60" cy="232.40" r="9.49" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 214 mm · mass 4925 g · bill 47.2 mm</title></circle>
+<circle class="pt" cx="534.86" cy="240.80" r="9.35" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 215 mm · mass 4850 g · bill 46.8 mm</title></circle>
+<circle class="pt" cx="599.66" cy="140.00" r="10.65" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 222 mm · mass 5750 g · bill 50.4 mm</title></circle>
+<circle class="pt" cx="507.09" cy="201.60" r="8.76" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · female · flipper 212 mm · mass 5200 g · bill 45.2 mm</title></circle>
+<circle class="pt" cx="516.34" cy="179.20" r="10.47" fill="#0E7877" fill-opacity="0.8"><title>Gentoo · Biscoe · male · flipper 213 mm · mass 5400 g · bill 49.9 mm</title></circle>
+<circle class="pt" cx="321.94" cy="392.00" r="9.24" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 192 mm · mass 3500 g · bill 46.5 mm</title></circle>
+<circle class="pt" cx="358.97" cy="347.20" r="10.51" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 196 mm · mass 3900 g · bill 50.0 mm</title></circle>
+<circle class="pt" cx="331.20" cy="375.20" r="10.98" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 193 mm · mass 3650 g · bill 51.3 mm</title></circle>
+<circle class="pt" cx="284.91" cy="389.20" r="8.84" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 188 mm · mass 3525 g · bill 45.4 mm</title></circle>
+<circle class="pt" cx="368.23" cy="366.80" r="11.49" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 197 mm · mass 3725 g · bill 52.7 mm</title></circle>
+<circle class="pt" cx="377.49" cy="341.60" r="8.76" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 198 mm · mass 3950 g · bill 45.2 mm</title></circle>
+<circle class="pt" cx="192.34" cy="420.00" r="9.09" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 178 mm · mass 3250 g · bill 46.1 mm</title></circle>
+<circle class="pt" cx="368.23" cy="364.00" r="10.98" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 197 mm · mass 3750 g · bill 51.3 mm</title></circle>
+<circle class="pt" cx="349.71" cy="319.20" r="9.05" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 195 mm · mass 4150 g · bill 46.0 mm</title></circle>
+<circle class="pt" cx="377.49" cy="369.60" r="10.98" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 198 mm · mass 3700 g · bill 51.3 mm</title></circle>
+<circle class="pt" cx="331.20" cy="358.40" r="9.27" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 193 mm · mass 3800 g · bill 46.6 mm</title></circle>
+<circle class="pt" cx="340.46" cy="361.20" r="11.13" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 194 mm · mass 3775 g · bill 51.7 mm</title></circle>
+<circle class="pt" cx="257.14" cy="369.60" r="9.42" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 185 mm · mass 3700 g · bill 47.0 mm</title></circle>
+<circle class="pt" cx="405.26" cy="330.40" r="11.24" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 201 mm · mass 4050 g · bill 52.0 mm</title></circle>
+<circle class="pt" cx="303.43" cy="383.60" r="9.02" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 190 mm · mass 3575 g · bill 45.9 mm</title></circle>
+<circle class="pt" cx="405.26" cy="330.40" r="10.69" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 201 mm · mass 4050 g · bill 50.5 mm</title></circle>
+<circle class="pt" cx="368.23" cy="414.40" r="10.62" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 197 mm · mass 3300 g · bill 50.3 mm</title></circle>
+<circle class="pt" cx="220.11" cy="369.60" r="13.42" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 181 mm · mass 3700 g · bill 58.0 mm</title></circle>
+<circle class="pt" cx="303.43" cy="397.60" r="9.20" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 190 mm · mass 3450 g · bill 46.4 mm</title></circle>
+<circle class="pt" cx="349.71" cy="291.20" r="10.22" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 195 mm · mass 4400 g · bill 49.2 mm</title></circle>
+<circle class="pt" cx="220.11" cy="380.80" r="7.75" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 181 mm · mass 3600 g · bill 42.4 mm</title></circle>
+<circle class="pt" cx="312.69" cy="403.20" r="9.96" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 191 mm · mass 3400 g · bill 48.5 mm</title></circle>
+<circle class="pt" cx="275.66" cy="459.20" r="8.04" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 187 mm · mass 2900 g · bill 43.2 mm</title></circle>
+<circle class="pt" cx="331.20" cy="358.40" r="10.73" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 193 mm · mass 3800 g · bill 50.6 mm</title></circle>
+<circle class="pt" cx="349.71" cy="414.40" r="9.31" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 195 mm · mass 3300 g · bill 46.7 mm</title></circle>
+<circle class="pt" cx="368.23" cy="319.20" r="11.24" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 197 mm · mass 4150 g · bill 52.0 mm</title></circle>
+<circle class="pt" cx="396.00" cy="403.20" r="10.69" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 200 mm · mass 3400 g · bill 50.5 mm</title></circle>
+<circle class="pt" cx="396.00" cy="358.40" r="10.33" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 200 mm · mass 3800 g · bill 49.5 mm</title></circle>
+<circle class="pt" cx="312.69" cy="369.60" r="9.20" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 191 mm · mass 3700 g · bill 46.4 mm</title></circle>
+<circle class="pt" cx="442.29" cy="274.40" r="11.53" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 205 mm · mass 4550 g · bill 52.8 mm</title></circle>
+<circle class="pt" cx="275.66" cy="425.60" r="7.20" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 187 mm · mass 3200 g · bill 40.9 mm</title></circle>
+<circle class="pt" cx="405.26" cy="302.40" r="12.04" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 201 mm · mass 4300 g · bill 54.2 mm</title></circle>
+<circle class="pt" cx="275.66" cy="408.80" r="7.78" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 187 mm · mass 3350 g · bill 42.5 mm</title></circle>
+<circle class="pt" cx="423.77" cy="324.80" r="10.87" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 203 mm · mass 4100 g · bill 51.0 mm</title></circle>
+<circle class="pt" cx="349.71" cy="380.80" r="10.40" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 195 mm · mass 3600 g · bill 49.7 mm</title></circle>
+<circle class="pt" cx="386.74" cy="347.20" r="9.60" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 199 mm · mass 3900 g · bill 47.5 mm</title></circle>
+<circle class="pt" cx="349.71" cy="352.80" r="9.64" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 195 mm · mass 3850 g · bill 47.6 mm</title></circle>
+<circle class="pt" cx="488.57" cy="246.40" r="11.24" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 210 mm · mass 4800 g · bill 52.0 mm</title></circle>
+<circle class="pt" cx="321.94" cy="481.60" r="9.38" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 192 mm · mass 2700 g · bill 46.9 mm</title></circle>
+<circle class="pt" cx="442.29" cy="280.00" r="11.78" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 205 mm · mass 4500 g · bill 53.5 mm</title></circle>
+<circle class="pt" cx="488.57" cy="341.60" r="10.15" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 210 mm · mass 3950 g · bill 49.0 mm</title></circle>
+<circle class="pt" cx="275.66" cy="375.20" r="9.13" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 187 mm · mass 3650 g · bill 46.2 mm</title></circle>
+<circle class="pt" cx="358.97" cy="386.40" r="10.84" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 196 mm · mass 3550 g · bill 50.9 mm</title></circle>
+<circle class="pt" cx="358.97" cy="392.00" r="8.87" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 196 mm · mass 3500 g · bill 45.5 mm</title></circle>
+<circle class="pt" cx="358.97" cy="372.40" r="10.84" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 196 mm · mass 3675 g · bill 50.9 mm</title></circle>
+<circle class="pt" cx="405.26" cy="285.60" r="10.80" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 201 mm · mass 4450 g · bill 50.8 mm</title></circle>
+<circle class="pt" cx="303.43" cy="403.20" r="10.55" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 190 mm · mass 3400 g · bill 50.1 mm</title></circle>
+<circle class="pt" cx="507.09" cy="302.40" r="10.15" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 212 mm · mass 4300 g · bill 49.0 mm</title></circle>
+<circle class="pt" cx="275.66" cy="420.00" r="11.05" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 187 mm · mass 3250 g · bill 51.5 mm</title></circle>
+<circle class="pt" cx="377.49" cy="372.40" r="10.44" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 198 mm · mass 3675 g · bill 49.8 mm</title></circle>
+<circle class="pt" cx="386.74" cy="411.60" r="9.82" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 199 mm · mass 3325 g · bill 48.1 mm</title></circle>
+<circle class="pt" cx="405.26" cy="341.60" r="11.02" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 201 mm · mass 3950 g · bill 51.4 mm</title></circle>
+<circle class="pt" cx="331.20" cy="380.80" r="8.95" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 193 mm · mass 3600 g · bill 45.7 mm</title></circle>
+<circle class="pt" cx="423.77" cy="330.40" r="10.76" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 203 mm · mass 4050 g · bill 50.7 mm</title></circle>
+<circle class="pt" cx="275.66" cy="408.80" r="7.78" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 187 mm · mass 3350 g · bill 42.5 mm</title></circle>
+<circle class="pt" cx="368.23" cy="397.60" r="11.31" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 197 mm · mass 3450 g · bill 52.2 mm</title></circle>
+<circle class="pt" cx="312.69" cy="420.00" r="8.76" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 191 mm · mass 3250 g · bill 45.2 mm</title></circle>
+<circle class="pt" cx="423.77" cy="330.40" r="10.25" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 203 mm · mass 4050 g · bill 49.3 mm</title></circle>
+<circle class="pt" cx="414.51" cy="358.40" r="10.58" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 202 mm · mass 3800 g · bill 50.2 mm</title></circle>
+<circle class="pt" cx="340.46" cy="389.20" r="8.91" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 194 mm · mass 3525 g · bill 45.6 mm</title></circle>
+<circle class="pt" cx="451.54" cy="341.60" r="11.20" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 206 mm · mass 3950 g · bill 51.9 mm</title></circle>
+<circle class="pt" cx="294.17" cy="375.20" r="9.35" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 189 mm · mass 3650 g · bill 46.8 mm</title></circle>
+<circle class="pt" cx="349.71" cy="375.20" r="8.95" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 195 mm · mass 3650 g · bill 45.7 mm</title></circle>
+<circle class="pt" cx="460.80" cy="336.00" r="12.62" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 207 mm · mass 4000 g · bill 55.8 mm</title></circle>
+<circle class="pt" cx="414.51" cy="403.20" r="8.15" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 202 mm · mass 3400 g · bill 43.5 mm</title></circle>
+<circle class="pt" cx="331.20" cy="361.20" r="10.36" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 193 mm · mass 3775 g · bill 49.6 mm</title></circle>
+<circle class="pt" cx="488.57" cy="324.80" r="10.80" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · male · flipper 210 mm · mass 4100 g · bill 50.8 mm</title></circle>
+<circle class="pt" cx="377.49" cy="361.20" r="10.58" fill="#830FBF" fill-opacity="0.8"><title>Chinstrap · Dream · female · flipper 198 mm · mass 3775 g · bill 50.2 mm</title></circle>
+<circle cx="748" cy="68.0" r="6" fill="#FB7708" fill-opacity="0.8"/>
+<text x="762.00" y="72.00" text-anchor="start" font-size="13">Adelie</text>
+<circle cx="748" cy="94.0" r="6" fill="#830FBF" fill-opacity="0.8"/>
+<text x="762.00" y="98.00" text-anchor="start" font-size="13">Chinstrap</text>
+<circle cx="748" cy="120.0" r="6" fill="#0E7877" fill-opacity="0.8"/>
+<text x="762.00" y="124.00" text-anchor="start" font-size="13">Gentoo</text>
+</svg>

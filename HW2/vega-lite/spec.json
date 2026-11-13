@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Palmer penguins: flipper length vs body mass, colored by species and sized by bill length.",
+  "width": 640,
+  "height": 440,
+  "background": "#ffffff",
+  "data": {"values": []},
+  "title": {
+    "text": "Flipper length and body mass of Palmer penguins",
+    "anchor": "start",
+    "font": "Segoe UI",
+    "fontSize": 16,
+    "fontWeight": 600,
+    "color": "#222222",
+    "offset": 12
+  },
+  "params": [
+    {
+      "name": "focus",
+      "select": {"type": "point", "fields": ["species"]},
+      "bind": "legend"
+    }
+  ],
+  "mark": {"type": "circle", "cursor": "pointer"},
+  "encoding": {
+    "x": {
+      "field": "flipper",
+      "type": "quantitative",
+      "title": "Flipper Length (mm)",
+      "scale": {"domain": [165, 235], "zero": false},
+      "axis": {"values": [170, 180, 190, 200, 210, 220, 230]}
+    },
+    "y": {
+      "field": "mass",
+      "type": "quantitative",
+      "title": "Body Mass (g)",
+      "scale": {"domain": [2500, 6500], "zero": false},
+      "axis": {"values": [3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500]}
+    },
+    "color": {
+      "field": "species",
+      "type": "nominal",
+      "title": "Species",
+      "scale": {
+        "domain": ["Adelie", "Chinstrap", "Gentoo"],
+        "range": ["#FB7708", "#830FBF", "#0E7877"]
+      }
+    },
+    "size": {
+      "field": "bill",
+      "type": "quantitative",
+      "scale": {"domain": [32.1, 59.6], "range": [50, 616]},
+      "legend": null
+    },
+    "opacity": {
+      "condition": {"param": "focus", "value": 0.8},
+      "value": 0.12
+    },
+    "tooltip": [
+      {"field": "species", "type": "nominal", "title": "Species"},
+      {"field": "island", "type": "nominal", "title": "Island"},
+      {"field": "sex", "type": "nominal", "title": "Sex"},
+      {"field": "flipper", "type": "quantitative", "title": "Flipper length (mm)", "format": ".0f"},
+      {"field": "mass", "type": "quantitative", "title": "Body mass (g)", "format": ".0f"},
+      {"field": "bill", "type": "quantitative", "title": "Bill length (mm)", "format": ".1f"}
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Segoe UI",
+      "titleFont": "Segoe UI",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "gridColor": "#ececec",
+      "domainColor": "#888888"
+    },
+    "legend": {
+      "labelFont": "Segoe UI",
+      "titleFont": "Segoe UI",
+      "orient": "right"
+    },
+    "view": {"stroke": null}
+  }
+}
