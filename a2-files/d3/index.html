@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Penguins in d3</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <style>
+    body { font-family: Helvetica, Arial, sans-serif; margin: 30px; color: #222; }
+    h2 { margin: 0 0 4px; }
+    p { margin: 0 0 12px; color: #555; }
+    .grid line { stroke: #fff; }
+    .grid path { display: none; }
+    .axis text { font-size: 12px; fill: #4d4d4d; }
+    .axis-label { font-size: 14px; }
+    .dot { transition: opacity .2s; }
+    .legend-item { cursor: pointer; }
+    .legend-item.off { opacity: .3; }
+    #tooltip {
+      position: fixed; pointer-events: none; opacity: 0;
+      background: #fff; border: 1px solid #ccc; border-radius: 6px;
+      padding: 8px 10px; font-size: 13px; line-height: 1.45;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15); transition: opacity .1s;
+    }
+  </style>
+</head>
+<body>
+  <h2>Penguins in d3</h2>
+  <p>Hover a point for details. Click a species in the legend to hide or show it.</p>
+  <svg id="chart"></svg>
+  <div id="tooltip"></div>
+
+<script>
+const W = 820, H = 500;
+const margin = { top: 20, right: 170, bottom: 55, left: 70 };
+const w = W - margin.left - margin.right, h = H - margin.top - margin.bottom;
+
+const svg = d3.select("#chart").attr("width", W).attr("height", H);
+const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+const tip = d3.select("#tooltip");
+
+const color = d3.scaleOrdinal()
+  .domain(["Adelie", "Chinstrap", "Gentoo"])
+  .range(["#FF8C00", "#A034F0", "#159090"]);
+
+// d3.csv is async, so everything that needs the data happens inside .then
+d3.csv("../penglings.csv", d => ({
+  species: d.species,
+  island: d.island,
+  sex: d.sex,
+  flipper: +d.flipper_length_mm,
+  mass: +d.body_mass_g,
+  bill: +d.bill_length_mm
+})).then(raw => {
+  // "NA" turns into NaN, so drop those rows
+  const data = raw.filter(d => !isNaN(d.flipper) && !isNaN(d.mass) && !isNaN(d.bill));
+
+  const x = d3.scaleLinear().domain([168, 234]).range([0, w]);
+  const y = d3.scaleLinear().domain([2550, 6450]).range([h, 0]);
+  // sqrt scale so circle AREA grows with bill length, not radius
+  const r = d3.scaleSqrt().domain(d3.extent(data, d => d.bill)).range([2, 8]);
+
+  // gray panel and white grid like ggplot
+  g.append("rect").attr("width", w).attr("height", h).attr("fill", "#EBEBEB");
+  g.append("g").attr("class", "grid").attr("transform", `translate(0,${h})`)
+    .call(d3.axisBottom(x).ticks(7).tickSize(-h).tickFormat(""));
+  g.append("g").attr("class", "grid")
+    .call(d3.axisLeft(y).ticks(4).tickSize(-w).tickFormat(""));
+
+  g.append("g").attr("class", "axis").attr("transform", `translate(0,${h})`)
+    .call(d3.axisBottom(x).tickValues(d3.range(170, 231, 10)));
+  g.append("g").attr("class", "axis").call(d3.axisLeft(y).tickValues([3000, 4000, 5000, 6000]));
+
+  g.append("text").attr("class", "axis-label").attr("x", w / 2).attr("y", h + 44)
+    .attr("text-anchor", "middle").text("Flipper Length (mm)");
+  g.append("text").attr("class", "axis-label").attr("transform", "rotate(-90)")
+    .attr("x", -h / 2).attr("y", -52).attr("text-anchor", "middle").text("Body Mass (g)");
+
+  // points grow in from nothing on load
+  const dots = g.append("g").selectAll("circle").data(data).join("circle")
+    .attr("class", "dot")
+    .attr("cx", d => x(d.flipper)).attr("cy", d => y(d.mass))
+    .attr("fill", d => color(d.species)).attr("opacity", 0.8)
+    .attr("r", 0)
+    .on("mouseenter", function (event, d) {
+      d3.select(this).attr("stroke", "#222").attr("stroke-width", 1.5).raise();
+      tip.style("opacity", 1).html(
+        `<b style="color:${color(d.species)}">${d.species}</b> · ${d.island}<br>
+         Flipper: ${d.flipper} mm<br>Body mass: ${d.mass} g<br>
+         Bill length: ${d.bill} mm<br>Sex: ${d.sex === "NA" ? "unknown" : d.sex}`);
+    })
+    .on("mousemove", event => tip.style("left", `${event.clientX + 14}px`).style("top", `${event.clientY + 14}px`))
+    .on("mouseleave", function () {
+      d3.select(this).attr("stroke", null);
+      tip.style("opacity", 0);
+    });
+  dots.transition().duration(700).delay((d, i) => i * 3).attr("r", d => r(d.bill));
+
+  // size legend
+  const lg = svg.append("g").attr("transform", `translate(${margin.left + w + 25},${margin.top + 60})`);
+  lg.append("text").text("bill_length_mm").attr("font-size", 14);
+  [40, 50].forEach((b, i) => {
+    lg.append("circle").attr("cx", 10).attr("cy", 22 + i * 24).attr("r", r(b)).attr("fill", "#333").attr("opacity", .8);
+    lg.append("text").attr("x", 26).attr("y", 26 + i * 24).attr("font-size", 12).text(b);
+  });
+
+  // clickable species legend
+  const hidden = new Set();
+  const cl = svg.append("g").attr("transform", `translate(${margin.left + w + 25},${margin.top + 160})`);
+  cl.append("text").text("species").attr("font-size", 14);
+  const items = cl.selectAll("g").data(color.domain()).join("g")
+    .attr("class", "legend-item")
+    .attr("transform", (d, i) => `translate(0,${22 + i * 24})`)
+    .on("click", function (event, s) {
+      hidden.has(s) ? hidden.delete(s) : hidden.add(s);
+      d3.select(this).classed("off", hidden.has(s));
+      dots.transition().duration(300)
+        .attr("opacity", d => hidden.has(d.species) ? 0 : 0.8)
+        .attr("pointer-events", d => hidden.has(d.species) ? "none" : null);
+    });
+  items.append("circle").attr("cx", 10).attr("r", 5).attr("fill", d => color(d));
+  items.append("text").attr("x", 22).attr("y", 4).attr("font-size", 12).text(d => d);
+});
+</script>
+</body>
+</html>
