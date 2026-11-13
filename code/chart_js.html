@@ -11,13 +11,14 @@
     </div>
     <script>
         const path = "C:/Users/victo/OneDrive/Documents/GitHub/a2-DataVis-5ways/penglings.csv";
-        const colors = {"Adelie": "orange", "Chinstrap": "purple", "Gentoo": "teal"};
+        const colors = {"Adelie": "rgba(255, 165, 0, 0.8)", "Chinstrap": "rgba(128, 0, 128, 0.8)", "Gentoo": "rgba(0, 128, 128, 0.8)"};
 
         Papa.parse(path, {download: true, header: true, skipEmptyLines: true, 
             complete: ({data}) => {
                 const rows = data.filter(d => d.flipper_length_mm && d.body_mass_g && d.bill_length_mm);
                 const ds = Object.keys(colors).map(sp => ({
                 label: sp,
+                backgroundColor: colors[sp],
                 data: rows.filter(d => d.species == sp).map(d => ({
                     x: d.flipper_length_mm, 
                     y: d.body_mass_g,
