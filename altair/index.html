@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null}, "axis": {"grid": true, "gridColor": "#D8D8D8", "gridDash": [3, 3], "labelColor": "#333333", "titleColor": "#1D1D1D"}, "legend": {"labelColor": "#333333", "orient": "right", "titleColor": "#1D1D1D"}}, "data": {"url": "../penglings.csv", "format": {"type": "csv", "parse": {"bill_length_mm": "number", "flipper_length_mm": "number", "body_mass_g": "number"}}}, "mark": {"type": "circle", "opacity": 0.8, "stroke": "#333333", "strokeWidth": 0.5}, "encoding": {"color": {"field": "species", "scale": {"domain": ["Adelie", "Chinstrap", "Gentoo"], "range": ["#F28E2B", "#9B5DE5", "#59A14F"]}, "title": "Species", "type": "nominal"}, "size": {"field": "bill_length_mm", "scale": {"range": [10, 500]}, "title": "Bill Length (mm)", "type": "quantitative"}, "tooltip": [{"field": "species", "title": "Species", "type": "nominal"}, {"field": "flipper_length_mm", "title": "Flipper Length (mm)", "type": "quantitative"}, {"field": "body_mass_g", "title": "Body Mass (g)", "type": "quantitative"}, {"field": "bill_length_mm", "title": "Bill Length (mm)", "type": "quantitative"}], "x": {"axis": {"tickCount": 7}, "field": "flipper_length_mm", "scale": {"domain": [170, 235]}, "title": "Flipper Length (mm)", "type": "quantitative"}, "y": {"axis": {"tickCount": 6}, "field": "body_mass_g", "scale": {"domain": [2500, 6500]}, "title": "Body Mass (g)", "type": "quantitative"}}, "height": 500, "title": "Penguin Body Mass vs. Flipper Length", "transform": [{"filter": "isValid(datum.flipper_length_mm) && isValid(datum.body_mass_g) && isValid(datum.bill_length_mm)"}], "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json"};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

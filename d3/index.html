@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>D3 Penguin Scatterplot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="page">
+        <h1>Penguin Body Mass vs. Flipper Length</h1>
+        <p class="subtitle">Species are color-coded.</p>
+        <div id="chart"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script>
+        const colors = {
+            Adelie: "#F28E2B",
+            Chinstrap: "#9B5DE5",
+            Gentoo: "#59A14F"
+        };
+
+        const width = 1080;
+        const height = 620;
+        const margin = { top: 28, right: 210, bottom: 64, left: 80 };
+
+        const chartWidth = width - margin.left - margin.right;
+        const chartHeight = height - margin.top - margin.bottom;
+
+        const svg = d3.select("#chart")
+            .append("svg")
+            .attr("viewBox", `0 0 ${width} ${height}`);
+
+        const chart = svg.append("g")
+            .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+        const tooltip = d3.select("#chart")
+            .append("div")
+            .attr("class", "tooltip");
+
+        d3.csv("../penglings.csv", d3.autoType).then(function (data) {
+            data = data.filter(d =>
+                d.species &&
+                Number.isFinite(d.flipper_length_mm) &&
+                Number.isFinite(d.body_mass_g) &&
+                Number.isFinite(d.bill_length_mm)
+            );
+
+            const x = d3.scaleLinear()
+                .domain(d3.extent(data, d => d.flipper_length_mm))
+                .nice()
+                .range([0, chartWidth]);
+
+            const y = d3.scaleLinear()
+                .domain(d3.extent(data, d => d.body_mass_g))
+                .nice()
+                .range([chartHeight, 0]);
+
+            const radius = d3.scaleSqrt()
+                .domain(d3.extent(data, d => d.bill_length_mm))
+                .range([4, 12]);
+
+            // Grid lines
+            chart.append("g")
+                .attr("class", "grid")
+                .call(
+                    d3.axisLeft(y)
+                        .ticks(6)
+                        .tickSize(-chartWidth)
+                        .tickFormat("")
+                );
+
+            // Axes
+            chart.append("g")
+                .attr("class", "axis")
+                .attr("transform", `translate(0, ${chartHeight})`)
+                .call(d3.axisBottom(x).ticks(6));
+
+            chart.append("g")
+                .attr("class", "axis")
+                .call(d3.axisLeft(y).ticks(6));
+
+            // Axis labels
+            chart.append("text")
+                .attr("class", "label")
+                .attr("x", chartWidth / 2)
+                .attr("y", chartHeight + 52)
+                .attr("text-anchor", "middle")
+                .text("Flipper Length (mm)");
+
+            chart.append("text")
+                .attr("class", "label")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -chartHeight / 2)
+                .attr("y", -52)
+                .attr("text-anchor", "middle")
+                .text("Body Mass (g)");
+
+            // Penguin points
+            chart.selectAll("circle")
+                .data(data)
+                .join("circle")
+                .attr("cx", d => x(d.flipper_length_mm))
+                .attr("cy", d => y(d.body_mass_g))
+                .attr("r", d => radius(d.bill_length_mm))
+                .attr("fill", d => colors[d.species])
+                .attr("opacity", 0.8)
+                .attr("stroke", "rgba(0, 0, 0, 0.12)")
+                .attr("stroke-width", 0.7)
+                .on("mouseenter mousemove", function (event, d) {
+                    const [mouseX, mouseY] = d3.pointer(
+                        event,
+                        document.querySelector("#chart")
+                    );
+
+                    tooltip
+                        .style("opacity", 1)
+                        .style("left", `${mouseX + 18}px`)
+                        .style("top", `${mouseY - 8}px`)
+                        .html(`
+                            ${d.species}<br>
+                            Flipper: ${d.flipper_length_mm} mm<br>
+                            Mass: ${d.body_mass_g} g<br>
+                            Bill: ${d.bill_length_mm} mm
+                        `);
+                })
+                .on("mouseleave", function () {
+                    tooltip.style("opacity", 0);
+                });
+
+            // Species legend
+            const legend = svg.append("g")
+                .attr("transform", `translate(${margin.left + chartWidth + 30}, ${margin.top})`);
+
+            Object.keys(colors).forEach(function (species, index) {
+                const row = legend.append("g")
+                    .attr("transform", `translate(0, ${index * 22})`);
+
+                row.append("circle")
+                    .attr("r", 6)
+                    .attr("fill", colors[species])
+                    .attr("opacity", 0.8);
+
+                row.append("text")
+                    .attr("class", "legend-label")
+                    .attr("x", 14)
+                    .attr("y", 4)
+                    .text(species);
+            });
+        });
+    </script>
+</body>
+
+</html>
