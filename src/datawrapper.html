@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Penguin Measurements</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 30px 20px;
+        background-color: #F7F7F2;
+        font-family: Arial, sans-serif;
+      }
+
+      .chart-container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      iframe {
+        width: 0;
+        min-width: 100% !important;
+        border: none;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chart-container">
+      <iframe 
+        title="Penguin Measurements"
+        aria-label="Scatter Plot"
+        id="datawrapper-chart-PGvm7"
+        src="https://datawrapper.dwcdn.net/PGvm7/1/"
+        scrolling="no"
+        frameborder="0"
+        style="width: 0;
+        min-width: 100% !important;
+        border: none;"
+        height="445"
+        data-external="1">
+      </iframe>
+    </div>
+
+    <script type="text/javascript">
+      (function() {
+        function e() {
+          window.addEventListener("message", function(e) {
+            if (e.data["datawrapper-height"] !== undefined) {
+              var t = document.querySelectorAll("iframe");
+              for (var n in e.data["datawrapper-height"]) {
+                for (var r = 0, i; i = t[r]; r++) {
+                  if (i.contentWindow === e.source) {
+                    var a = e.data["datawrapper-height"][n] + "px";
+                    i.style.height = a;
+                  }
+                }
+              }
+            }
+          });
+        }
+        e();
+      })();
+    </script>
+  </body>
+</html>

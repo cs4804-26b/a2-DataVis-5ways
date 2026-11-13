@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguin Scatterplot - D3</title>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #F7F7F2;
+            color: #222222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #chart {
+            display: block;
+            margin: 0 auto;
+        }
+
+        svg {
+            overflow: visible;
+            font-family: Arial, sans-serif;
+        }
+
+        .title {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            fill: #222222;
+        }
+
+        .subtitle {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: normal;
+            fill: #555555;
+        }
+
+        .axis-label {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: normal;
+            fill: #222222;
+        }
+
+        .tick text {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            fill: #222222;
+        }
+
+        .tick line {
+            stroke: #DDDDDD;
+            stroke-width: 0.7;
+        }
+
+        .domain {
+            stroke: #AAAAAA;
+        }
+
+        @media (max-width: 950px) {
+            body {
+                margin: 15px;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg id="chart" width="900" height="600"></svg>
+
+    <script src="script.js"></script>
+</body>
+</html>

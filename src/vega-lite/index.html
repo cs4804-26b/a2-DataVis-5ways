@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguin Scatterplot - Vega-Lite</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #F7F7F2;
+            color: #222222;
+        }
+
+        .visualization-container {
+            width: fit-content;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        #chart {
+            max-width: 1000px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Vega-Lite chart typography */
+        #chart .vega-embed {
+            font-family: Arial, sans-serif;
+        }
+
+        #chart svg {
+            font-family: Arial, sans-serif;
+        }
+
+        .filter-container {
+            width: 450px;
+            max-width: 100%;
+            margin: 20px auto 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .filter-heading {
+            font-size: 14px;
+            font-weight: bold;
+            color: #222222;
+            margin-bottom: 12px;
+        }
+
+        .range-values {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #222222;
+            margin-bottom: 8px;
+        }
+
+        .range-slider {
+            position: relative;
+            height: 30px;
+        }
+
+        .slider-track {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: #D5D5D0;
+            border-radius: 5px;
+        }
+
+        .slider-range {
+            position: absolute;
+            top: 12px;
+            height: 6px;
+            background: #2563EB;
+            border-radius: 5px;
+        }
+
+        .range-slider input {
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            margin: 0;
+            top: 0;
+            appearance: none;
+            -webkit-appearance: none;
+            background: none;
+            pointer-events: none;
+        }
+
+        .range-slider input::-webkit-slider-runnable-track {
+            height: 6px;
+            background: transparent;
+        }
+
+        .range-slider input::-moz-range-track {
+            height: 6px;
+            background: transparent;
+        }
+
+        .range-slider input::-webkit-slider-thumb {
+            appearance: none;
+            -webkit-appearance: none;
+            pointer-events: auto;
+            cursor: grab;
+            width: 18px;
+            height: 18px;
+            margin-top: -6px;
+            border-radius: 50%;
+            background: #2563EB;
+            border: 2px solid white;
+            box-shadow: 0 0 2px #555;
+        }
+
+        .range-slider input::-moz-range-thumb {
+            pointer-events: auto;
+            cursor: grab;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #2563EB;
+            border: 2px solid white;
+            box-shadow: 0 0 2px #555;
+        }
+
+        .range-slider input:active::-webkit-slider-thumb {
+            cursor: grabbing;
+        }
+
+        .range-slider input:active::-moz-range-thumb {
+            cursor: grabbing;
+        }
+
+        .filter-description {
+            font-size: 12px;
+            color: #666666;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                margin: 15px;
+            }
+
+            .visualization-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="visualization-container">
+
+        <div id="chart"></div>
+
+        <div class="filter-container">
+            <div class="filter-heading">Filter by Bill Length (mm)</div>
+
+            <div class="range-values">
+                <span>Minimum: <strong id="minValue">--</strong> mm</span>
+                <span>Maximum: <strong id="maxValue">--</strong> mm</span>
+            </div>
+
+            <div class="range-slider">
+                <div class="slider-track"></div>
+                <div class="slider-range" id="sliderRange"></div>
+
+                <input
+                    type="range"
+                    id="minSlider"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="0.1"
+                    aria-label="Minimum bill length"
+                >
+
+                <input
+                    type="range"
+                    id="maxSlider"
+                    min="0"
+                    max="100"
+                    value="100"
+                    step="0.1"
+                    aria-label="Maximum bill length"
+                >
+            </div>
+
+            <div class="filter-description">
+                Drag either handle to adjust the bill length range and filter the penguins.
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
