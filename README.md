@@ -59,3 +59,8 @@ Datawrapper is a web-based tool that allows users to create charts, maps, and ta
 ## Design Achievements
 - Kept the color theme consistent throughout all my graphs. Made sure all the colors were contrasting enough in order to differentiate between the different species. Opacity being set to 0.8 makes sure that even with overlapping dots, you can still see the individual points.
 - Had to add the background and grid lines to d3 implementation so it wasn't just dots floating on a white background
+- Added Legends to R, Altair, Tableau, DataWrapper as I believe it is important that you can see what all the colors and different sizes means. It helps give context to the data.
+  - ggplot + R: using the ```guides()``` parameter
+  - Altair using ```legend()``` parameter
+  - Tableau: hid unnecessary legends, and adjusted the filter to the data we care about
+  - DataWrapper: ensuring they appear in the graph and are mostly out of the way
