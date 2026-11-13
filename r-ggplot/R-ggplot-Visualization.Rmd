@@ -1,0 +1,36 @@
+---
+title: "R-ggplot2-Visualization"
+author: "Jake Dorick"
+date: "2026-11-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Visualization Using ggplot2
+
+```{r}
+data <- read.csv("penglings.csv")
+```
+
+Call the ggplot2 library (I already have it installed on my system)
+```{r}
+library(ggplot2)
+```
+
+### Create the visualization
+
+```{r}
+ggplot(data, 
+       aes(x = flipper_length_mm, 
+           y = body_mass_g,
+           size = bill_length_mm,
+           color = species)) +
+  geom_point(alpha = 0.8) +
+  labs(x = "Flipper Length (mm)",
+       y = "Body Mass (g)",
+       title = "Body Mass by Flipper Length - Jake Dorick") +
+    scale_color_manual(values = c("Adelie" = "slateblue", "Chinstrap" = "darkgreen", "Gentoo" = "pink1"))
+```
