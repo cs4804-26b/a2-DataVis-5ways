@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A2 d3.js </title>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+  <script>
+    console.log("d3 version", d3.version); // test that d3 loaded
+    (async () => {
+      const csv = await d3.csv("https://raw.githubusercontent.com/cs4804-26b/a2-DataVis-5ways/refs/heads/main/penglings.csv");
+      const sid = {Adelie: 0, Gentoo: 1, Chinstrap: 2};
+      const data = csv.map(e => {return {
+            x: e.flipper_length_mm,
+            y: e.body_mass_g,
+            rx: e.bill_length_mm,
+            ry: e.bill_depth_mm,
+            c: sid[e.species],
+            n: e[""],
+          }}).filter(e => !Object.values(e).some(isNaN));
+
+      const body = document.querySelector("body");
+      const width = 500;
+      const height = 500;
+      const margin = 50;
+
+      const [xmin, xmax] = d3.extent(data, d => d.x);
+      const [ymin, ymax] = d3.extent(data, d => d.y);
+      const [rxmin, rxmax] = d3.extent(data, d => d.rx);
+      const [rymin, rymax] = d3.extent(data, d => d.ry);
+      const x = d3.scaleLinear([xmin, xmax], [margin, width - margin]);
+      const y = d3.scaleLinear([ymin, ymax], [height - margin, margin]);
+      const rx = d3.scaleLinear([rxmin, rxmax], [3, 10]);
+      const ry = d3.scaleLinear([rymin, rymax], [3, 10]);
+
+      const colors = ["#ffaa66b0", "#66bbaab0", "#aa66ffb0"];
+      let tooltip
+
+      const svg = d3.create("svg")
+          .attr("width", width)
+          .attr("height", height)
+          .on("mousemove", e => {
+            tooltip.style("top", e.clientY - tooltip.node().offsetHeight + "px")
+                  .style("left", e.clientX + "px");
+          });
+
+      const tttext = d => {
+        const all = csv[d.n];
+        return `Penguin ${d.n} from ${all["island"]} is ${all["sex"]}`;
+      };
+
+      for (let d of data) {
+        let i = -1;
+        console.log(+d.rx, +d.ry)
+        svg.append("ellipse")
+            .attr("cx", x(d.x))
+            .attr("cy", y(d.y))
+            .attr("rx", rx(d.rx))
+            .attr("ry", ry(d.ry))
+            .attr("fill", colors[d.c])
+            .on("mouseenter", _ => {
+              tooltip.style("visibility", "visible")
+                  .text(tttext(d));
+            }).on("mouseout", _ => {
+              tooltip.style("visibility", "hidden")
+                  .text(tttext(d));
+            });
+      }
+
+      svg.append("g")
+          .attr("transform", "translate(0, " + (height - margin) + ")")
+          .call(d3.axisBottom(x))
+        .append("text")
+          .text("Flipper Length (mm)")
+          .attr("fill", "#000")
+          .attr("transform", "translate(" + (width / 2) + ", 40)")
+          .attr("font-size", 13);
+
+      svg.append("g")
+          .attr("transform", "translate(" + margin + ", 0)")
+          .call(d3.axisLeft(y))
+        .append("text")
+          .text("Body Mass (g)")
+          .attr("fill", "#000")
+          .attr("transform", "rotate(-90) translate(" + (-height / 2 + margin) + ", -40)")
+          .attr("font-size", 13);
+
+      tooltip = d3.select("body")
+          .append("text")
+          .text("Hello world!")
+          .style("position", "absolute")
+          .style("pointer-events", "none")
+          .style("background", "#fff")
+          .style("border", "2px solid #000")
+          .style("padding", "3px")
+          .style("visibility", "hidden");
+
+      body.appendChild(svg.node());
+      body.appendChild(tooltip.node());
+    })()
+  </script>
+</body>
+</html>
