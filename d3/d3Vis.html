@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Penguin Chart - D3</title>
+  <style>
+    .tooltip {
+      position: fixed;
+      pointer-events: none;
+      padding: 8px 10px;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      font: 13px sans-serif;
+      line-height: 1.5;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Penguin measurements</h1>
+  <div id="container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script>
+    const width = 800;
+    const height = 500;
+    const margin = { top: 56, right: 180, bottom: 76, left: 88 };
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+
+
+    const speciesColors = {
+      Adelie: "#ff941f",
+      Chinstrap: "#a83dcc",
+      Gentoo: "#159995"
+    };
+
+    // cleaning data
+
+    d3.csv("../penglings.csv").then(rows => {
+      const data = rows
+        .map(row => ({
+          species: row.species,
+          flipperLength: Number(row.flipper_length_mm),
+          bodyMass: Number(row.body_mass_g),
+          billLength: Number(row.bill_length_mm)
+        }))
+        .filter(d =>
+          d.species &&
+          Number.isFinite(d.flipperLength) &&
+          Number.isFinite(d.bodyMass) &&
+          Number.isFinite(d.billLength)
+        );
+
+      if (data.length === 0) {
+        throw new Error("No penguin rows have all required measurements.");
+      }
+
+      //making the graph
+
+      const x_scale = d3.scaleLinear()
+        .domain(d3.extent(data, d=> d.flipperLength))
+        .range([0, plotWidth]);
+
+      const y_scale = d3.scaleLinear()
+        .domain(d3.extent(data, d=> d.bodyMass))
+        .range([plotHeight, 0]);
+
+      const circle_scale = d3.scaleSqrt()
+        .domain(d3.extent(data, d=> d.billLength))
+        .range([5, 10]);
+
+      const tooltip = d3.select("body")
+        .append("div")
+        .attr("class", "tooltip");
+
+      const svg = d3.select("body")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+      svg.append("text")
+        .attr("x", margin.left + plotWidth / 2)
+        .attr("y", 28)
+        .attr("text-anchor", "middle")
+        .attr("font-size", "18px")
+        .attr("font-weight", "bold")
+        .text("Penguin Body Mass vs. Flipper Length");
+
+      
+      const plot = svg.append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      // gray background and lines
+      plot.append("rect")
+        .attr("width", plotWidth)
+        .attr("height", plotHeight)
+        .attr("fill", "#e9e9e9");
+
+      plot.append("g")
+        .attr("transform", `translate(0,${plotHeight})`)
+        .attr("color", "#FFFFFF")
+        .attr("stroke-opacity", 0.9)
+        .call(d3.axisBottom(x_scale)
+          .tickSize(-plotHeight)
+          .tickFormat(""));
+
+      plot.append("g")
+        .attr("color", "#FFFFFF")
+        .attr("stroke-opacity", 0.9)
+        .call(d3.axisLeft(y_scale)
+          .tickSize(-plotWidth)
+          .tickFormat(""));
+
+      //adding x and y axes
+      plot.append("g")
+        .attr("transform", `translate(0,${plotHeight})`)
+        .call(d3.axisBottom(x_scale))
+        .selectAll(".domain, .tick line")
+        .attr("stroke", "#FFFFFF");
+
+      plot.append("g")
+        .call(d3.axisLeft(y_scale).tickFormat(d3.format("d")))
+        .selectAll(".domain, .tick line")
+        .attr("stroke", "#FFFFFF");
+
+      // x-axis title 
+      plot.append("text")
+        .text("Flipper Length (mm)")
+        .attr("x", plotWidth/2 - 20)
+        .attr("y", plotHeight + 35)
+
+      // y-axis title 
+      plot.append("text")
+        .text("Body Mass (g)")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -plotWidth/2+20)
+        .attr("y", -55)
+
+      //adding data to chart
+      plot.selectAll(".data-point")
+        .data(data)
+        .join("circle")
+        .attr("class", "data-point")
+        .attr("cx", d=>x_scale(d.flipperLength))
+        .attr("cy", d=>y_scale(d.bodyMass))
+        .attr("r", d=>circle_scale(d.billLength))
+        .attr("fill", d=> speciesColors[d.species])
+        .attr("fill-opacity", 0.8)
+        .on("mouseenter", (event, d) => {
+          tooltip
+            .style("opacity", 1)
+            .html(
+              `Flipper length: ${d.flipperLength} mm<br>` +
+              `Body mass: ${d3.format(",")(d.bodyMass)} g<br>` +
+              `Bill length: ${d.billLength} mm`
+            );
+        })
+        .on("mousemove", event => {
+          tooltip
+            .style("left", `${event.clientX + 12}px`)
+            .style("top", `${event.clientY + 12}px`);
+        })
+        .on("mouseleave", () => {
+          tooltip.style("opacity", 0);
+        });
+
+      // making the legend
+      const legend = plot.append("g")
+  .attr("transform", `translate(${plotWidth + 24},${plotHeight / 2 - 88})`);
+
+// bill length legend
+legend.append("text")
+  .attr("x", 0)
+  .attr("y", 0)
+  .text("bill_length_mm");
+
+const billLengthLegend = [40, 50];
+
+legend.append("rect")
+      .attr("x", "-3")
+      .attr("y", "11")
+      .attr("width", "25")
+      .attr("height", "62")
+      .attr("fill", "#e9e9e9");
+
+legend.selectAll(".bill-length-item")
+  .data(billLengthLegend)
+  .join("g")
+  .attr("class", "bill-length-item")
+  .attr("transform", (_, i) => `translate(10, ${28 + i * 30})`)
+  .call(entry => {
+    entry.append("circle")
+      .attr("r", d => circle_scale(d))
+      .attr("fill", "#000000")
+      .attr("fill-opacity", 0.8);
+
+    entry.append("text")
+      .attr("x", 24)
+      .attr("y", 4)
+      .text(d => d);
+  });
+
+// species legend
+legend.append("text")
+  .attr("x", 0)
+  .attr("y", 112)
+  .text("species");
+
+legend.append("rect")
+      .attr("x", "-5")
+      .attr("y", "122")
+      .attr("width", "20")
+      .attr("height", "62")
+      .attr("fill", "#e9e9e9");
+
+legend.selectAll(".species-item")          // distinct class fixes the join
+  .data(Object.entries(speciesColors))
+  .join("g")
+  .attr("class", "species-item")
+  .attr("transform", (_, i) => `translate(4, ${134 + i * 20})`)
+  .call(entry => {
+    entry.append("circle")
+      .attr("r", 4)
+      .attr("fill", ([, color]) => color);
+
+    entry.append("text")
+      .attr("x", 19)
+      .attr("y", 4)
+      .text(([species]) => species);
+  });
+
+  });
+
+      
+  </script>
+</body>
+</html>
