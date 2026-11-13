@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/johnp958/a2-DataVis-5ways/main/penglings.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "filter": "isValid(datum.flipper_length_mm) && isValid(datum.body_mass_g) && isValid(datum.bill_length_mm)"
+    }
+  ],
+  "mark": {"type": "circle", "opacity": 0.8},
+  "encoding": {
+    "x": {
+      "field": "flipper_length_mm",
+      "type": "quantitative",
+      "title": "Flipper Length (mm)",
+      "scale": {"domain": [170, 235]}
+    },
+    "y": {
+      "field": "body_mass_g",
+      "type": "quantitative",
+      "title": "Body Mass (g)",
+      "scale": {"domain": [2500, 6500]}
+    },
+    "color": {
+      "field": "species",
+      "type": "nominal",
+      "title": "Species",
+      "scale": {
+        "domain": ["Adelie", "Chinstrap", "Gentoo"],
+        "range": ["#E09719", "#B363C7", "#27f5b4"]
+      }
+    },
+    "size": {
+      "field": "bill_length_mm",
+      "type": "quantitative",
+      "title": "Bill Length (mm)",
+      "scale": {"range": [30, 300]}
+    },
+    "tooltip": [
+      {"field": "species", "type": "nominal"},
+      {"field": "flipper_length_mm", "type": "quantitative"},
+      {"field": "body_mass_g", "type": "quantitative"},
+      {"field": "bill_length_mm", "type": "quantitative"}
+    ]
+  },
+  "width": 700,
+  "height": 450,
+  "title": "Penguin Flipper Length vs Body Mass",
+  "config": {
+    "axis": {"grid": true},
+    "view": {"stroke": null},
+    "legend": {"orient": "right"}
+  }
+}
