@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+<div id="vis"></div>
+
+<script>
+    const spec = {
+        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+        description: "Chart of penglings yayyy",
+        "width": 300,
+        data: {
+            url: "penglings.csv",
+            format:
+                {type: "csv",
+                parse: {
+                    flipper_length_mm: "number",
+                    body_mass_g: "number",
+                    bill_length_mm: "number"
+                }
+            }
+        },
+        mark: {
+            type: "circle",
+            opacity: 0.8,
+        },
+        encoding: {
+            x: { field: "flipper_length_mm",
+                type: "quantitative" ,
+                scale: { zero: false },
+                title: "Flipper Length (mm)",
+            },
+            y: { field: "body_mass_g",
+                type: "quantitative",
+                scale: { zero: false },
+                title: "Body Mass (g)",
+            },
+            size: {
+                field: "bill_length_mm",
+                type: "quantitative",
+                "scale": {
+                    "range": [20, 70]
+                },
+                "legend": {
+                    "title": "Bill Length (mm)"},
+            },
+            color: {
+                field: "species",
+                "scale": {"range": [ "#01a2b0", "#ff818a", "#c62423"]},
+                type: "nominal",
+                "legend": {
+                    "title": "Species"},
+            },
+            tooltip: [
+                { field: "species", type: "nominal", title: "Species" },
+                { field: "flipper_length_mm", type: "quantitative", title: "Flipper Length (mm)" },
+                { field: "body_mass_g", type: "quantitative", title: "Body Mass (g)" },
+                { field: "bill_length_mm", type: "quantitative", title: "Bill Length (mm)" }
+            ]
+        }
+    };
+
+    vegaEmbed("#vis", spec);
+</script>
+</body>
+</html>
