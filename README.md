@@ -2,7 +2,7 @@
 
 ## Overview
 
-For this assignment, I recreated the same penguin scatterplot using six different visualization libraries and tools: D3.js, Matplotlib, Plotly, ggplot2, Datawrapper, and Flourish. The goal was to explore different approaches to data visualization and compare how much control each tool provides.
+For this assignment, I recreated the same penguin scatterplot using five different visualization libraries and tools: D3.js, Matplotlib, Plotly, Datawrapper, and Flourish. The goal was to explore different approaches to data visualization and compare how much control each tool provides.
 
 The dataset contains measurements of three penguin species: Adelie, Chinstrap, and Gentoo. Each scatterplot displays flipper length on the X-axis and body mass on the Y-axis. I also used different colors to distinguish the species and different circle sizes to represent bill length.
 
@@ -66,11 +66,11 @@ I think Flourish would be useful for interactive presentations and data storytel
 
 ## Technical Achievements
 
-### 1. Creating Visualizations Using Six Different Tools
+### 1. Creating Visualizations Using Five Different Tools
 
 I recreated the same scatterplot using four programming libraries and two online visualization tools. This allowed me to compare different approaches to visualization development.
 
-D3.js required manual control over most chart elements, while Matplotlib, Plotly, and ggplot2 provided built-in plotting functions. Datawrapper and Flourish allowed me to configure visualizations through graphical interfaces.
+D3.js required manual control over most chart elements, while Matplotlib and Plotly provided built-in plotting functions. Datawrapper and Flourish allowed me to configure visualizations through graphical interfaces.
 
 ### 2. Data Cleaning and Processing
 
