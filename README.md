@@ -124,35 +124,37 @@ We will choose some at random to run and test.
 
 **NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
 
+# Name: John Porter
+
 # R + ggplot2
 
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
+For the R visualization, I used the ggplot 2 library to make a scatterplot based on the dataset provided to us. I used geom_point() to make circles and mapped species to color and bill length to size. Additionally, I customized the axis ranges, colors and transparency to match the visual we were shown. ggplot2 was relatively simple to use since the library provides functions that make it easy to map certain variables to visual properties for the scatterplot. However, some parts I found frustrating was the formatting and getting the legend to appear correctly. I think that R and ggplot2 is a reasonable choice to use in the fututre.
 
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
-
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
-
-![ggplot2](img/r-ggplot2.png)
+![ggplot2](img/r-ggplot.png)
 
 # d3
 
-![ggplot2](img/d3-ggplot2.png)
+For the D3 visualization, I used javascript and the D3 library to create the scatterplot. I loaded the dataset using d3.csv as suggested in the assignment README and used D3 scales to position circles based on flipper length and body mass. Similarly, I used species for color and bill length for circle size. D3 was more challenging because of having to manually make SVG elements, scales, etc. instead of having built-in functions for these. Additionally, making sure the CSV data was loaded and converted properly made this the largest code file out of the five. Although, I can aknowledge the creative control that d3 gives the user makes it a useful tool to create things with more specific needs. 
+
+![ggplot2](img/d3-ggplot.png)
 
 # Altair
 
-![ggplot2](img/altair-ggplot2.png)
+For the Altair visualization, I used python with Altair and Pandas libraries. I loaded the dataset using pandas and used Altair for the visualization components. Like previous visualizations, the different columns were assigned to their proper axes, colors, size, etc. Altair was one of the easier tools to work with due to the syntax making it easy to connect dataset columns to their proper visual components. Compared to d3, I didn't need to manually add each axes or other features. It was a little difficult to change the bubble sizes and formatting to look like the other charts, but I could definitely see myself using Altair in the future for the convenience and ease of use I had with it.
+
+![ggplot2](img/altair-ggplot.png)
 
 # Flourish
 
 Link: https://public.flourish.studio/visualisation/30899242/
 
-![ggplot2](img/flourish-ggplot2.png)
+
+
+![ggplot2](img/flourish-ggplot.png)
 
 # Vega-lite
 
-![ggplot2](img/vega-lite-ggplot2.png)
+![ggplot2](img/vega-lite-ggplot.png)
 
 ## Technical Achievements
 - **Proved P=NP**: Using a combination of...
@@ -166,7 +168,7 @@ Link: https://public.flourish.studio/visualisation/30899242/
 Below is a list of resources I used to help get started on the different parts of the project:
 
 - https://cran.r-project.org/web/packages/ggplot2/vignettes/ggplot2.html
-- https://d3js.org/api
+- https://d3js.org/
 - https://altair-viz.github.io/altair-viz-v4/getting_started/starting.html
 - https://helpcenter.flourish.studio/hc/en-us/articles/8761582471439-Scatter-plot-an-overview
 - https://vega.github.io/vega-lite/docs/data.html
