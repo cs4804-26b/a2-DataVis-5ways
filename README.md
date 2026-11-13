@@ -1,16 +1,3 @@
-Now that you have successfully made a "visualization" of shapes and lines using
-d3, your next assignment is to successfully make an *actual visualization*... 5
-times. 
-
-The goal of this project is to gain experience with as many data visualization
-libraries, languages, and tools as possible.
-
-I have provided a small dataset about penguins, `penglings.csv`. Each row
-contains a penguin observation and several variables about it, including bill
-length, flipper length, and more.
-
-Your goal is to use 5 different tools to make the following chart:
-
 ![The reference image](img/reference.png)
 
 These features should be preserved as much as possible in your replication:
@@ -33,88 +20,7 @@ Note that some software packages will make it **impossible** to perfectly
 preserve the above requirements. Be sure to note where these deviate as you
 reflect on what a tool is good for.
 
-Improvements are also welcome as part of Technical and Design achievements.
-
-## Libraries, Tools, Languages
-
-You are required to use 5 different tools or libraries. Of the 5 tools, you must
-use at least 3 libraries (libraries require code of some kind). This could be
-`Python, R, Javascript`, or `Java, Javascript, Matlab` or any other combination.
-Dedicated tools (i.e. Excel) do not count towards the language requirement.
-
-Otherwise, you should seek tools and libraries to fill out your 5.
-
-Below are a few ideas. Do not limit yourself to this list! There are new tools
-coming out every year and we may not have an exhaustive list of the latest and
-greatest.
-
-Some may be difficult choices, like Matlab or SPSS, which require large
-installations, licenses, and occasionally difficult UIs.
-
-I have marked a few that are strongly suggested.
-
-- R + ggplot2 `<- definitely worth trying`
-- Excel
-- d3 `<- since the rest of the class uses this, we're requiring it`
-- Altair `<- hugely popular python library. highly recommended `
-- three.js `<- well, it's a 3d library. not really recommended, but could be
-  interesting and fun`
-- p5js `<- good for playing around. not really a chart lib`
-- Tableau
-- PowerBI
-- Vega-lite `<- very interesting formal visualization model; might be the future
-  of the field`
-- Flourish `<- popular in recent years`
-- DataWrapper `<- popular in recent years`
-- GNUplot `<- the former CS department head uses this all the time :)`
-- SAS/SPSS/Matlab
-
-You may write everything from scratch, or start with demo programs from books or
-the web. If you do start with code that you found, please identify the source of
-the code in your README and, most importantly, make non-trivial changes to the
-code to make it your own so you really learn what you're doing. 
-
-## Tips
-
-- If you're using d3, key to this assignment is knowing how to load data. You
-  will likely use the [`d3.json` or `d3.csv` functions](https://d3js.org/d3-dsv)
-  to load the data you found.
-
-**Beware that these functions are *asynchronous*, meaning it's possible to
-"build" an empty visualization before the data actually loads. Figuring out how
-to do this properly can be a major hiccup if you haven't used async functions
-before. If this means you, start part of this project early so you don't end up
-in a rush!**
-
-- `penglings.csv` has a few rows with `NA` values (two have no measurements at
-  all). Filter them out before you plot (in d3, converting `"NA"` to a number
-  gives `NaN`, which breaks scales and circle positions).
-
-- *For web languages like d3* Don't forget to run a local webserver when you're
-  debugging. Same as A1: run `python3 -m http.server` in your repo folder and
-  visit http://localhost:8000. Being able to host a local webserver is an
-  essential web development skill and very common in visualization design as
-  well.
-
-## Readme Requirements
-
-A good readme with screenshots and structured documentation is required for this
-project. It should be possible to scroll through your readme to get an overview
-of all the tools and visualizations you produced.
-
-- Each visualization should start with a top-level heading (e.g. `# d3`)
-- Each visualization should include a screenshot. Put these in an `img` folder
-  and link through the readme (markdown command: `![caption](img/<imgname>)`.
-- Write a paragraph for each visualization tool you use. What was easy?
-  Difficult? Where could you see the tool being useful in the future? Did you
-  have to use any hacks or data manipulation to get the right chart?
-
 ## Other Requirements
-
-0. Your code should be forked from the GitHub repo.
-1. Place all code, Excel sheets, etcetera in a named folder. For example,
-   `r-ggplot, matlab, mathematica, excel` and so on.
-2. Your writeup (readme.md in the repo) should also contain the following:
 
 - Description of the Technical achievements you attempted with this
   visualization.
@@ -170,6 +76,17 @@ to make the folor legend function with custom colors, so instead I just set it
 up to use to built-in `cool` gradient which looks better than the others I
 tried. Other than that, it was pretty easy for me to work with because like d3,
 I already know how matplotlib and python work.
+
+# altair (library)
+
+![Pretty dang good to be honest](img/altair.png)
+
+It looks prettier than basically all of the others, so that's a huge bonus.
+Really weird that it can render to HTML, I imagine that's for interactivity but
+I still think it's a bit strange. It's a little weird that their scales default
+to 0 as the minimum in the domain, rather than as the actual minimum of the
+data. Altogether, this was way easier than matplotlib or d3 and took way less
+time. Declarative code is wonderful.
 
 # gnuplot (language?)
 
