@@ -1,12 +1,17 @@
 {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
         "url": "penglings.csv",
-        "mark": {
-            "type": "point",
-            "invalid": "filter"
+        "format": {
+            "type": "csv"
         }
     },
     "mark": "point",
+    "config": {
+        "mark": {
+            "invalid": "filter"
+        }
+    },
     "encoding": {
         "x": {
         "field": "flipper_length_mm",

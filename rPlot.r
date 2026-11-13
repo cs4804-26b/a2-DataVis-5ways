@@ -18,4 +18,4 @@ p <-ggplot(df, aes(x = flipper_length_mm, y = body_mass_g, color = species, size
        x = "Flipper Length (mm)",
        y = "Body Mass (g)")
 
-ggsave("R_Penguin_Plot.png", plot = p, path = "./Plots", width = 8, height = 6, dpi = 300)
+ggsave("ggplot2_Penguin_Plot.png", plot = p, path = "./Plots", width = 8, height = 6, dpi = 300)
