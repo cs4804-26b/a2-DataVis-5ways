@@ -15,7 +15,7 @@ I used the above demos to give me a base starting code before altering it to mat
 ![d3](img/A2_d3_visualization.png)
 
 # Altair
-<sub> Note: must be run from the Python_Altair folder </sub>
+<sub> Note: must be run from the Python_Altair folder; html generated </sub>
 
 Altair is a library in python used to create interactive data visualizations. I had the most fun with this library and I found the logic very similar to R and ggplot. I used the below source to get started with the base graph. Pandas was used to import the csv and clean the data. Through some searching of documentation I learned that ```.interactive()``` is an easy way to make the graph be able to zoom in and out. ```add_params()``` allowed for filters to be added per species. When you click on a species, only those of that species will be highlighted. They also had a built in tooltip parameter that let tooltips be added per data point. I feel that Altair is a useful tool for quick visualizations with far less code, but still being able to have detailed insights on data.
 
@@ -31,6 +31,7 @@ Source: https://altair-viz.github.io/gallery/multifeature_scatter_plot.html
 ![Altair_filter](img/Altair_filter.png)
 
 # R + ggplot2 + plotly + R Markdown
+<sub> html generated when knit</sub>
 
 R is a language primarily focused on statistical computing. ggplot2 is a popular library for charting in R. R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document. To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size. I also used the plotly library to add some interactive elements. When hovering over each point, a tooltip appears showing each data point/penguin's species, flipper length, body mass, and bill length.
 
@@ -45,7 +46,7 @@ Tableau is a business intelligence and data visualization platform that lets use
 ![Tableau](img/Tableau_implementation.png)
 
 # DataWrapper
-Datawrapper is a web-based tool that allows users to create charts, maps, and tables directly online. It was extremely simple with drop down menus and tips. However, I found that this method did not provide as much control as I would've liked that other tools gave. For instance, I couldn't find any way to add tool tips, the legends were always in awkward places, and I did not see any options to move the axis titles. They were always stuck within the graph which made the graph itself feel cluttered. The beak length circle filter also didn't seem to show much of a difference. This tool would be good for people who want to make quick and simple visualizations without programming experience, however the lack of control over design made it frustrating to use. 
+Datawrapper is a web-based tool that allows users to create charts, maps, and tables directly online. It was extremely simple with drop down menus and tips. However, I found that this method did not provide as much control as I would've liked that other tools gave. I also did not find a way to save my implementation beyond the saved png. For instance, I couldn't find any way to add tool tips, the legends were always in awkward places, and I did not see any options to move the axis titles. They were always stuck within the graph which made the graph itself feel cluttered. The beak length circle filter also didn't seem to show much of a difference. This tool would be good for people who want to make quick and simple visualizations without programming experience, however the lack of control over design made it frustrating to use. 
 
 ![DataWrapper](img/DataWrapper_Implementation.png)
 
