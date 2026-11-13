@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3 CSV Scatter Plot</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body { font-family: sans-serif; }
+    circle { opacity: 0.8; }
+    circle:hover { fill: #ff6347; }
+  </style>
+</head>
+<body>
+
+  <div id="chart"></div>
+
+  <script>
+    // 1. Set dimensions and margins
+    const margin = { top: 20, right: 30, bottom: 40, left: 50 };
+    const width = 600 - margin.left - margin.right;
+    const height = 400 - margin.top - margin.bottom;
+
+    // 2. Append the SVG container
+    const svg = d3.select("#chart")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    // 3. Load and parse the CSV data
+    d3.csv("penglings.csv", d => ({
+    x: +d.flipper_length_mm,
+    y: +d.body_mass_g,
+    species: d.species
+    })).then(data => {
+    // Some penguins have missing measurements ("NA"), which become NaN. Drop them.
+    data = data.filter(d => !isNaN(d.x) && !isNaN(d.y));
+    
+    // 4. Create scales
+    const xScale = d3.scaleLinear()
+        .domain(d3.extent(data, d => d.x)).nice()
+        .range([0, width]);
+
+    const yScale = d3.scaleLinear()
+        .domain(d3.extent(data, d => d.y)).nice()
+        .range([height, 0]);
+
+        // 5. Add X and Y axes
+        svg.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(xScale));
+
+        svg.append("g")
+        .call(d3.axisLeft(yScale));
+
+        const color = d3.scaleOrdinal()
+            .domain(["Adelie", "Chinstrap", "Gentoo"])
+            .range(["#0000ff", "#ff0000", "#00ff00"]);
+
+        // 6. Plot the scatter points
+        svg.selectAll("circle")
+            .data(data)
+            .join("circle")
+                .attr("cx", d => xScale(d.x))
+                .attr("cy", d => yScale(d.y))
+                .attr("r", 6)
+                .attr("fill", d => color(d.species));
+        
+        // X axis label
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", height + 38)
+            .attr("text-anchor", "middle")
+            .text("Flipper length (mm)");
+
+        // Y axis label (rotated)
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height / 2)
+            .attr("y", -38)
+            .attr("text-anchor", "middle")
+            .text("Body mass (g)");
+
+        // Title
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", -5)
+            .attr("text-anchor", "middle")
+            .style("font-weight", "bold")
+            .text("Body Mass vs. Flipper Length");
+
+        const legend = svg.selectAll(".legend")
+            .data(color.domain())
+            .join("g")
+                .attr("class", "legend")
+                .attr("transform", (d, i) => `translate(${width - 90},${height - 60 + i * 20})`);
+
+        legend.append("circle")
+            .attr("r", 6)
+            .attr("fill", d => color(d));
+
+        legend.append("text")
+            .attr("x", 12)
+            .attr("y", 4)
+            .style("font-size", "12px")
+            .text(d => d);
+
+    }).catch(error => {
+      console.error("Error loading CSV:", error);
+    });
+  </script>
+
+</body>
+</html>

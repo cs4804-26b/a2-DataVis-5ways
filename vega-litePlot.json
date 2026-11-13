@@ -1,0 +1,32 @@
+{
+    "data": {
+        "url": "penglings.csv",
+        "mark": {
+            "type": "point",
+            "invalid": "filter"
+        }
+    },
+    "mark": "point",
+    "encoding": {
+        "x": {
+        "field": "flipper_length_mm",
+        "type": "quantitative",
+        "title": "Flipper Length (mm)",
+        "scale": {"zero": false}
+        },
+        "y": {
+        "field": "body_mass_g",
+        "type": "quantitative",
+        "title": "Body Mass (g)",
+        "scale": {"zero": false}
+        },
+        "color": {
+        "field": "species",
+        "type": "nominal",
+        "scale": {
+            "domain": ["Adelie", "Chinstrap", "Gentoo"],
+            "range": ["#0000ff", "#ff0000", "#00ff00"]
+        }
+        }
+    }
+}
