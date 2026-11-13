@@ -183,6 +183,20 @@ was awful as usual. This is also super weird but PNG output isn't antialiased so
 it looks terrible, but SVG output exists and doesn't look terrible (because it's
 vectorized).
 
+# Google Sheets (tool)
+
+![The monster which haunts us in our sleep](img/google-sheets.png)
+
+I tried to use a spreadsheet, I really did. I was excited when I saw that google
+sheets had a bubble chart. I made one. It looks horrific. In google sheets, you
+can't change the maximum and minimum bubble size for some reason, which means if
+you have a lot of bubbles you can't actually tell what's going on. This seems
+kind of dumb because the point of charts is to make lots of data make sense...
+
+I also tried to use excel, but I don't have it on my computer and the web
+version refused to function properly. It somehow crashed on like 300 rows of
+data, then refused to insert a bubble chart four times in a row. IDK man.
+
 # Technical Achievements
 
 - **Proved P=NP**: Using a combination of...
