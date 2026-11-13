@@ -1,4 +1,4 @@
-const DATA_URL = "http://localhost:8000/penglings.csv"
+const DATA_URL = "/penglings.csv"
 
 const loadData = async () => {
   return await d3.csv(DATA_URL, (d) => {
