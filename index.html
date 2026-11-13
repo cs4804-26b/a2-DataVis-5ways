@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>penguins d3</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+body { font-family: sans-serif; }
+.tip { position: absolute; background: white; border: 1px solid #999; padding: 4px; font-size: 12px; pointer-events: none; display: none; }
+</style>
+</head>
+<body>
+<div id="chart"></div>
+<div class="tip" id="tip"></div>
+<script>
+const w = 700, h = 500, m = {top: 20, right: 140, bottom: 50, left: 60};
+
+const svg = d3.select("#chart").append("svg")
+  .attr("width", w)
+  .attr("height", h);
+
+// load data then draw
+d3.csv("../penglings.csv").then(function(data) {
+  // drop rows with NA
+  data = data.filter(d => d.flipper_length_mm != "NA" && d.body_mass_g != "NA" && d.bill_length_mm != "NA");
+  data.forEach(d => {
+    d.flipper = +d.flipper_length_mm;
+    d.mass = +d.body_mass_g;
+    d.bill = +d.bill_length_mm;
+  });
+
+  const x = d3.scaleLinear().domain(d3.extent(data, d => d.flipper)).nice().range([m.left, w - m.right]);
+  const y = d3.scaleLinear().domain(d3.extent(data, d => d.mass)).nice().range([h - m.bottom, m.top]);
+  const r = d3.scaleSqrt().domain(d3.extent(data, d => d.bill)).range([2, 9]);
+  const color = d3.scaleOrdinal()
+    .domain(["Adelie", "Chinstrap", "Gentoo"])
+    .range(["#ff8c00", "#a034f0", "#159090"]);
+
+  // grid lines
+  svg.append("g")
+    .attr("transform", "translate(0," + (h - m.bottom) + ")")
+    .call(d3.axisBottom(x).tickSize(-(h - m.top - m.bottom)).tickFormat(""))
+    .attr("color", "#ddd");
+  svg.append("g")
+    .attr("transform", "translate(" + m.left + ",0)")
+    .call(d3.axisLeft(y).tickSize(-(w - m.left - m.right)).tickFormat(""))
+    .attr("color", "#ddd");
+
+  // axes
+  svg.append("g")
+    .attr("transform", "translate(0," + (h - m.bottom) + ")")
+    .call(d3.axisBottom(x));
+  svg.append("g")
+    .attr("transform", "translate(" + m.left + ",0)")
+    .call(d3.axisLeft(y));
+
+  svg.append("text")
+    .attr("x", (w - m.right + m.left) / 2)
+    .attr("y", h - 10)
+    .attr("text-anchor", "middle")
+    .text("Flipper Length (mm)");
+  svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -(h - m.bottom + m.top) / 2)
+    .attr("y", 15)
+    .attr("text-anchor", "middle")
+    .text("Body Mass (g)");
+
+  const tip = d3.select("#tip");
+
+  // points
+  svg.selectAll("circle.dot")
+    .data(data)
+    .join("circle")
+    .attr("class", "dot")
+    .attr("cx", d => x(d.flipper))
+    .attr("cy", d => y(d.mass))
+    .attr("r", d => r(d.bill))
+    .attr("fill", d => color(d.species))
+    .attr("opacity", 0.8)
+    .on("mouseover", function(event, d) {
+      d3.select(this).attr("stroke", "black");
+      tip.style("display", "block")
+        .html(d.species + "<br>flipper: " + d.flipper + "<br>mass: " + d.mass + "<br>bill: " + d.bill);
+    })
+    .on("mousemove", function(event) {
+      tip.style("left", (event.pageX + 10) + "px").style("top", (event.pageY - 10) + "px");
+    })
+    .on("mouseout", function() {
+      d3.select(this).attr("stroke", null);
+      tip.style("display", "none");
+    });
+
+  // legend
+  const legend = svg.append("g").attr("transform", "translate(" + (w - m.right + 20) + "," + m.top + ")");
+  color.domain().forEach((s, i) => {
+    legend.append("circle").attr("cx", 0).attr("cy", i * 20).attr("r", 6).attr("fill", color(s)).attr("opacity", 0.8);
+    legend.append("text").attr("x", 12).attr("y", i * 20 + 4).text(s).style("font-size", "12px");
+  });
+  legend.append("text").attr("x", 0).attr("y", 80).text("Bill Length (mm)").style("font-size", "12px");
+  [35, 45, 55].forEach((b, i) => {
+    legend.append("circle").attr("cx", 6).attr("cy", 100 + i * 22).attr("r", r(b)).attr("fill", "#999").attr("opacity", 0.8);
+    legend.append("text").attr("x", 20).attr("y", 104 + i * 22).text(b).style("font-size", "12px");
+  });
+});
+</script>
+</body>
+</html>
