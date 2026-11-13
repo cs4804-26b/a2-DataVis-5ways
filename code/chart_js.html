@@ -1,0 +1,42 @@
+<!-- started with Chart.js's "Step-by-step guide", used reference docs, used Claude to help with debugging -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>chart_js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  </head>
+  <body>
+    <div id="wrap"><canvas id="chart"></canvas>
+    </div>
+    <script>
+        const path = "C:/Users/victo/OneDrive/Documents/GitHub/a2-DataVis-5ways/penglings.csv";
+        const colors = {"Adelie": "rgba(255, 165, 0, 0.8)", "Chinstrap": "rgba(128, 0, 128, 0.8)", "Gentoo": "rgba(0, 128, 128, 0.8)"};
+
+        Papa.parse(path, {download: true, header: true, skipEmptyLines: true, 
+            complete: ({data}) => {
+                const rows = data.filter(d => d.flipper_length_mm && d.body_mass_g && d.bill_length_mm);
+                const ds = Object.keys(colors).map(sp => ({
+                label: sp,
+                backgroundColor: colors[sp],
+                data: rows.filter(d => d.species == sp).map(d => ({
+                    x: d.flipper_length_mm, 
+                    y: d.body_mass_g,
+                    r: (d.bill_length_mm-20) / 5
+                })),
+            }));
+
+            new Chart(document.getElementById("chart"), {
+                type: "bubble",
+                data: {datasets: ds},
+                options: {
+                    scales: {
+                        x: {title: {display: true, text: "Flipper Length (mm)"}},
+                        y: {title: {display: true, text: "Body Mass (g)"}}
+                    }
+                }
+            });
+        }});
+    </script>
+  </body>
+</html>
