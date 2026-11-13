@@ -82,9 +82,9 @@ chart = alt.Chart(data).mark_circle(
     ),
     # size based on bill length
     size = alt.Size(
-        "bill_length_mm",
+        "bill_length_mm:Q",
         title = "Bill Length (mm)",
-        scale = alt.Scale(range=[30, 200])
+        scale = alt.Scale(range=[20,500], zero = False),
     ),
 
     opacity=alt.condition(
