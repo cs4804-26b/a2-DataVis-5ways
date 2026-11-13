@@ -1,149 +1,72 @@
-Assignment 2 - Data Visualization, 5 Ways  
-===
+# Assignment 2 - Data Visualization, 5 Ways
 
-Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
+Russell Hertel (hert22)
 
-The goal of this project is to gain experience with as many data visualization libraries, languages, and tools as possible.
+For this assignment I made the same penguin scatterplot with 5 different tools. Flipper length is on the x axis and body mass is on the y axis. Color is species and size is bill length. I used 3 libraries (d3, Altair, matplotlib) and 2 tools (Excel, Datawrapper).
 
-I have provided a small dataset about penguins, `penglings.csv`.
-Each row contains a penguin observation and several variables about it, including bill length, flipper length, and more.
+In every version I removed the rows with NA values first. I also used the same 3 colors for the species every time.
 
-Your goal is to use 5 different tools to make the following chart:
+# d3
 
-![](img/ggplot2.png)
+Code is in the `d3` folder. To run it, start a server in the repo folder with `python3 -m http.server` and go to http://localhost:8000/d3/.
 
-These features should be preserved as much as possible in your replication:
+![d3](img/d3.png)
 
-- Data positioning: it should be an upward-trending scatterplot as shown.  Flipper Length should be on the x-axis and Body Mass on the y-axis.
-- Scales: Note the scales do not start at 0.
-- Axis ticks and labels: both axes are labeled and there are tick marks at a reasonable interval, e.g 10, 20, 30, etc.
-- Color mapping to species.
-- Size mapping to Bill Length.
-- Opacity of circles set to 0.8 or similar for a semi-transparent effect.
+d3 took the most work out of all of them. You have to build everything yourself, like the axes, the labels, the grid and the legend. Loading the csv is async, so all the drawing has to go inside the `.then()`. I had to filter out the "NA" rows or the circles would break. I used `scaleSqrt` for the size so bigger bills don't look way too big. The good part is you can control everything. I would use d3 for a custom chart on a website.
 
-Other features are not required. This includes:
+# Altair
 
-- The background grid.
-- The legends.
+Code is in the `altair` folder. Run `python3 penguins_altair.py` from inside that folder. It saves an html file and a png.
 
-Note that some software packages will make it **impossible** to perfectly preserve the above requirements. 
-Be sure to note where these deviate as you reflect on what a tool is good for.
+![altair](img/altair.png)
 
-Improvements are also welcome as part of Technical and Design achievements.
+Altair was the easiest one. You just say which column goes to x, y, color and size, and it makes the legends for you. The only thing I had to change was `zero=False` on the scales because Altair starts at 0 by default. Adding a tooltip and zoom only took one line each. I would use this for quick charts in python.
 
-Libraries, Tools, Languages
----
+# matplotlib
 
-You are required to use 5 different tools or libraries.
-Of the 5 tools, you must use at least 3 libraries (libraries require code of some kind).
-This could be `Python, R, Javascript`, or `Java, Javascript, Matlab` or any other combination.
-Dedicated tools (i.e. Excel) do not count towards the language requirement.
+Code is in the `matplotlib` folder. Run `python3 penguins_matplotlib.py` from inside that folder.
 
-Otherwise, you should seek tools and libraries to fill out your 5.
+![matplotlib](img/matplotlib.png)
 
-Below are a few ideas. Do not limit yourself to this list!
-There are new tools coming out every year and we may not have an exhaustive list of the latest and greatest.
+matplotlib was pretty easy too, but it is more manual than Altair. It doesn't do color by a category on its own, so I looped over each species and plotted them one at a time. The size also had to be scaled by hand. I did `(bill length - 30) * 6` so the dots were a good size. The legend only shows species, not bill length. It does start the axes at the data and not at 0, which was nice. I would use it for static charts for a report or paper.
 
-Some may be difficult choices, like Matlab or SPSS, which require large installations, licenses, and occasionally difficult UIs.
+# Excel
 
-I have marked a few that are strongly suggested.
+The file is `excel/penguins_excel.xlsx`.
 
-- R + ggplot2 `<- definitely worth trying`
-- Excel
-- d3 `<- since the rest of the class uses this, we're requiring it`
-- Altair `<- hugely popular python library. highly recommended `
-- three.js `<- well, it's a 3d library. not really recommended, but could be interesting and fun`
-- p5js `<- good for playing around. not really a chart lib`
-- Tableau
-- PowerBI
-- Vega-lite `<- very interesting formal visualization model; might be the future of the field`
-- Flourish `<- popular in recent years`
-- DataWrapper `<- popular in recent years`
-- GNUplot `<- the former CS department head uses this all the time :)`
-- SAS/SPSS/Matlab
+![excel](img/excel.png)
 
-You may write everything from scratch, or start with demo programs from books or the web. 
-If you do start with code that you found, please identify the source of the code in your README and, most importantly, make non-trivial changes to the code to make it your own so you really learn what you're doing. 
+I used a bubble chart in Excel since a normal scatter can't change the dot size. I had to split the data into 3 sets of columns, one for each species, so each species could be its own series with its own color. Then the bill length column is the bubble size. I set the axis min and max by hand so they don't start at 0. I set the fill transparency to 20% to get the 0.8 opacity. There is no legend for the bubble size. Excel is good if you just want a fast chart and don't want to code.
 
-Tips
----
+# Datawrapper
 
-- If you're using d3, key to this assignment is knowing how to load data.
-You will likely use the [`d3.json` or `d3.csv` functions](https://d3js.org/d3-dsv) to load the data you found.
+The cleaned data I uploaded is `datawrapper/penglings_clean.csv`.
 
-**Beware that these functions are *asynchronous*, meaning it's possible to "build" an empty visualization before the data actually loads. Figuring out how to do this properly can be a major hiccup if you haven't used async functions before. If this means you, start part of this project early so you don't end up in a rush!**
+![datawrapper](img/datawrapper.png)
 
-- `penglings.csv` has a few rows with `NA` values (two have no measurements at all). Filter them out before you plot (in d3, converting `"NA"` to a number gives `NaN`, which breaks scales and circle positions).
+Datawrapper is a website where you upload a csv and pick a chart type. I picked scatter plot and set x to flipper length, y to body mass, color to species and size to bill length. It was very fast and it adds hover tooltips by default. I did have to upload a csv with the NA rows taken out. You can't control things as much as with code. It would be good for making a quick chart for a news article or a blog.
 
-- *For web languages like d3* Don't forget to run a local webserver when you're debugging.
-Same as A1: run `python3 -m http.server` in your repo folder and visit http://localhost:8000.
-Being able to host a local webserver is an essential web development skill and very common in visualization design as well.
+# Technical Achievements
 
-Readme Requirements
----
+- **Tooltips in d3:** If you hover over a dot it shows the species, flipper length, body mass and bill length. The dot also gets a black outline.
+- **Tooltips and zoom in Altair:** The Altair html has tooltips. You can also zoom and pan with `.interactive()`.
+- **Size legend in d3:** I made a legend for bill length by hand with 3 example circles.
+- **Data cleaning:** Every version removes the rows with NA before plotting.
+- **Tooltips in Datawrapper:** Datawrapper has hover info built in.
 
-A good readme with screenshots and structured documentation is required for this project. 
-It should be possible to scroll through your readme to get an overview of all the tools and visualizations you produced.
+# Design Achievements
 
-- Each visualization should start with a top-level heading (e.g. `# d3`)
-- Each visualization should include a screenshot. Put these in an `img` folder and link through the readme (markdown command: `![caption](img/<imgname>)`.
-- Write a paragraph for each visualization tool you use. What was easy? Difficult? Where could you see the tool being useful in the future? Did you have to use any hacks or data manipulation to get the right chart?
+- **Same colors everywhere:** All 5 charts use orange for Adelie, purple for Chinstrap and teal for Gentoo. This makes them easy to compare.
+- **Light grid:** I made the grid lines light gray so they don't get in the way of the dots.
+- **Square root size scale:** In d3 I used `scaleSqrt` so the area of a circle matches the bill length better.
+- **Clear labels:** All the axes have labels with units.
 
-Other Requirements
----
+## Tools summary
 
-0. Your code should be forked from the GitHub repo.
-1. Place all code, Excel sheets, etcetera in a named folder. For example, `r-ggplot, matlab, mathematica, excel` and so on.
-2. Your writeup (readme.md in the repo) should also contain the following:
-
-- Description of the Technical achievements you attempted with this visualization.
-  - Some ideas include interaction, such as mousing over to see more detail about the point selected.
-- Description of the Design achievements you attempted with this visualization.
-  - Some ideas include consistent color choice, font choice, element size (e.g. the size of the circles).
-
-GitHub Details
----
-
-- Fork the GitHub Repository. You now have a copy associated with your username.
-- Make changes to fulfill the project requirements. 
-- To submit, make a [Pull Request](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) on the original repository, and put the link to your pull request in the A2 assignment on Canvas.
-- Note: name your pull request using the following scheme: 
-```
-a2-your Gh username-your first name-your lastname
-```
-
-Grading
----
-
-Grades on a 120 point scale. 
-24 points will be based on your Technical and Design achievements, as explained in your readme. 
-
-Make sure you include the files necessary to reproduce your plots.
-You should structure these in folders if helpful.
-We will choose some at random to run and test.
-
-**NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
-
-# R + ggplot2 + R Markdown
-
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
-
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
-
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
-
-![ggplot2](img/ggplot2.png)
-
-# d3...
-
-(And so on...)
-
-
-## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
-
-### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+| tool | type | easy? | notes |
+|---|---|---|---|
+| d3 | javascript library | hard | full control but a lot of code |
+| Altair | python library | easy | legends and tooltips for free |
+| matplotlib | python library | medium | had to loop for colors |
+| Excel | tool | medium | needed bubble chart and split columns |
+| Datawrapper | tool | easy | fast but less control |
