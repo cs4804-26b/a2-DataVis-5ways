@@ -29,8 +29,11 @@ One thing I especially appreciate about this was that a legend was automatically
 ![R](img/r.png)
 
 ## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
+- **Excel**: Used Filter functions to manually created seperate columns of data for each penguin species with NA values filtered out so that those columns could be used as different groups within a Bubble Plot.
+- **Python**: Used Pandas to convert the CSV into data for Matplotlib to visualize.
+- **R**: Used built-in R functionality to convert the CSV into data for ggplot to visualize.
 
 ### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+- **Excel**: Manually set X and Y range and scale so as to not start each axis at 0. Changed bubble size from area to radius to diameter to make size differences more visible.
+- **Python**: Created custom dot size function to make the differences in dot size more visible, changed alpha value of dots to make them semitransparent.
+- **R**: Changed alpha value of dots to make them semitransparent.
