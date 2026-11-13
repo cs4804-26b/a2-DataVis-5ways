@@ -14,7 +14,8 @@
       const data = csv.map(e => {return {
             x: e.flipper_length_mm,
             y: e.body_mass_g,
-            r: e.bill_length_mm,
+            rx: e.bill_length_mm,
+            ry: e.bill_depth_mm,
             c: sid[e.species],
             n: e[""],
           }}).filter(e => !Object.values(e).some(isNaN));
@@ -26,10 +27,12 @@
 
       const [xmin, xmax] = d3.extent(data, d => d.x);
       const [ymin, ymax] = d3.extent(data, d => d.y);
-      const [rmin, rmax] = d3.extent(data, d => d.r);
+      const [rxmin, rxmax] = d3.extent(data, d => d.rx);
+      const [rymin, rymax] = d3.extent(data, d => d.ry);
       const x = d3.scaleLinear([xmin, xmax], [margin, width - margin]);
       const y = d3.scaleLinear([ymin, ymax], [height - margin, margin]);
-      const r = d3.scaleLinear([rmin, rmax], [3, 10]);
+      const rx = d3.scaleLinear([rxmin, rxmax], [3, 10]);
+      const ry = d3.scaleLinear([rymin, rymax], [3, 10]);
 
       const colors = ["#ffaa66b0", "#66bbaab0", "#aa66ffb0"];
       let tooltip
@@ -49,10 +52,12 @@
 
       for (let d of data) {
         let i = -1;
-        svg.append("circle")
+        console.log(+d.rx, +d.ry)
+        svg.append("ellipse")
             .attr("cx", x(d.x))
             .attr("cy", y(d.y))
-            .attr("r", r(d.r))
+            .attr("rx", rx(d.rx))
+            .attr("ry", ry(d.ry))
             .attr("fill", colors[d.c])
             .on("mouseenter", _ => {
               tooltip.style("visibility", "visible")
@@ -88,7 +93,8 @@
           .style("pointer-events", "none")
           .style("background", "#fff")
           .style("border", "2px solid #000")
-          .style("padding", "3px");
+          .style("padding", "3px")
+          .style("visibility", "hidden");
 
       body.appendChild(svg.node());
       body.appendChild(tooltip.node());

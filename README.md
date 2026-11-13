@@ -120,4 +120,8 @@ data, then refused to insert a bubble chart four times in a row. IDK man.
 
 # Design Achievements
 
-- something something reinvented the wheel
+- made the marker shapes ellipses whose width is the bill length and whose
+  height is the bill depth (d3)
+    - apparently bill shape is completely different across species, I didn't
+      know that!
+    - I tried to do this in altair but it was getting way to complicated
