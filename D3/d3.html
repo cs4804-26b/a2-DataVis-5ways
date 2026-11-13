@@ -90,7 +90,7 @@
       // Size scale
       var size = d3.scaleSqrt()
         .domain(d3.extent(data, function(d) { return d.bill_length_mm; }))
-        .range([2, 9]);
+        .range([5, 20]);
 
       // Add dots
       svg.append("g")
