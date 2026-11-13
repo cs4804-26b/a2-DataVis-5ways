@@ -27,15 +27,15 @@ def main():
          schema_overrides={"species": pl.Categorical, "bill_length_mm": pl.Float64,},
          null_values=["NA"],
      ).drop_nulls().drop_nans()
-    size_arr = np.array(df["bill_length_mm"]) / 20
 
     fig = px.scatter(
         df,
         x="flipper_length_mm",
         y="body_mass_g",
         color="species",
-        size=size_arr,
+        size="bill_length_mm",
     )
+    fig.update_traces(marker_sizemode="diameter", marker_sizeref=4)
     fig.write_html(os.path.join(script_dir, "index.html"))
     
 if __name__ == '__main__':

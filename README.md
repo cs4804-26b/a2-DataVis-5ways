@@ -49,12 +49,12 @@ color issues. I think this is reasonable because Excel is not primarily focused 
 
 ## Python + Plotly
 
-Plotly is a python package written fro creating interactive visualizations. I specificaly used the express subpackage, which is a very high level way of creating graphs. In writing the graph this way,
-I was able to get several features, such as graph interactvitiy (zooming in and out, hovering over data points for popups with information, export). However, to do things outside the scope of the high level API, workarounds have to be used, or you have the use the laternate lower level API. For example, I had to manually scale the range of values for the 'Bill Length' variable to achieve a noticeable difference in
-the graph.
+Plotly is a python package written for creating interactive visualizations. I specificaly used the express subpackage, which is a very high level way of creating graphs. In writing the graph this way,
+I was able to get several features, such as graph interactvitiy (zooming in and out, hovering over data points for popups with information, export) without having to write any code. However, to do things outside the scope of the high level API, workarounds have to be used, or you have the use the alternate lower level API. For example, the API doesn't let the user seperate the scale from values plotted, so I
+had to manually set the size mode (area to diamter) of the size markers. Even then, the engine resizes the points if they get too large, so I couldn't the get the points to look as large as I wanted them to.
 
 ### Technical Achievements
-- Working around high level API to displays sizes more accurately
+- Working around high level API to provie more a visual difference between marker sizes
 
 ### Design Achievments
-None, as all graph features were provided by the library
+- None, as all graph features were provided by the library
