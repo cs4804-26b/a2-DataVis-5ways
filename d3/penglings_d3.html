@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Penglings</title>
+</head>
+<body>
+  <div id="container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script>
+    d3.csv("../penglings.csv", d => {
+        if (!d.flipper_length_mm || !d.body_mass_g || !d.bill_length_mm || !d.species) return null;
+        return {
+            flipper_length_mm: +d.flipper_length_mm,
+            body_mass_g: +d.body_mass_g,
+            bill_length_mm: +d.bill_length_mm,
+            species: d.species
+        };
+    }).then(data => {
+        const width = 800;
+        const height = 600;
+        const margin = {top: 20, right: 20, bottom: 40, left: 60};
+
+        const chartWidth = width - margin.left - margin.right;
+        const chartHeight = height - margin.top - margin.bottom;
+
+        const svg = d3.select("body")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        const x = d3.scaleLinear()
+            .domain([170, 240])
+            .range([0, chartWidth]);
+
+        svg.append("g")
+            .attr("transform", "translate(" + margin.left + "," + (chartHeight + margin.top) + ")")
+            .call(d3.axisBottom(x));
+
+        const y = d3.scaleLinear()
+            .domain([2500, 6500])
+            .range([chartHeight, 0]);
+
+        svg.append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+            .call(d3.axisLeft(y));
+
+        const r = d3.scaleSqrt()
+            .domain([40, 55])
+            .range([6, 10]);
+
+        const color = d3.scaleOrdinal()
+            .domain(["Adelie", "Chinstrap", "Gentoo"])
+            .range(d3.schemeCategory10);
+
+        svg.append("text")
+            .attr("x", (chartWidth / 2) + margin.left)
+            .attr("y", height - 5)
+            .attr("text-anchor", "middle")
+            .text("Flipper Length (mm)");
+
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("x", (-chartHeight / 2) + margin.top)
+            .attr("y", 15)
+            .attr("text-anchor", "middle")
+            .text("Body Mass (g)");
+
+        svg.append('g')
+            .selectAll("dot")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("cx", function (d) { return x(d.flipper_length_mm) + margin.left; } )
+            .attr("cy", function (d) { return y(d.body_mass_g) + margin.top; } )
+            .attr("r", function (d) { return r(d.bill_length_mm); } )
+            .style("fill", function (d) { return color(d.species); })
+            .style("fill-opacity", 0.7)
+            });
+  </script>
+</body>
+</html>

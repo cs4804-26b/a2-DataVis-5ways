@@ -1,149 +1,62 @@
-Assignment 2 - Data Visualization, 5 Ways  
-===
+# Excel
 
-Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
+Excel is a spreadsheet and data analysis tool that is part of Microsoft Office. 
+It has a relatively low barrier to entry compared to other more code-heavy options which can be good for people with less coding experience. 
+However, it can become clunky to manipulate data, especially since every array of data needs to be shown in data cells in the software.
+Additionally, finding everything within the Excel UI can become a pain.
+Sometimes even when I knew what I needed to do, it was hard to find the menu to actually do it.  
+To make the chart, I used a bubble chart since it allows for changing bubble size based on a "z" value. 
+To organize the data for the chart, I made a new sheet with the 3 data columns for each type of penguin using the Filter function to filter for the correct penguin type and to get rid of NA values. 
 
-The goal of this project is to gain experience with as many data visualization libraries, languages, and tools as possible.
+![excel](img/excel.png)
 
-I have provided a small dataset about penguins, `penglings.csv`.
-Each row contains a penguin observation and several variables about it, including bill length, flipper length, and more.
+# Python + Pandas + Matplotlib
+Python is a coding language that is easy to begin development in and contains many useful libraries. 
+Many of these libraries are useful for processing and visualizing data. 
+Because of that, creating a basic chart only takes a few lines of code when using these libraries, creating a low barrier to entry. 
+I also know that if I wanted to expand the visualization further or use it within a website in the future, I would be able to due to Python and its libraries' great flexibility and wide range of features.  
+For my chart, I used Pandas to convert the CSV to a dataframe. 
+Then, I used Matplotlib's scatter function to create the graph, and used its built in show function to display the graph in a new window after running the program. Since the scatter function uses area for circle size which is difficult to see small differences in size for, I created a new equation to make the size differences for the circles easier to see.
 
-Your goal is to use 5 different tools to make the following chart:
+![python](img/python.png)
 
-![](img/ggplot2.png)
+# R + ggplot
+R is another coding language, although it is less flexible than Python being focused mainly on data and statistics. 
+I used a regular R file in RStudio with the output going directly to the "plots" tab in RStudio.   
+I used R's built-in read.csv function to convert the CSV to a dataframe, then I used ggplot's geom_point function to create the scatterplot. 
+One thing I especially appreciate about this was that a legend was automatically created, including automatic size scaling for the dots and dot size being included in the legend. 
 
-These features should be preserved as much as possible in your replication:
+![R](img/r.png)
 
-- Data positioning: it should be an upward-trending scatterplot as shown.  Flipper Length should be on the x-axis and Body Mass on the y-axis.
-- Scales: Note the scales do not start at 0.
-- Axis ticks and labels: both axes are labeled and there are tick marks at a reasonable interval, e.g 10, 20, 30, etc.
-- Color mapping to species.
-- Size mapping to Bill Length.
-- Opacity of circles set to 0.8 or similar for a semi-transparent effect.
+# D3.js
+D3.js is a framework for creating SVG graphics in javascript. 
+Unlike the other frameworks, it does not have a built-in scatterplot function and all graphical components must be manually placed. 
+This significantly increases flexibility and creative freedom, but also makes it take much longer to create charts. 
+To experience more of the upsides of using D3 without  the downsides, Agentic/AI coding could be very nice as it would be significantly faster to iterate than with manual coding while maintaining the increased freedom over the easier to use but more restrictive Python and R libraries.  
+For my chart, I filtered out rows with NA values in the four target columns then used various SVG elements to draw the elements in the chart, manually setting the scales of the x axis, y axis, and dot sizes.
 
-Other features are not required. This includes:
+Expanded on approach outlined in https://d3-graph-gallery.com/graph/scatter_basic.html 
 
-- The background grid.
-- The legends.
+![d3](img/d3.png)
 
-Note that some software packages will make it **impossible** to perfectly preserve the above requirements. 
-Be sure to note where these deviate as you reflect on what a tool is good for.
+# PowerBI
+Power BI is a data visualization tool. For users that don't want to deal with code, I found it to be a much more powerful and intuitive tool for visualization than Excel. Despite having more experience in Excel and none in PowerBI, I found it faster to both create the initial graph and to iterate on the design. Of course, flexibility is lost compared to the code-based options, a trade-off for the time and convenience of creating the graphics.  
+For my chart, I had to transform the data columns to be decimal / whole number types since it orignally classified all the columns as text type. From there, it was simple to add a scatterplot and drag the data into the X-axis, Y-axis, Size, and Legend value fields of the graph. From there, I configured settings to make the graph more readable, such as changing the axis labels and changing the size multiplier on the markers.
 
-Improvements are also welcome as part of Technical and Design achievements.
-
-Libraries, Tools, Languages
----
-
-You are required to use 5 different tools or libraries.
-Of the 5 tools, you must use at least 3 libraries (libraries require code of some kind).
-This could be `Python, R, Javascript`, or `Java, Javascript, Matlab` or any other combination.
-Dedicated tools (i.e. Excel) do not count towards the language requirement.
-
-Otherwise, you should seek tools and libraries to fill out your 5.
-
-Below are a few ideas. Do not limit yourself to this list!
-There are new tools coming out every year and we may not have an exhaustive list of the latest and greatest.
-
-Some may be difficult choices, like Matlab or SPSS, which require large installations, licenses, and occasionally difficult UIs.
-
-I have marked a few that are strongly suggested.
-
-- R + ggplot2 `<- definitely worth trying`
-- Excel
-- d3 `<- since the rest of the class uses this, we're requiring it`
-- Altair `<- hugely popular python library. highly recommended `
-- three.js `<- well, it's a 3d library. not really recommended, but could be interesting and fun`
-- p5js `<- good for playing around. not really a chart lib`
-- Tableau
-- PowerBI
-- Vega-lite `<- very interesting formal visualization model; might be the future of the field`
-- Flourish `<- popular in recent years`
-- DataWrapper `<- popular in recent years`
-- GNUplot `<- the former CS department head uses this all the time :)`
-- SAS/SPSS/Matlab
-
-You may write everything from scratch, or start with demo programs from books or the web. 
-If you do start with code that you found, please identify the source of the code in your README and, most importantly, make non-trivial changes to the code to make it your own so you really learn what you're doing. 
-
-Tips
----
-
-- If you're using d3, key to this assignment is knowing how to load data.
-You will likely use the [`d3.json` or `d3.csv` functions](https://d3js.org/d3-dsv) to load the data you found.
-
-**Beware that these functions are *asynchronous*, meaning it's possible to "build" an empty visualization before the data actually loads. Figuring out how to do this properly can be a major hiccup if you haven't used async functions before. If this means you, start part of this project early so you don't end up in a rush!**
-
-- `penglings.csv` has a few rows with `NA` values (two have no measurements at all). Filter them out before you plot (in d3, converting `"NA"` to a number gives `NaN`, which breaks scales and circle positions).
-
-- *For web languages like d3* Don't forget to run a local webserver when you're debugging.
-Same as A1: run `python3 -m http.server` in your repo folder and visit http://localhost:8000.
-Being able to host a local webserver is an essential web development skill and very common in visualization design as well.
-
-Readme Requirements
----
-
-A good readme with screenshots and structured documentation is required for this project. 
-It should be possible to scroll through your readme to get an overview of all the tools and visualizations you produced.
-
-- Each visualization should start with a top-level heading (e.g. `# d3`)
-- Each visualization should include a screenshot. Put these in an `img` folder and link through the readme (markdown command: `![caption](img/<imgname>)`.
-- Write a paragraph for each visualization tool you use. What was easy? Difficult? Where could you see the tool being useful in the future? Did you have to use any hacks or data manipulation to get the right chart?
-
-Other Requirements
----
-
-0. Your code should be forked from the GitHub repo.
-1. Place all code, Excel sheets, etcetera in a named folder. For example, `r-ggplot, matlab, mathematica, excel` and so on.
-2. Your writeup (readme.md in the repo) should also contain the following:
-
-- Description of the Technical achievements you attempted with this visualization.
-  - Some ideas include interaction, such as mousing over to see more detail about the point selected.
-- Description of the Design achievements you attempted with this visualization.
-  - Some ideas include consistent color choice, font choice, element size (e.g. the size of the circles).
-
-GitHub Details
----
-
-- Fork the GitHub Repository. You now have a copy associated with your username.
-- Make changes to fulfill the project requirements. 
-- To submit, make a [Pull Request](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) on the original repository, and put the link to your pull request in the A2 assignment on Canvas.
-- Note: name your pull request using the following scheme: 
-```
-a2-your Gh username-your first name-your lastname
-```
-
-Grading
----
-
-Grades on a 120 point scale. 
-24 points will be based on your Technical and Design achievements, as explained in your readme. 
-
-Make sure you include the files necessary to reproduce your plots.
-You should structure these in folders if helpful.
-We will choose some at random to run and test.
-
-**NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
-
-# R + ggplot2 + R Markdown
-
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
-
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
-
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
-
-![ggplot2](img/ggplot2.png)
-
-# d3...
-
-(And so on...)
-
+![power_bi](img/powerbi.png)
 
 ## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
+- **Excel**: Used Filter functions to manually created seperate columns of data for each penguin species with NA values filtered out so that those columns could be used as different groups within a Bubble Plot.
+- **Python**: Used Pandas to convert the CSV into data for Matplotlib to visualize.
+- **R**: Used built-in R functionality to convert the CSV into data for ggplot to visualize.
+- **d3**: Asynchronous filtered out rows with NA values in target columns with d3.csv, used configurable constants for width and height of the entire graphic, and margins for the graph itself to allow for extra elements such as axis labels to be displayed outside of the chart.
+- **PowerBI**: Converted columns stored as a text type to a decimal number / whole number type using the transform data tool before using the data in a scatterplot.
 
-### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+## Design Achievements
+- **Excel**: Manually set X and Y range and scale so as to not start each axis at 0. Changed bubble size from area to radius to diameter to make size differences more visible.
+- **Python**: Created custom dot size function to make the differences in dot size more visible, changed alpha value of dots to make them semitransparent.
+- **R**: Changed alpha value of dots to make them semitransparent.
+- **d3**: Manually set domain and range values for x-axis, y-axis, and dot size, and set dot transparency.
+- **PowerBI**: Changed from dots to triangles as I find the flat edges easier to compare sizes than with circles. Changed label fonts / font sizes, changed chart title and axis labels from the default, configured the y-axis to show as 2000, 3000, etc instead of 2k, 3k, etc, and added a legend for species.
+
+AI Use: Used AI similar to a search engine to help with setting up environments and finding/understanding the libraries and functions used to make the plots.
