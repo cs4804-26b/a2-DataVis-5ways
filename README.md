@@ -1,149 +1,49 @@
-Assignment 2 - Data Visualization, 5 Ways  
-===
+# a2 5 Ways
+For this project, I was required to make 5 scatterplots using 5 different libraries/languages.
+The scatterplots would use the 'penglings.csv' dataset, which contains some data about penguin species including:
+- Bill length (mm)
+- Flipper length (mm)
+- Body mass (g)
+- Species (Adelie, Chinstrap, or Gentoo)
 
-Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
+There are others, but these are the primary fields that will be used in these plots.
 
-The goal of this project is to gain experience with as many data visualization libraries, languages, and tools as possible.
+# R + ggplot2
+![Penguins Plotted in R](Plots/ggplot2_Penguin_Plot.png)
 
-I have provided a small dataset about penguins, `penglings.csv`.
-Each row contains a penguin observation and several variables about it, including bill length, flipper length, and more.
+This plot was created in R using the ggplot2 library. This one took a me a little bit, as R is a somewhat unique language. However, ggplot2 made creating this plot _very_ easy. As I'll describe later, a language like d3 offers a ton of customizability and unique functions, but it is super bulky and takes time to write properly. ggplot2 on the other hand was very short, only requiring 21 lines of code. Since R is so popular in statistics and math fields, I will probably use this one in the future.
 
-Your goal is to use 5 different tools to make the following chart:
+To generate this plot, type `Rscript --vanilla rPlot.r` into your terminal and the plot will appear in the ./Plots directory as `ggplot2_Penguin_Plot.png`.
 
-![](img/ggplot2.png)
+# Javascript + d3
+![Penguins Plotted in Javascript](Plots/d3_Penguin_Plot.png)
 
-These features should be preserved as much as possible in your replication:
+This plot took up a bulk of my time working on this project. d3 is a wonderful language that offers a ton of customizability, but javascript is not a fun language to write in and d3 certainly does not make the writing process fast. Setting the plot, axis labels, even getting the color legend for the penguin species was tedious since it was added manually, not automatically like most of the other libraries on this list. That being said, if I ever encountered any issues with the other libraries, I would be wishing I was writing in d3!
 
-- Data positioning: it should be an upward-trending scatterplot as shown.  Flipper Length should be on the x-axis and Body Mass on the y-axis.
-- Scales: Note the scales do not start at 0.
-- Axis ticks and labels: both axes are labeled and there are tick marks at a reasonable interval, e.g 10, 20, 30, etc.
-- Color mapping to species.
-- Size mapping to Bill Length.
-- Opacity of circles set to 0.8 or similar for a semi-transparent effect.
+To view this plot, start a server on localhost:8000 with `python3 -m http.server` and visit `http://localhost:8000` in your browser.
 
-Other features are not required. This includes:
+# Python + Altair
+![Penguins Plotted in Python](Plots/Altair_Penguin_Plot.png)
 
-- The background grid.
-- The legends.
+I don't have much to say about this one, I had the same experience with Altair that I had with ggplot2. The only difference was I was writing in python this time! ggplot2 made it easier to change styles like colors, but overall Altair was very similar to ggplot2.
 
-Note that some software packages will make it **impossible** to perfectly preserve the above requirements. 
-Be sure to note where these deviate as you reflect on what a tool is good for.
+To generate this plot, type `python altairPlot.py` into your terminal and the plot will appear in the `./Plots` directory as `Altair_Penguin_Plot.png`.
 
-Improvements are also welcome as part of Technical and Design achievements.
+# JSON + Vega-lite
+![Penguins Plotted in JSON](Plots/vega-lite_Penguin_Plot.png)
 
-Libraries, Tools, Languages
----
+Vega-lite is a very interesting visualization library. Based on what I've seen online you can make very pretty and very unique plots with this. Rather than using a typical programming language like python or javascript, Vega-lite is written in the JSON format. I don't use JSON very often as package managers oftentimes do all the work for me, but JSON and Vega-lite make plotting very easy. However, accessing the plot is a different story.
 
-You are required to use 5 different tools or libraries.
-Of the 5 tools, you must use at least 3 libraries (libraries require code of some kind).
-This could be `Python, R, Javascript`, or `Java, Javascript, Matlab` or any other combination.
-Dedicated tools (i.e. Excel) do not count towards the language requirement.
+To view this plot, I installed a Visual Studio Code extension called "Vega Viewer". The normal way would be to go on the online Vega Editor, but with private github repositories this won't work. Instead, in VSCode with the Vega Viewer extension installed, open vega-litePlot.json. In the top left of VSCode, under view, click Command Palate and search for Vega: Preview Vega Graph and click it. This will open a new tab with the plot visible.
 
-Otherwise, you should seek tools and libraries to fill out your 5.
+Alternatively, just look at the image above.
 
-Below are a few ideas. Do not limit yourself to this list!
-There are new tools coming out every year and we may not have an exhaustive list of the latest and greatest.
+# GNUPlot
+![Penguins Plotted in JSON](Plots/GNUPlot_Penguin_Plot.png)
 
-Some may be difficult choices, like Matlab or SPSS, which require large installations, licenses, and occasionally difficult UIs.
+GNUPlot is probably my favorite one on this list, saved for last as always. It uses it's own scripting language to make plots, and it is very specialized to do so. If I didn't color code the penguins I could have written it in only 8 lines. Additionally, it was super easy to make a 3d rotatable plot, so I totally recommend booting this one up yourself. Super simple, super straightforward, super great result.
 
-I have marked a few that are strongly suggested.
+To view this plot, type `gnuplot -persist gnuplotPlot.gp` into the terminal. A window will open with the 3d plot, which you can drag inside to rotate.
 
-- R + ggplot2 `<- definitely worth trying`
-- Excel
-- d3 `<- since the rest of the class uses this, we're requiring it`
-- Altair `<- hugely popular python library. highly recommended `
-- three.js `<- well, it's a 3d library. not really recommended, but could be interesting and fun`
-- p5js `<- good for playing around. not really a chart lib`
-- Tableau
-- PowerBI
-- Vega-lite `<- very interesting formal visualization model; might be the future of the field`
-- Flourish `<- popular in recent years`
-- DataWrapper `<- popular in recent years`
-- GNUplot `<- the former CS department head uses this all the time :)`
-- SAS/SPSS/Matlab
-
-You may write everything from scratch, or start with demo programs from books or the web. 
-If you do start with code that you found, please identify the source of the code in your README and, most importantly, make non-trivial changes to the code to make it your own so you really learn what you're doing. 
-
-Tips
----
-
-- If you're using d3, key to this assignment is knowing how to load data.
-You will likely use the [`d3.json` or `d3.csv` functions](https://d3js.org/d3-dsv) to load the data you found.
-
-**Beware that these functions are *asynchronous*, meaning it's possible to "build" an empty visualization before the data actually loads. Figuring out how to do this properly can be a major hiccup if you haven't used async functions before. If this means you, start part of this project early so you don't end up in a rush!**
-
-- `penglings.csv` has a few rows with `NA` values (two have no measurements at all). Filter them out before you plot (in d3, converting `"NA"` to a number gives `NaN`, which breaks scales and circle positions).
-
-- *For web languages like d3* Don't forget to run a local webserver when you're debugging.
-Same as A1: run `python3 -m http.server` in your repo folder and visit http://localhost:8000.
-Being able to host a local webserver is an essential web development skill and very common in visualization design as well.
-
-Readme Requirements
----
-
-A good readme with screenshots and structured documentation is required for this project. 
-It should be possible to scroll through your readme to get an overview of all the tools and visualizations you produced.
-
-- Each visualization should start with a top-level heading (e.g. `# d3`)
-- Each visualization should include a screenshot. Put these in an `img` folder and link through the readme (markdown command: `![caption](img/<imgname>)`.
-- Write a paragraph for each visualization tool you use. What was easy? Difficult? Where could you see the tool being useful in the future? Did you have to use any hacks or data manipulation to get the right chart?
-
-Other Requirements
----
-
-0. Your code should be forked from the GitHub repo.
-1. Place all code, Excel sheets, etcetera in a named folder. For example, `r-ggplot, matlab, mathematica, excel` and so on.
-2. Your writeup (readme.md in the repo) should also contain the following:
-
-- Description of the Technical achievements you attempted with this visualization.
-  - Some ideas include interaction, such as mousing over to see more detail about the point selected.
-- Description of the Design achievements you attempted with this visualization.
-  - Some ideas include consistent color choice, font choice, element size (e.g. the size of the circles).
-
-GitHub Details
----
-
-- Fork the GitHub Repository. You now have a copy associated with your username.
-- Make changes to fulfill the project requirements. 
-- To submit, make a [Pull Request](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) on the original repository, and put the link to your pull request in the A2 assignment on Canvas.
-- Note: name your pull request using the following scheme: 
-```
-a2-your Gh username-your first name-your lastname
-```
-
-Grading
----
-
-Grades on a 120 point scale. 
-24 points will be based on your Technical and Design achievements, as explained in your readme. 
-
-Make sure you include the files necessary to reproduce your plots.
-You should structure these in folders if helpful.
-We will choose some at random to run and test.
-
-**NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
-
-# R + ggplot2 + R Markdown
-
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
-
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
-
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
-
-![ggplot2](img/ggplot2.png)
-
-# d3...
-
-(And so on...)
-
-
-## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
-
-### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+## Design Achievements
+- Color Choice: I used the generic RGB colorscheme for all my plots because they are easily recognizable. I am slightly colorblind and when I was making the first plot, R + ggplot2, the default colors were cyan, red, and orange. The shades of red and yellow were near indistinguishable to me, so I chose colors that greatly contrasted each other. When removing the rgb values (Which you can do in the GNUPlot window) each of the colors can still be clearly seen in greyscale.
