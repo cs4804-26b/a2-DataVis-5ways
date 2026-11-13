@@ -1,0 +1,78 @@
+{   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data":{
+        "url": "penglings.csv"
+    },
+    "mark": {"type":"circle",
+    "opacity": 0.8
+},
+    "transform": [
+        {
+            "filter": "isValid(datum.flipper_length_mm) && isValid(datum.body_mass_g) && isValid(datum.bill_length_mm)"
+        }
+    ],
+    "title": "Penguin Flipper Length vs Body Mass",
+    "params":[
+            {
+                "name": "grid",
+                "select": "interval",
+                "bind": "scales"
+            }
+        ],
+    "encoding":{
+        "y":{
+            "field": "body_mass_g",
+            "title": "Body Mass (g)",
+            "type": "quantitative",
+            "scale":{
+                "zero": false
+            }
+        },
+        "x":{
+            "field": "flipper_length_mm",
+            "title": "Flipper Length (mm)",
+            "type": "quantitative",
+             "scale":{
+                "zero": false
+            }
+        },
+        "color":{
+            "field": "species",
+            "type": "nominal",
+            "scale":{
+                "domain": ["Adelie", "Chinstrap", "Gentoo"],
+                "range": ["#FF6E00", "#663399", "#00CED1"]
+            }
+        },
+        "size":{
+            "field":"bill_length_mm",
+            "type": "quantitative",
+            "scale":{
+                "zero": false
+            }
+        },
+        "tooltip":[
+            {
+                "field": "species",
+                "type": "nominal",
+                "title": "Species"
+            },
+            {
+                "field": "flipper_length_mm",
+                "type": "quantitative",
+                "title": "Flipper Length (mm)"
+            },
+            {
+                "field": "body_mass_g",
+                "type": "quantitative",
+                "title": "Body Mass (g)"
+            },
+            {
+                "field": "bill_length_mm",
+                "type": "quantitative",
+                "title": "Bill Length (mm)"
+            }
+        ]
+        
+
+    }
+}

@@ -1,149 +1,72 @@
-Assignment 2 - Data Visualization, 5 Ways  
-===
+# R + ggplot2 + ggplotly
+R is a statistical programming language typically used for different ideas within data science or just overall data analysis. Meanwhile ggplot2 is a popular R package that is utilized to create different visualizations of data. This is what I used to create what the chart would look like I used geom_point to plot out the different data points. There were other details involved as well such as scale for the specific color mapping, theme to add a few other design pieces to the graph, labs for labels etc. It took a little bit of time to understand how the different pieces worked but since it's just a few lines of code it wasn't too bad. I used ggplotly to enable more interactivity within the graph and printed it so that way it would actually display. A difficult part of creating this was just figuring out how to run R properly on VS Code. However what was most difficult was the fact that ggplotly fought me on being able to make a second legend and it just didn't happen. 
 
-Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
+Static Graph that has both legends because plotly sucks:
 
-The goal of this project is to gain experience with as many data visualization libraries, languages, and tools as possible.
+![alt text](img/penguinggplotstatic.png)
 
-I have provided a small dataset about penguins, `penglings.csv`.
-Each row contains a penguin observation and several variables about it, including bill length, flipper length, and more.
+Regular Graph:
 
-Your goal is to use 5 different tools to make the following chart:
+![alt text](img/R-ggplotRegular.png)
 
-![](img/ggplot2.png)
+Graph After Being Interacted With:
 
-These features should be preserved as much as possible in your replication:
+![alt text](img/R-ggplotInteracted.png)
 
-- Data positioning: it should be an upward-trending scatterplot as shown.  Flipper Length should be on the x-axis and Body Mass on the y-axis.
-- Scales: Note the scales do not start at 0.
-- Axis ticks and labels: both axes are labeled and there are tick marks at a reasonable interval, e.g 10, 20, 30, etc.
-- Color mapping to species.
-- Size mapping to Bill Length.
-- Opacity of circles set to 0.8 or similar for a semi-transparent effect.
 
-Other features are not required. This includes:
 
-- The background grid.
-- The legends.
+# D3
+D3 is a javascript libarary that is able to build out data visualizations by building out different visual components to represent data. This was by far the most tedious visualizations to create out. The rest of the visualizations were using languages like Python which felt like they were holding your hand since they have all these automatic functions built in to help you out. d3 since it is javascript and therefore not on the same level as python doesn't have those precautions in place instead needing to manually build out the different pieces axis and then all the different pieces within things like the axis such as the domain etc. Interactivity was the same way with needing to find the perfect way to get a respnsive graph without moving the whole chart. We had already worked with d3 before so I already knew how to build out shapes and have interactivity pieces but actually putting that into a coherent visualization instead of just a silly little picture was definitely an upgrade in knowledge.
 
-Note that some software packages will make it **impossible** to perfectly preserve the above requirements. 
-Be sure to note where these deviate as you reflect on what a tool is good for.
+Regular Graph:
 
-Improvements are also welcome as part of Technical and Design achievements.
+![alt text](img/d3Regular.png)
 
-Libraries, Tools, Languages
----
+Graph That is Interacted With:
 
-You are required to use 5 different tools or libraries.
-Of the 5 tools, you must use at least 3 libraries (libraries require code of some kind).
-This could be `Python, R, Javascript`, or `Java, Javascript, Matlab` or any other combination.
-Dedicated tools (i.e. Excel) do not count towards the language requirement.
+![alt text](img/d3Interacted.png)
 
-Otherwise, you should seek tools and libraries to fill out your 5.
+# Altair
+Altair is a python library that is used to create different data visualizations. Since its Python and python is so high level I found that the pieces were quite simple to learn and only took a few lines of code. I first used pandas to be able to read the csv data and used mark_circle within the Alt.Chart to actually plot out the different points. Then there was just different pieces to do within the Chart such as the encoding and the properties to properly set up the pieces that were necessary so that way the data can be properly represented. Adding some of the other features such as the interactivity only required adding a .interactive to the chart. In order to actually run the code I used chart.save to put all the code into an html file so that way I could display the graph on a webpage in a simple format
 
-Below are a few ideas. Do not limit yourself to this list!
-There are new tools coming out every year and we may not have an exhaustive list of the latest and greatest.
+Regular Graph:
 
-Some may be difficult choices, like Matlab or SPSS, which require large installations, licenses, and occasionally difficult UIs.
+![alt text](img/altairRegular.png)
 
-I have marked a few that are strongly suggested.
+Graph After Being Interacted With:
 
-- R + ggplot2 `<- definitely worth trying`
-- Excel
-- d3 `<- since the rest of the class uses this, we're requiring it`
-- Altair `<- hugely popular python library. highly recommended `
-- three.js `<- well, it's a 3d library. not really recommended, but could be interesting and fun`
-- p5js `<- good for playing around. not really a chart lib`
-- Tableau
-- PowerBI
-- Vega-lite `<- very interesting formal visualization model; might be the future of the field`
-- Flourish `<- popular in recent years`
-- DataWrapper `<- popular in recent years`
-- GNUplot `<- the former CS department head uses this all the time :)`
-- SAS/SPSS/Matlab
+![alt text](img/altairInteracted.png)
 
-You may write everything from scratch, or start with demo programs from books or the web. 
-If you do start with code that you found, please identify the source of the code in your README and, most importantly, make non-trivial changes to the code to make it your own so you really learn what you're doing. 
+# Vegalite
+Vegalite is a way to create visualizations utilizing a JSON Syntax. Altair and Vegalite are connected because Altair is built directly on top of Vegalite's specification. This means that Vegalite and Altair have a lot of similar features that they utilize (encoding for the different fields, etc). Even the way they display graphs is the same so its clear to see that they are related to one another in some way. I was already familiar with JSON syntax due to working with JSON schemas and had already done the Altair visualization at this point so it wasn't the most difficult visualization to complete. The most annoying thing about it was because Vegalite is kind of its own thing I had to install an extension to preview the Vega Graph and run that in a very specific way in order to be able to actually display the graph.
 
-Tips
----
+Regular Graph:
 
-- If you're using d3, key to this assignment is knowing how to load data.
-You will likely use the [`d3.json` or `d3.csv` functions](https://d3js.org/d3-dsv) to load the data you found.
+![alt text](img/vegaliteRegular.png)
 
-**Beware that these functions are *asynchronous*, meaning it's possible to "build" an empty visualization before the data actually loads. Figuring out how to do this properly can be a major hiccup if you haven't used async functions before. If this means you, start part of this project early so you don't end up in a rush!**
+Graph After Being Interacted With:
 
-- `penglings.csv` has a few rows with `NA` values (two have no measurements at all). Filter them out before you plot (in d3, converting `"NA"` to a number gives `NaN`, which breaks scales and circle positions).
+![alt text](img/vegaliteInteracted.png)
 
-- *For web languages like d3* Don't forget to run a local webserver when you're debugging.
-Same as A1: run `python3 -m http.server` in your repo folder and visit http://localhost:8000.
-Being able to host a local webserver is an essential web development skill and very common in visualization design as well.
+# MatplotLib
+Matplotlib is another Python Library that is used to plot out different data visualizations. Again because python is so high level of a language it wasn't too difficult to set up with only a few lines of code as different pieces are already built into the language which is nice. Like Altair I had to use pandas to be able to properly get the csv data and then I was able to plot it out using a scatterplot and overall different plt commands. To add some more interactivity outside of the base activity being able to click and drag rather than the base toolbar it required using mplcursors and setting that up. I've used matplotlib in some of the other classes that I've taken at WPI such as Intro to AI, Machine Learning etc so I was already familiar with the tool and how to get graphs to show up.
 
-Readme Requirements
----
+Regular Graph:
 
-A good readme with screenshots and structured documentation is required for this project. 
-It should be possible to scroll through your readme to get an overview of all the tools and visualizations you produced.
+![alt text](img/matplotlibRegular.png)
+Graph After Being Interacted With:
 
-- Each visualization should start with a top-level heading (e.g. `# d3`)
-- Each visualization should include a screenshot. Put these in an `img` folder and link through the readme (markdown command: `![caption](img/<imgname>)`.
-- Write a paragraph for each visualization tool you use. What was easy? Difficult? Where could you see the tool being useful in the future? Did you have to use any hacks or data manipulation to get the right chart?
-
-Other Requirements
----
-
-0. Your code should be forked from the GitHub repo.
-1. Place all code, Excel sheets, etcetera in a named folder. For example, `r-ggplot, matlab, mathematica, excel` and so on.
-2. Your writeup (readme.md in the repo) should also contain the following:
-
-- Description of the Technical achievements you attempted with this visualization.
-  - Some ideas include interaction, such as mousing over to see more detail about the point selected.
-- Description of the Design achievements you attempted with this visualization.
-  - Some ideas include consistent color choice, font choice, element size (e.g. the size of the circles).
-
-GitHub Details
----
-
-- Fork the GitHub Repository. You now have a copy associated with your username.
-- Make changes to fulfill the project requirements. 
-- To submit, make a [Pull Request](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) on the original repository, and put the link to your pull request in the A2 assignment on Canvas.
-- Note: name your pull request using the following scheme: 
-```
-a2-your Gh username-your first name-your lastname
-```
-
-Grading
----
-
-Grades on a 120 point scale. 
-24 points will be based on your Technical and Design achievements, as explained in your readme. 
-
-Make sure you include the files necessary to reproduce your plots.
-You should structure these in folders if helpful.
-We will choose some at random to run and test.
-
-**NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
-
-# R + ggplot2 + R Markdown
-
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
-
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
-
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
-
-![ggplot2](img/ggplot2.png)
-
-# d3...
-
-(And so on...)
-
+![alt text](img/matplotlibInteracted.png)
 
 ## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
+- **Multiple Pieces of Interactivity**: For every single visualization I added multiple different pieces of interactivity including ...
+    - Being able to move around the graph with pan usually by click and drag 
+    - Being able to zoom in on the graph usually by doing the 2 finger slide 
+    - When you hover over a specific point it will give you information about that specific point in a little box
 
-### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+## Design Achievements
+- **Color System**: I tried to keep the same overall color scheme that the original example has for the species with Orange for Adelie, Purple for Chinstrap and a blueish greenish for Gentoo
+
+- **Better Understanding of Visualization** I added different features in that should hopefully make understanding the data easier such as making sure that every single visualization has a legend for species and bill length (except for plotly because plotly apparently hates 2 legends for whatever reason), grid within the different parts of the graph and even an overall title to represent what the graph is about
+
+- **Miscellaneous** I also added a small little theme to the R graph and messed around with a few little details like making the bottom axis blue

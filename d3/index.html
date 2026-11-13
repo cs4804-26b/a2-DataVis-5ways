@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A2: Hello World, GitHub and d3</title>
+</head>
+<body>
+  <div id="container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script>
+    async function getData(){
+      const response = await d3.csv("penglings.csv", (d)=>{
+        return {"Body Mass": +d["body_mass_g"], "Flipper Length": +d["flipper_length_mm"], "Species": d["species"], "Bill Length": +d["bill_length_mm"]};
+      });
+      buildVisualization(response);
+    }
+    function buildVisualization(data){
+    console.log("d3 version", d3.version); // test that d3 loaded
+    const svg = d3.create("svg").attr("width", 1100).attr("height", 700);
+    const g = svg.append("g");
+    const xScale = d3.scaleLinear().domain([170,240]).range([60,800]);
+    const xAxis = g.append("g").attr("transform", "translate(0,650)").call(d3.axisBottom(xScale).tickSize(-575).tickValues([170, 180, 190, 200, 210, 220, 230, 240]));
+    const yScale = d3.scaleLinear().domain([2500,6500]).range([650,100]);
+    const yAxis = g.append("g").attr("transform", "translate(60,0)").call(d3.axisLeft(yScale).tickSize(-775));
+    svg.append("text").text("Flipper Length (mm)").attr("x", 325).attr("y", 675).attr("text-anchor", "middle").attr("dominant-baseline", "middle").attr("font-size", "20px").attr("font-family", "Helvetica")
+    svg.append("text").text("Body Mass (g)").attr("x", 10).attr("y", 300).attr("text-anchor", "middle").attr("dominant-baseline", "middle").attr("font-size", "20px").attr("font-family", "Helvetica").attr("transform", "rotate(-90, 10, 300)")
+    svg.append("text").text("Flipper Length (mm) vs Body Mass (g)").attr("x", 450).attr("y", 30).attr("text-anchor", "middle").attr("dominant-baseline", "middle").attr("font-size", "40px").attr("font-family", "Helvetica")
+    const colorMap = d3.scaleOrdinal()
+      .domain(["Adelie", "Chinstrap", "Gentoo"])
+      .range(["#FF6E00", "#663399", "#00CED1"])
+    const sizeMap = d3.scaleLinear()
+      .domain([35, 55])
+      .range([5, 12]);
+    let tooltip = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("position", "absolute")
+      .style("visibility", "hidden")
+      .style("background-color", "white")
+      .style("border", "1px solid black")
+      .style("padding", "5px")
+      .style("border-radius", "5px");
+    g.append("clipPath")
+      .attr("id", "clip")
+      .append("rect")
+      .attr("x", 60)
+      .attr("y", 50)
+      .attr("width", 740)
+      .attr("height", 600);
+    g.selectAll("circle")
+      .data(data)
+      .enter()
+      .filter(d => !isNaN(d["Flipper Length"]) && !isNaN(d["Body Mass"]) && d["Species"] && !isNaN(d["Bill Length"]))
+      .append("circle")
+      .attr("cx", d =>  xScale(d["Flipper Length"]))
+      .attr("cy", d =>  yScale(d["Body Mass"]))
+      .attr("r", d => sizeMap(d["Bill Length"]))
+      .attr("opacity", 0.8)
+      .attr("clip-path", "url(#clip)")
+      .attr("fill", d => {
+        return colorMap(d["Species"]);
+      }).on("mouseover", function(event, d) {
+        tooltip.style("visibility", "visible")
+          .html(`
+            <strong>Species:</strong> ${d["Species"]}<br>
+            <strong>Flipper Length (mm):</strong> ${d["Flipper Length"]}<br>
+            <strong>Body Mass (g):</strong> ${d["Body Mass"]}<br>
+            <strong>Bill Length (mm):</strong> ${d["Bill Length"]}
+          `)
+          .style("left", (event.pageX + 10) + "px")
+          .style("top", (event.pageY - 10) + "px");
+      }).on("mouseout", function() {
+        tooltip.style("visibility", "hidden");
+      });
+      const zoom = d3.zoom()
+        .scaleExtent([.25, 10])
+        .on("zoom", (event) => {
+          newX = event.transform.rescaleX(xScale);
+          newY = event.transform.rescaleY(yScale);
+          xAxis.call(d3.axisBottom(newX).tickSize(-575).ticks(8));
+          yAxis.call(d3.axisLeft(newY).tickSize(-775));
+          g.selectAll("circle").attr("cx", d => newX(d["Flipper Length"])).attr("cy", d => newY(d["Body Mass"]));
+
+        });
+      svg.call(zoom);
+      svg.append("rect").attr("x", 900).attr("y", 275).attr("width", 150).attr("height", 150).attr("stroke", "black").attr("fill", "white").attr("id", "legend");
+      svg.append("circle").attr("r", 8).attr("stroke", "black").attr("fill","#FF6E00").attr("transform", "translate(925, 315)").attr("id", "legend");
+      svg.append("circle").attr("r", 8).attr("stroke", "black").attr("fill","#663399").attr("transform", "translate(925, 355)").attr("id", "legend");
+      svg.append("circle").attr("r", 8).attr("stroke", "black").attr("fill","#00CED1").attr("transform", "translate(925, 395)").attr("id", "legend");
+      svg.append("text").text("Species").attr("x", 940).attr("y", 290).attr("dominant-baseline", "middle").attr("font-size", "21px").attr("font-family", "Helvetica");
+      svg.append("text").text("Adelie").attr("x", 940).attr("y", 315).attr("dominant-baseline", "middle").attr("font-size", "16px").attr("font-family", "Helvetica");
+      svg.append("text").text("Chinstrap").attr("x", 940).attr("y", 355).attr("dominant-baseline", "middle").attr("font-size", "16px").attr("font-family", "Helvetica");
+      svg.append("text").text("Gentoo").attr("x", 940).attr("y", 395).attr("dominant-baseline", "middle").attr("font-size", "16px").attr("font-family", "Helvetica");
+      svg.append("rect").attr("x", 900).attr("y", 80).attr("width", 160).attr("height", 160).attr("stroke", "black").attr("fill", "white").attr("id", "legend");
+      svg.append("circle").attr("r", 5).attr("stroke", "black").attr("transform", "translate(925, 115)").attr("id", "legend");
+      svg.append("circle").attr("r", 6.75).attr("stroke", "black").attr("transform", "translate(925, 140)").attr("id", "legend");
+      svg.append("circle").attr("r", 8.5).attr("stroke", "black").attr("transform", "translate(925, 165)").attr("id", "legend");
+      svg.append("circle").attr("r", 10.25).attr("stroke", "black").attr("transform", "translate(925, 190)").attr("id", "legend");
+      svg.append("circle").attr("r", 12).attr("stroke", "black").attr("transform", "translate(925, 220)").attr("id", "legend");
+      svg.append("text").text("Bill Length (mm)").attr("x", 905).attr("y", 95).attr("dominant-baseline", "middle").attr("font-size", "21px").attr("font-family", "Helvetica");
+      svg.append("text").text("35").attr("x", 950).attr("y", 115).attr("dominant-baseline", "middle").attr("font-size", "16px").attr("font-family", "Helvetica");
+      svg.append("text").text("40").attr("x", 950).attr("y", 140).attr("dominant-baseline", "middle").attr("font-size", "16px").attr("font-family", "Helvetica");
+      svg.append("text").text("45").attr("x", 950).attr("y", 165).attr("dominant-baseline", "middle").attr("font-size", "16px").attr("font-family", "Helvetica");
+      svg.append("text").text("50").attr("x", 950).attr("y", 190).attr("dominant-baseline", "middle").attr("font-size", "16px").attr("font-family", "Helvetica");
+      svg.append("text").text("55").attr("x", 950).attr("y", 220).attr("dominant-baseline", "middle").attr("font-size", "16px").attr("font-family", "Helvetica");
+
+    container.append(svg.node());
+    }
+    getData();
+
+      </script>
+</body>
+</html>
