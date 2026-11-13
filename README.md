@@ -20,6 +20,14 @@ Then, I used Matplotlib's scatter function to create the graph, and used its bui
 
 ![python](img/python.png)
 
+# R
+R is another coding language, although it is less flexible than Python being focused mainly on data and statistics. 
+I used a regular R file in RStudio with the output going directly to the "plots" tab in RStudio.   
+I used R's built-in read.csv function to convert the CSV to a dataframe, then I used ggplot's geom_point function to create the scatterplot. 
+One thing I especially appreciate about this was that a legend was automatically created, including automatic size scaling for the dots and dot size being included in the legend. 
+
+![R](img/r.png)
+
 ## Technical Achievements
 - **Proved P=NP**: Using a combination of...
 - **Solved AI Forever**: ...
