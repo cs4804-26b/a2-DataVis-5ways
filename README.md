@@ -116,9 +116,8 @@ data, then refused to insert a bubble chart four times in a row. IDK man.
 
 # Technical Achievements
 
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
+- Mouse-over effect in the d3 implementation which shows penguin information
 
 # Design Achievements
 
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+- something something reinvented the wheel
