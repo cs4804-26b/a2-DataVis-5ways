@@ -124,7 +124,7 @@ We will choose some at random to run and test.
 
 **NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
 
-# R + ggplot2 + R Markdown
+# R + ggplot2
 
 R is a language primarily focused on statistical computing.
 ggplot2 is a popular library for charting in R.
@@ -134,12 +134,25 @@ To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer,
 
 While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
 
-![ggplot2](img/ggplot2.png)
+![ggplot2](img/r-ggplot2.png)
 
-# d3...
+# d3
 
-(And so on...)
+![ggplot2](img/d3-ggplot2.png)
 
+# Altair
+
+![ggplot2](img/altair-ggplot2.png)
+
+# Flourish
+
+Link: https://public.flourish.studio/visualisation/30899242/
+
+![ggplot2](img/flourish-ggplot2.png)
+
+# Vega-lite
+
+![ggplot2](img/vega-lite-ggplot2.png)
 
 ## Technical Achievements
 - **Proved P=NP**: Using a combination of...
@@ -147,3 +160,13 @@ While it takes time to find the correct documentation, these functions made the 
 
 ### Design Achievements
 - **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+
+# Sources:
+
+Below is a list of resources I used to help get started on the different parts of the project:
+
+- https://cran.r-project.org/web/packages/ggplot2/vignettes/ggplot2.html
+- https://d3js.org/api
+- https://altair-viz.github.io/altair-viz-v4/getting_started/starting.html
+- https://helpcenter.flourish.studio/hc/en-us/articles/8761582471439-Scatter-plot-an-overview
+- https://vega.github.io/vega-lite/docs/data.html
