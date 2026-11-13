@@ -147,7 +147,7 @@ test.
 **NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY
 DELETE THE ABOVE.**
 
-# d3
+# d3 (library)
 
 ![The target graph rendered with d2.js](img/d3.png)
 
@@ -160,9 +160,9 @@ and `"Gentoo"` is actually `NaN` in JS :(
 
 (I mean this literally, `isNaN("Gentoo")` returns `true`)
 
-# matplotlib
+# matplotlib (library)
 
-![Kind o fhte target in matplotlib](img/matplotlib.png)
+![Kind of the target in matplotlib](img/matplotlib.png)
 
 It took way longer than it should have to get the legend to work than it should
 have for a library which supposedly supports legends. I could not figure out how
@@ -170,6 +170,18 @@ to make the folor legend function with custom colors, so instead I just set it
 up to use to built-in `cool` gradient which looks better than the others I
 tried. Other than that, it was pretty easy for me to work with because like d3,
 I already know how matplotlib and python work.
+
+# gnuplot (language?)
+
+![The graph made with GNUplot](img/gnuplot.png)
+
+I basically had to hack together a really weird script in an esoteric language
+that I've never used before and will likely never use again. It's probably
+wonderful if you get used to using it, but it just didn't really feel right to
+me. I'd much prefer to use an actual programming language. Also, making a legend
+was awful as usual. This is also super weird but PNG output isn't antialiased so
+it looks terrible, but SVG output exists and doesn't look terrible (because it's
+vectorized).
 
 # Technical Achievements
 
