@@ -1,149 +1,77 @@
-Assignment 2 - Data Visualization, 5 Ways  
-===
+# d3.js
 
-Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
+For this visualization, I used D3.js to recreate the original penguin scatterplot using JavaScript. The goal was to match the original graph by plotting flipper length on the x-axis, body mass on the y-axis, using different colors for each species, and changing the circle sizes based on bill length. D3 required me to manually create the axes, scales, gridlines, circles, and legends. One challenge was figuring out how to convert the data values into positions on the graph while keeping the correct axis ranges. I also had to make sure the CSV loaded correctly and remove the missing values. Once I understood how the scales worked, adding and customizing the circles was relatively straightforward. I also found that changing colors, fonts, and other design elements was easy because I had direct control over them in the code. I think D3 is most useful for creating highly customized and interactive visualizations where you want complete control over how everything looks and behaves.
 
-The goal of this project is to gain experience with as many data visualization libraries, languages, and tools as possible.
+![d3](img/d3.png)
 
-I have provided a small dataset about penguins, `penglings.csv`.
-Each row contains a penguin observation and several variables about it, including bill length, flipper length, and more.
+Technical Achievements
 
-Your goal is to use 5 different tools to make the following chart:
+I added two interactive features to improve the visualization. The first was a tooltip that displays additional information when hovering over a penguin, including its species, measurements, island, and year. I also added buttons that allow users to filter the chart by species. This makes it easier to compare individual groups without having all three species displayed at the same time. The number of visible penguins also updates when a filter is selected.
 
-![](img/ggplot2.png)
+Design Achievements
 
-These features should be preserved as much as possible in your replication:
+I tried to recreate the original chart's appearance by using a light gray background, white gridlines, and similar axis ranges. I also chose a consistent color for each species and used the same colors in the legend. I adjusted the circle sizes based on bill length and kept the opacity at 0.8 so overlapping points would still be visible. I used Arial and made the labels large enough to read. I also added a darker outline when hovering over a circle to make the selected point easier to identify.
 
-- Data positioning: it should be an upward-trending scatterplot as shown.  Flipper Length should be on the x-axis and Body Mass on the y-axis.
-- Scales: Note the scales do not start at 0.
-- Axis ticks and labels: both axes are labeled and there are tick marks at a reasonable interval, e.g 10, 20, 30, etc.
-- Color mapping to species.
-- Size mapping to Bill Length.
-- Opacity of circles set to 0.8 or similar for a semi-transparent effect.
+# R + ggplot2
 
-Other features are not required. This includes:
+For this visualization, I used R and the ggplot2 library to recreate the original penguin scatterplot. Since the example was originally created using ggplot2, I wanted to match its appearance as closely as possible, including the colors, circle sizes, axis ranges, and gray background with white gridlines. Compared to D3, ggplot2 made the process much easier because it automatically handled the axes, legends, and positioning of the points. Mapping the different data variables to the graph was also relatively simple using the aes() function. One challenge was adjusting the formatting options to get the graph looking as close to the example as possible. I also had some difficulty getting the interactive Plotly version to display correctly in RStudio's Viewer, which required troubleshooting. I think ggplot2 is most useful for quickly creating detailed and accurate visualizations for statistical analysis, especially when working with datasets that need to be explored or compared.
 
-- The background grid.
-- The legends.
+![r-ggplot2](img/r.png)
 
-Note that some software packages will make it **impossible** to perfectly preserve the above requirements. 
-Be sure to note where these deviate as you reflect on what a tool is good for.
+Technical Achievements
 
-Improvements are also welcome as part of Technical and Design achievements.
+I added an interactive version of the chart using the Plotly library. This allows users to hover over individual penguins and view their exact measurements, species, island, and year. I also added the ability to hide or show different species through the legend and zoom in on areas of the graph. In addition, I created a second version with regression trend lines for each species. This helps show the overall relationship between flipper length and body mass within each group.
 
-Libraries, Tools, Languages
----
+[Open the interactive R visualization](r-ggplot2/penguins-interactive.html)
 
-You are required to use 5 different tools or libraries.
-Of the 5 tools, you must use at least 3 libraries (libraries require code of some kind).
-This could be `Python, R, Javascript`, or `Java, Javascript, Matlab` or any other combination.
-Dedicated tools (i.e. Excel) do not count towards the language requirement.
+Design Achievements
 
-Otherwise, you should seek tools and libraries to fill out your 5.
+I tried to make the chart closely resemble the original by using a gray background, white gridlines, similar axis ranges, and semi-transparent circles. I kept the same species colors as my D3 visualization so they would be easier to compare. I also adjusted the font sizes, axis labels, legends, and circle sizes to improve readability. For the version with trend lines, I used thin lines that match the species colors to add information without making the graph too cluttered.
 
-Below are a few ideas. Do not limit yourself to this list!
-There are new tools coming out every year and we may not have an exhaustive list of the latest and greatest.
+Additional Note
 
-Some may be difficult choices, like Matlab or SPSS, which require large installations, licenses, and occasionally difficult UIs.
+One limitation I noticed was that the interactive Plotly version did not look exactly the same as the static ggplot2 chart. Some aspects of the circle sizing and legend formatting changed when converting it. However, I was able to keep the original static visualization for comparison while using the interactive version to explore the data.
 
-I have marked a few that are strongly suggested.
+# python + altair
 
-- R + ggplot2 `<- definitely worth trying`
-- Excel
-- d3 `<- since the rest of the class uses this, we're requiring it`
-- Altair `<- hugely popular python library. highly recommended `
-- three.js `<- well, it's a 3d library. not really recommended, but could be interesting and fun`
-- p5js `<- good for playing around. not really a chart lib`
-- Tableau
-- PowerBI
-- Vega-lite `<- very interesting formal visualization model; might be the future of the field`
-- Flourish `<- popular in recent years`
-- DataWrapper `<- popular in recent years`
-- GNUplot `<- the former CS department head uses this all the time :)`
-- SAS/SPSS/Matlab
+For this visualization, I used Python with the Altair library to recreate the original scatterplot. I used pandas to load the penguin dataset and remove incomplete observations, then used Altair to represent flipper length, body mass, species, and bill length through the position, color, and size of the circles. I also adjusted the opacity, axis ranges, and background to match the original figure. Creating the basic graph was fairly easy because Altair allows you to map the data columns directly to visual properties without manually drawing each element. Adding tooltips was also simple compared to D3 because Altair has built-in support for interactions. One challenge was understanding how the encoding and formatting options worked, particularly when trying to match the circle sizes and legends to the original. I think Altair is most useful for quickly creating clean, interactive visualizations in Python, especially when you're already using pandas to process and analyze data.
 
-You may write everything from scratch, or start with demo programs from books or the web. 
-If you do start with code that you found, please identify the source of the code in your README and, most importantly, make non-trivial changes to the code to make it your own so you really learn what you're doing. 
+![python-altair](img/python.png)
 
-Tips
----
+Technical Achievements
 
-- If you're using d3, key to this assignment is knowing how to load data.
-You will likely use the [`d3.json` or `d3.csv` functions](https://d3js.org/d3-dsv) to load the data you found.
+I added several interactive features to improve the visualization. First, I included tooltips that display the exact measurements and other information about each penguin when hovering over a circle. I also made the species legend clickable so users can highlight one species while fading the others. This makes it easier to compare the different groups without removing the other data points completely. Finally, I enabled zooming and panning, which allows users to examine sections of the graph more closely when points overlap.
 
-**Beware that these functions are *asynchronous*, meaning it's possible to "build" an empty visualization before the data actually loads. Figuring out how to do this properly can be a major hiccup if you haven't used async functions before. If this means you, start part of this project early so you don't end up in a rush!**
+[Open the interactive Altair visualization](python-altair/penguins-interactive.html)
 
-- `penglings.csv` has a few rows with `NA` values (two have no measurements at all). Filter them out before you plot (in d3, converting `"NA"` to a number gives `NaN`, which breaks scales and circle positions).
+Design Achievements
 
-- *For web languages like d3* Don't forget to run a local webserver when you're debugging.
-Same as A1: run `python3 -m http.server` in your repo folder and visit http://localhost:8000.
-Being able to host a local webserver is an essential web development skill and very common in visualization design as well.
+I tried to make the chart look as close to the original as possible by adjusting the background, gridlines, axes, and circle sizes. I used the same orange, purple, and teal species colors as my D3 and R visualizations so the charts would be consistent. I also used Arial and adjusted the axis labels and legend text to make them easier to read. The circles use 80% opacity, similar to the original, and their sizes are based on bill length. One difference is that Altair scales circle sizes differently than D3 and ggplot2, so I had to adjust the size range to get a similar appearance.
 
-Readme Requirements
----
+# tableau
 
-A good readme with screenshots and structured documentation is required for this project. 
-It should be possible to scroll through your readme to get an overview of all the tools and visualizations you produced.
+For this visualization, I used Tableau Public to recreate the penguin scatterplot without writing code. I imported the dataset and assigned flipper length and body mass to the axes, species to color, and bill length to circle size. I then adjusted the axis ranges, colors, transparency, gridlines, and legends to make the graph resemble the original. Creating the basic scatterplot was easy because Tableau uses a drag-and-drop interface, and I didn't have to write any code to map the data. Adding tooltips and filters was also relatively simple using the built-in options. One challenge was that Tableau initially aggregated the data, which caused multiple penguins to be grouped together instead of appearing as individual points. I had to disable aggregation and make sure the missing measurements were handled correctly. Some of the formatting settings were also difficult to locate. I think Tableau is most useful for quickly exploring datasets and creating interactive dashboards that can be understood and used by people without programming experience.
 
-- Each visualization should start with a top-level heading (e.g. `# d3`)
-- Each visualization should include a screenshot. Put these in an `img` folder and link through the readme (markdown command: `![caption](img/<imgname>)`.
-- Write a paragraph for each visualization tool you use. What was easy? Difficult? Where could you see the tool being useful in the future? Did you have to use any hacks or data manipulation to get the right chart?
+![tableau](img/tableau.png)
 
-Other Requirements
----
+Technical Achievements
 
-0. Your code should be forked from the GitHub repo.
-1. Place all code, Excel sheets, etcetera in a named folder. For example, `r-ggplot, matlab, mathematica, excel` and so on.
-2. Your writeup (readme.md in the repo) should also contain the following:
+I added several interactive features to improve the visualization. First, I customized the tooltips to display additional information about each penguin, including its measurements, species, island, and year. I also added a species highlighter that lets users focus on one species while keeping the other observations visible in the background. Finally, I added a dropdown filter that allows users to display individual species instead of the entire dataset. These features make the chart easier to explore and help users examine specific groups of penguins.
 
-- Description of the Technical achievements you attempted with this visualization.
-  - Some ideas include interaction, such as mousing over to see more detail about the point selected.
-- Description of the Design achievements you attempted with this visualization.
-  - Some ideas include consistent color choice, font choice, element size (e.g. the size of the circles).
+Design Achievements
 
-GitHub Details
----
+I tried to make the chart as similar to the original as possible by adjusting the axis ranges, gridlines, background color, and circle sizes. I used the same orange, purple, and teal species colors as my other visualizations to keep them consistent. I also set the circle opacity to 80% and adjusted the font sizes to make the labels and legends easier to read. One difference was that Tableau handled circle scaling and legend formatting differently from ggplot2, so I adjusted those settings manually to get as close to the original as possible.
 
-- Fork the GitHub Repository. You now have a copy associated with your username.
-- Make changes to fulfill the project requirements. 
-- To submit, make a [Pull Request](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) on the original repository, and put the link to your pull request in the A2 assignment on Canvas.
-- Note: name your pull request using the following scheme: 
-```
-a2-your Gh username-your first name-your lastname
-```
+# power-bi
 
-Grading
----
+For this visualization, I used Microsoft Power BI Desktop to recreate the original penguin scatterplot. Like Tableau, Power BI allowed me to create the graph through a graphical interface rather than writing code. I imported and cleaned the dataset, then mapped flipper length, body mass, species, and bill length to the appropriate visual properties. Creating the basic chart and adding interactive elements like tooltips and slicers was relatively easy because Power BI includes these features in its interface. One of the biggest challenges was that Power BI automatically aggregated the data, so I had to create a unique ID for each penguin to display the individual observations correctly. I also found it difficult to match certain formatting details because Power BI automatically controls features such as axis tick intervals and bubble scaling. I think Power BI is most useful for building interactive dashboards and reports where users need to filter data, track measurements, and explore information without having to write much code.
 
-Grades on a 120 point scale. 
-24 points will be based on your Technical and Design achievements, as explained in your readme. 
+![power-bi](img/power-bi.png)
 
-Make sure you include the files necessary to reproduce your plots.
-You should structure these in folders if helpful.
-We will choose some at random to run and test.
+Technical Achievements
 
-**NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
+I added several interactive features to improve the visualization. First, I customized the tooltips to show additional information about each penguin, including its measurements, species, island, and year. I also added a slicer that allows users to filter the chart by species. To make the filter more informative, I created a DAX measure that counts the penguins currently being displayed and added it to a card. This count updates automatically when a different species is selected. These features make the chart more useful for exploring the data.
 
-# R + ggplot2 + R Markdown
+Design Achievements
 
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
-
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
-
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
-
-![ggplot2](img/ggplot2.png)
-
-# d3...
-
-(And so on...)
-
-
-## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
-
-### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+I tried to make the visualization look as similar to the original as possible by matching the axis ranges, colors, circle sizes, transparency, and labels. I used the same orange, purple, and teal species colors as my other visualizations to keep everything consistent. I also adjusted the fonts, legend, and background to improve readability. I placed the species filter and penguin counter above the chart so users could easily interact with them without covering the data.

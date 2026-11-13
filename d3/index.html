@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Penguin Scatterplot</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Penguin Measurements</h1>
+        <p>Comparing flipper length and body mass across penguin species.</p>
+
+        <div id="filters">
+            <strong>Filter by species:</strong>
+            <button class="selected" data-species="All">All</button>
+            <button data-species="Adelie">Adelie</button>
+            <button data-species="Chinstrap">Chinstrap</button>
+            <button data-species="Gentoo">Gentoo</button>
+        </div>
+
+        <p id="count">Loading penguin data...</p>
+
+        <div id="chart-area">
+            <div id="tooltip"></div>
+        </div>
+    </main>
+</body>
+
+</html>
