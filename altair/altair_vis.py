@@ -17,8 +17,8 @@ for column in numeric_columns:
 
 
 species_selection = alt.selection_point(
-    fields=["species"],
-    bind="legend"
+    fields = ["species"],
+    bind = "legend"
 )
 
 axes_x = {
@@ -33,57 +33,80 @@ axes_y = {
     "gap": 500
 }
 
-color = {
+peng_color = {
        "Adelie": "#F56C27",
        "Chinstrap": "#88219E",
        "Gentoo": "#685CE0"
 }
-
 # chart definition
 
 chart = alt.Chart(data).mark_circle(
-    opacity=0.8,
-    stroke="black",
-    strokeWidth=0.5
+    opacity = 0.8
 ).encode(
     x=alt.X(
         "flipper_length_mm:Q",
-        title="Flipper Length (mm)",
-        scale=alt.Scale(domain=[axes_x["x_min"], axes_x["x_max"]], zero=False),
-        axis=alt.Axis(
-            values=list(range(axes_x["x_min"] + axes_x["gap"], axes_x["x_max"], 10)),
-            labelFontSize=16,
-            titleFontSize=20,
-            grid=True
+        title = "Flipper Length (mm)",
+        scale = alt.Scale(domain = [axes_x["x_min"], axes_x["x_max"]], zero=False),
+        axis = alt.Axis(
+            values = list(range(axes_x["x_min"] + axes_x["gap"], axes_x["x_max"], 10)),
+            labelFontSize = 16,
+            titleFontSize = 20,
+            grid = True
         )
     ),
 
     y=alt.Y(
         "body_mass_g:Q",
-        title="Body Mass (g)",
-        scale=alt.Scale(domain=[axes_y["y_min"], axes_y["y_max"]], zero=False),
-        axis=alt.Axis(
-            values=list(range(axes_y["y_min"] + axes_y["gap"], axes_y["y_max"], axes_y["gap"])),
-            labelFontSize=16,
-            titleFontSize=20,
-            grid=True
+        title = "Body Mass (g)",
+        scale = alt.Scale(domain=[axes_y["y_min"], axes_y["y_max"]], zero=False),
+        axis = alt.Axis(
+            values = list(range(axes_y["y_min"] + axes_y["gap"], axes_y["y_max"], axes_y["gap"])),
+            labelFontSize = 16,
+            titleFontSize = 20,
+            grid = True
         )
-    )
+    ),
+
+    color = alt.Color(
+        "species:N",
+        title = "Penguin Species",
+        scale = alt.Scale(
+            domain = ["Adelie", "Chinstrap","Gentoo"],
+            range = ["#F56C27","#88219E","#685CE0"]
+        ),
+        legend = alt.Legend(
+            labelFontSize = 16,
+            titleFontSize = 20,
+            orient = "right"
+        )
+    ),
+    # size based on bill length
+    size = alt.Size(
+        "bill_length_mm",
+        title = "Bill Length (mm)",
+        scale = alt.Scale(range=[30, 200])
+    ),
+
+    opacity=alt.condition(
+        species_selection,
+        alt.value(0.8),
+        alt.value(0.05)
+    ),
 ).add_params(
     species_selection
 ).properties(
-    width=1200,
-    height=900,
-    title=alt.Title(
+    width = 800,
+    height = 600,
+    title = alt.Title(
         "Penguin Body Mass vs. Flipper Length",
-        fontSize=24
+        fontSize = 24
     )
 ).configure_axis(
-    gridOpacity=0.6,
-    domainWidth=1.5,
-    tickWidth=1.5
+    gridOpacity = 0.6,
+    domainWidth = 1.5,
+    tickWidth = 1.5
 ).configure_view(
-    stroke=None
+    stroke = None
 )
 
 chart.save("penguin_scatterplot.html")
