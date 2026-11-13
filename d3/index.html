@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penguin Scatterplot - D3</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      text-align: center;
+    }
+
+    svg {
+      background: white;
+      border-radius: 12px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: #202638;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      pointer-events: none;
+      opacity: 0;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    .legend-title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .legend-label {
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Penguin Body Mass vs. Flipper Length</h2>
+
+  <svg width="900" height="600"
+       viewBox="0 0 900 600"></svg>
+
+  <div class="tooltip"></div>
+
+  <script>
+    const svg = d3.select("svg");
+
+    const width = 900;
+    const height = 600;
+
+    const margin = {
+      top: 30,
+      right: 170,
+      bottom: 70,
+      left: 90
+    };
+
+    // ==========================================
+    // 1. SCALES
+    // ==========================================
+
+    const x = d3.scaleLinear()
+      .domain([170, 240])
+      .range([margin.left, width - margin.right]);
+
+    const y = d3.scaleLinear()
+      .domain([2500, 6500])
+      .range([height - margin.bottom, margin.top]);
+
+    const color = d3.scaleOrdinal()
+      .domain(["Adelie", "Chinstrap", "Gentoo"])
+      .range(["#F28E8E", "#65B8A6", "#799CE8"]);
+
+    // Circle radius represents Bill Length
+    // Larger bills produce noticeably larger circles
+    const size = d3.scaleLinear()
+      .domain([30, 60])
+      .range([3, 11]);
+
+    const tooltip = d3.select(".tooltip");
+
+    // ==========================================
+    // 2. LOAD DATA
+    // ==========================================
+
+    d3.csv("../penglings.csv").then(raw => {
+
+      const data = raw.map(d => ({
+        species: d.species,
+        flipper: +d.flipper_length_mm,
+        mass: +d.body_mass_g,
+        bill: +d.bill_length_mm
+      })).filter(d =>
+        d.species &&
+        Number.isFinite(d.flipper) &&
+        Number.isFinite(d.mass) &&
+        Number.isFinite(d.bill) &&
+        d.flipper > 0 &&
+        d.mass > 0 &&
+        d.bill > 0
+      );
+
+      // ==========================================
+      // 3. AXES
+      // ==========================================
+
+      svg.append("g")
+        .attr(
+          "transform",
+          `translate(0,${height - margin.bottom})`
+        )
+        .call(d3.axisBottom(x).ticks(7));
+
+      svg.append("g")
+        .attr(
+          "transform",
+          `translate(${margin.left},0)`
+        )
+        .call(d3.axisLeft(y).ticks(8));
+
+      // X-axis label
+      svg.append("text")
+        .attr("x", (margin.left + width - margin.right) / 2)
+        .attr("y", height - 15)
+        .attr("text-anchor", "middle")
+        .style("font-size", "14px")
+        .text("Flipper Length (mm)");
+
+      // Y-axis label
+      svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height / 2)
+        .attr("y", 25)
+        .attr("text-anchor", "middle")
+        .style("font-size", "14px")
+        .text("Body Mass (g)");
+
+      // ==========================================
+      // 4. SCATTERPLOT
+      // ==========================================
+
+      svg.selectAll("circle.penguin")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("class", "penguin")
+        .attr("cx", d => x(d.flipper))
+        .attr("cy", d => y(d.mass))
+        .attr("r", d => size(d.bill))
+        .attr("fill", d => color(d.species))
+        .attr("opacity", 0.8)
+        .attr("stroke", "white")
+        .attr("stroke-width", 0.4)
+
+        // Interactive tooltip
+        .on("mouseover", (event, d) => {
+          tooltip
+            .style("opacity", 1)
+            .html(`
+              <strong>${d.species}</strong><br>
+              Flipper: ${d.flipper} mm<br>
+              Mass: ${d.mass} g<br>
+              Bill: ${d.bill} mm
+            `);
+        })
+
+        .on("mousemove", event => {
+          tooltip
+            .style("left", (event.pageX + 12) + "px")
+            .style("top", (event.pageY - 20) + "px");
+        })
+
+        .on("mouseout", () => {
+          tooltip.style("opacity", 0);
+        });
+
+      // ==========================================
+      // 5. SPECIES LEGEND
+      // ==========================================
+
+      const speciesLegend = svg.append("g")
+        .attr("transform", "translate(750,65)");
+
+      speciesLegend.append("text")
+        .attr("class", "legend-title")
+        .attr("x", 0)
+        .attr("y", 0)
+        .text("Species");
+
+      ["Adelie", "Chinstrap", "Gentoo"].forEach(
+        (species, i) => {
+
+          speciesLegend.append("circle")
+            .attr("cx", 8)
+            .attr("cy", 25 + i * 30)
+            .attr("r", 7)
+            .attr("fill", color(species))
+            .attr("opacity", 0.8);
+
+          speciesLegend.append("text")
+            .attr("class", "legend-label")
+            .attr("x", 23)
+            .attr("y", 30 + i * 30)
+            .text(species);
+        }
+      );
+
+    
+      const billLegend = svg.append("g")
+        .attr("transform", "translate(750,235)");
+
+      billLegend.append("text")
+        .attr("class", "legend-title")
+        .attr("x", 0)
+        .attr("y", 0)
+        .text("Bill Length (mm)");
+
+      [40, 50].forEach((bill, i) => {
+
+        billLegend.append("circle")
+          .attr("cx", 15)
+          .attr("cy", 35 + i * 45)
+          .attr("r", size(bill))
+          .attr("fill", "#555555")
+          .attr("opacity", 0.8);
+
+        billLegend.append("text")
+          .attr("class", "legend-label")
+          .attr("x", 38)
+          .attr("y", 40 + i * 45)
+          .text(`${bill} mm`);
+      });
+
+    }).catch(error => {
+      console.error("Could not load penguin data:", error);
+    });
+  </script>
+</body>
+</html>
