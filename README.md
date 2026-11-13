@@ -33,22 +33,28 @@ D3.js is a framework for creating SVG graphics in javascript.
 Unlike the other frameworks, it does not have a built-in scatterplot function and all graphical components must be manually placed. 
 This significantly increases flexibility and creative freedom, but also makes it take much longer to create charts. 
 To experience more of the upsides of using D3 without  the downsides, Agentic/AI coding could be very nice as it would be significantly faster to iterate than with manual coding while maintaining the increased freedom over the easier to use but more restrictive Python and R libraries.  
-For my chart, I filtered out rows NA values in the four target columns then used various SVG elements to draw the elements in the chart, manually setting the scales of the x axis, y axis, and dot sizes.
+For my chart, I filtered out rows with NA values in the four target columns then used various SVG elements to draw the elements in the chart, manually setting the scales of the x axis, y axis, and dot sizes.
 
 Expanded on approach outlined in https://d3-graph-gallery.com/graph/scatter_basic.html 
 
 ![d3](img/d3.png)
+
+# PowerBI
+Power BI is a data visualization tool. For users that don't want to deal with code, I found it to be a much more powerful and intuitive tool for visualization than Excel. Despite having more experience in Excel and none in PowerBI, I found it faster to both create the initial graph and to iterate on the design. Of course, flexibility is lost compared to the code-based options, a trade-off for the time and convenience of creating the graphics.  
+For my chart, I had to transform the data columns to be decimal / whole number types since it orignally classified all the columns as text type. From there, it was simple to add a scatterplot and drag the data into the X-axis, Y-axis, Size, and Legend value fields of the graph. From there, I configured settings to make the graph more readable, such as changing the axis labels and changing the size multiplier on the markers.
 
 ## Technical Achievements
 - **Excel**: Used Filter functions to manually created seperate columns of data for each penguin species with NA values filtered out so that those columns could be used as different groups within a Bubble Plot.
 - **Python**: Used Pandas to convert the CSV into data for Matplotlib to visualize.
 - **R**: Used built-in R functionality to convert the CSV into data for ggplot to visualize.
 - **d3**: Asynchronous filtered out rows with NA values in target columns with d3.csv, used configurable constants for width and height of the entire graphic, and margins for the graph itself to allow for extra elements such as axis labels to be displayed outside of the chart.
+- **PowerBI**: Converted columns stored as a text type to a decimal number / whole number type using the transform data tool before using the data in a scatterplot.
 
 ## Design Achievements
 - **Excel**: Manually set X and Y range and scale so as to not start each axis at 0. Changed bubble size from area to radius to diameter to make size differences more visible.
 - **Python**: Created custom dot size function to make the differences in dot size more visible, changed alpha value of dots to make them semitransparent.
 - **R**: Changed alpha value of dots to make them semitransparent.
 - **d3**: Manually set domain and range values for x-axis, y-axis, and dot size, and set dot transparency.
+- **PowerBI**: Changed from dots to triangles as I find the flat edges easier to compare sizes than with circles. Changed label fonts / font sizes, changed chart title and axis labels from the default, configured the y-axis to show as 2000, 3000, etc instead of 2k, 3k, etc, and added a legend for species.
 
 AI Use: Used AI similar to a search engine to help with setting up environments and finding/understanding the libraries and functions used to make the plots.
