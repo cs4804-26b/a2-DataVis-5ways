@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Penguin Scatterplot - D3</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin:30px;
+      background: #f8fafc;
+    }
+    h2 {
+      text-align: center;
+      color: #25364a;
+    }
+    #chart {
+      display: block;
+      margin: auto;
+      background: white;
+    }
+    .tooltip {
+      position: absolute;
+      background: #25364a;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      pointer-events: none;
+      opacity:0;
+      font-size: 13px;
+    }
+    .controls {
+      text-align: center;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  
+<h2> Penguin Body Mass and Flipper Length</h2>
+<div class ="controls">
+  <label for = "speciesFilter">Select Species: </label>
+  <select id="speciesFilter">
+    <option value="All">All Species</option>
+    <option value="Adelie">Adelie</option>
+    <option value="Chinstrap">Chinstrap</option>
+    <option value="Gentoo">Gentoo</option>
+  </select>
+</div>
+<svg id="chart" width="950" height="600"></svg>
+<div class="tooltip"></div>
+<script>
+    // Set up the chart
+  const svg = d3.select("#chart");
+  const width = 950;
+  const height = 600;
+  const margin = {top: 35, right: 180, bottom: 70, left: 85};
+
+  const plotWidth = width - margin.left - margin.right;
+  const plotHeight = height - margin.top - margin.bottom;
+
+  const plot = svg.append("g").attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+    // Set the scales
+  const x = d3.scaleLinear()
+    .domain([165, 235])
+    .range([0, plotWidth]);
+
+  const y = d3.scaleLinear()
+    .domain([2500, 6500])
+    .range([plotHeight, 0]);
+
+  const size = d3.scaleSqrt()
+    .domain([30, 60])
+    .range([3, 12]);
+
+  // Pick colors for each species
+  const color = {
+    Adelie: "#E69F00",
+    Chinstrap: "#56B4E9",
+    Gentoo: "#009E73",
+  }
+
+  // Add the axes
+  plot.append("g")
+    .attr("transform", `translate(0, ${plotHeight})`)
+    .call(d3.axisBottom(x).ticks(8));
+  plot.append("g")
+    .call(d3.axisLeft(y).ticks(8));
+
+  // Add axis labels
+  plot.append("text")
+    .attr("x", plotWidth/2)
+    .attr("y", plotHeight + 55)
+    .attr("text-anchor", "middle")
+    .text("Flipper Length (mm)");
+
+  plot.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -plotHeight / 2)
+    .attr("y", -60).attr("text-anchor", "middle")
+    .text("Body Mass (g)");
+
+  //Add grid lines
+  plot.append("g")
+    .attr("opacity", 0.15)
+    .call(d3.axisLeft(y)
+          .ticks(8)
+          .tickSize(-plotWidth)
+          .tickFormat(""));
+  const tooltip = d3.select(".tooltip");
+
+  // Load the dataset
+  d3.csv("../penglings.csv").then(data => {
+    // Skip missing data
+    const penguins = data.filter(d =>
+      d.species &&
+      Number.isFinite(+d.flipper_length_mm) &&
+      Number.isFinite(+d.body_mass_g) &&
+      Number.isFinite(+d.bill_length_mm) &&
+      d.flipper_length_mm !== "NA" &&
+      d.body_mass_g != "NA" &&
+      d.bill_length_mm != "NA" &&
+      d.flipper_length_mm != "" &&
+      d.body_mass_g !== "" &&
+      d.bill_length_mm !== ""
+                                 );
+// Draw the circles
+  const circles = plot.selectAll("circle.penguin")
+    .data(penguins)
+    .enter()
+    .append("circle")
+    .attr("class", "penguin")
+    .attr("cx", d => x(+d.flipper_length_mm))
+    .attr("cy", d => y(+d.body_mass_g))
+    .attr("r", d => size(+d.bill_length_mm))
+    .attr("fill", d => color[d.species])
+    .attr("opacity", 0.8)
+    .on("mouseover", function(event, d){
+      d3.select(this).attr("stroke", "#222").attr("stroke-width", 2);
+
+      tooltip
+        .style("opacity", 1)
+        .html(`
+              <strong>${d.species}</strong><br>
+              Flipper Length: ${d.flipper_length_mm} mm<br>
+              Body Mass: ${d.body_mass_g} g<br>
+              Bill Length: ${d.bill_length_mm} mm
+              `);
+    })
+    .on("mousemove", function(event){
+      tooltip
+        .style("left", (event.pageX + 12) + "px")
+        .style("top", (event.pageY-20) + "px");
+    })
+    .on("mouseout", function(){
+        d3.select(this).attr("stroke", "none");
+        tooltip.style("opacity", 0);
+    });
+
+  // Filter by species
+  d3.select("#speciesFilter").on("change", function(){
+    const selected = this.value;
+
+    circles
+      .transition()
+      .duration(300)
+      .attr("opacity", d => 
+        selected === "All" || d.species === selected ? 0.8 : 0.08
+            );
+  });
+
+  // Add species Legend
+  const legend = svg.append("g")
+    .attr("transform", `translate(${width - 150}, 70)`);
+
+  Object.entries(color).forEach(([name, color], i) => {
+    legend.append("circle")
+     .attr("cx", 0)
+     .attr("cy", i * 25)
+     .attr("r", 6)
+     .attr("fill", color);
+    legend.append("text")
+     .attr("x", 15)
+     .attr("y", i * 25 + 5)
+     .attr("font-size", 13)
+     .text(name);
+  });
+
+  legend.append("text")
+   .attr("x", 0)
+   .attr("y", -20)
+   .attr("font-weight", "bold")
+   .text("Species");
+
+  // Add size Legend
+  const sizeLegend = svg.append("g")
+    .attr("transform", `translate(${width-150},230)`);
+
+  sizeLegend.append("text")
+    .attr("font-weight", "bold")
+    .text("Bill Length (mm)");
+
+  [35, 45, 55].forEach((value, i) => {
+    sizeLegend.append("circle")
+      .attr("cx", 12)
+      .attr("cy", 35 + i * 35)
+      .attr("r", size(value))
+      .attr("fill", "#888")
+      .attr("opacity", 0.8);
+    sizeLegend.append("text")
+      .attr("x", 35)
+      .attr("y", 40 + i * 35)
+      .attr("font-size", 12)
+      .text(value);
+  });
+}).catch(error => {
+  console.error("Error loading penglings.csv:", error);
+})        
+    
+</script>
+</body>
+</html>

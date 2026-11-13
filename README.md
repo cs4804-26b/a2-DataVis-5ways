@@ -1,149 +1,77 @@
 Assignment 2 - Data Visualization, 5 Ways  
 ===
+# Introduction
 
-Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
+For this assignment, I used five different visualization tools to create scatterplots using the penguin dataset. I also explored one additional tool to gain more experience with different ways of creating visualizations
 
-The goal of this project is to gain experience with as many data visualization libraries, languages, and tools as possible.
+The five main tools I used were Matplotlib, Altair, D3.js, ggplot2, and Flourish. Tableau was my additional tool
 
-I have provided a small dataset about penguins, `penglings.csv`.
-Each row contains a penguin observation and several variables about it, including bill length, flipper length, and more.
+Each visualization shows flipper length on the X-axis and body mass on the Y-axis. The colors represent penguin species, while circle sizes represent bill length. I tried to keep the visualizations consistent while learning about the features and limitations of each tool.
 
-Your goal is to use 5 different tools to make the following chart:
-
-![](img/ggplot2.png)
-
-These features should be preserved as much as possible in your replication:
-
-- Data positioning: it should be an upward-trending scatterplot as shown.  Flipper Length should be on the x-axis and Body Mass on the y-axis.
-- Scales: Note the scales do not start at 0.
-- Axis ticks and labels: both axes are labeled and there are tick marks at a reasonable interval, e.g 10, 20, 30, etc.
-- Color mapping to species.
-- Size mapping to Bill Length.
-- Opacity of circles set to 0.8 or similar for a semi-transparent effect.
-
-Other features are not required. This includes:
-
-- The background grid.
-- The legends.
-
-Note that some software packages will make it **impossible** to perfectly preserve the above requirements. 
-Be sure to note where these deviate as you reflect on what a tool is good for.
-
-Improvements are also welcome as part of Technical and Design achievements.
-
-Libraries, Tools, Languages
 ---
+# Matplotlib (Python)
+Code: https://github.com/AmieHuynh2101/a2-DataVis-5ways/blob/main/matplotlib/plot.py
+<img width="2700" height="1800" alt="image" src="https://github.com/user-attachments/assets/8ecdc3b4-d774-4f33-bd2c-c1e584a87472" />
 
-You are required to use 5 different tools or libraries.
-Of the 5 tools, you must use at least 3 libraries (libraries require code of some kind).
-This could be `Python, R, Javascript`, or `Java, Javascript, Matlab` or any other combination.
-Dedicated tools (i.e. Excel) do not count towards the language requirement.
 
-Otherwise, you should seek tools and libraries to fill out your 5.
+Matplotlib was one of the more straightforward tools because I could control the chart using Python code. It was easy to set the axis ranges, colors, and labels. However, I had to manually configure the legend and circle sizes. I think Matplotlib would be useful for data analysis and projects where I need more control over how a chart looks
 
-Below are a few ideas. Do not limit yourself to this list!
-There are new tools coming out every year and we may not have an exhaustive list of the latest and greatest.
-
-Some may be difficult choices, like Matlab or SPSS, which require large installations, licenses, and occasionally difficult UIs.
-
-I have marked a few that are strongly suggested.
-
-- R + ggplot2 `<- definitely worth trying`
-- Excel
-- d3 `<- since the rest of the class uses this, we're requiring it`
-- Altair `<- hugely popular python library. highly recommended `
-- three.js `<- well, it's a 3d library. not really recommended, but could be interesting and fun`
-- p5js `<- good for playing around. not really a chart lib`
-- Tableau
-- PowerBI
-- Vega-lite `<- very interesting formal visualization model; might be the future of the field`
-- Flourish `<- popular in recent years`
-- DataWrapper `<- popular in recent years`
-- GNUplot `<- the former CS department head uses this all the time :)`
-- SAS/SPSS/Matlab
-
-You may write everything from scratch, or start with demo programs from books or the web. 
-If you do start with code that you found, please identify the source of the code in your README and, most importantly, make non-trivial changes to the code to make it your own so you really learn what you're doing. 
-
-Tips
 ---
+# Altair (Python)
+Code: https://github.com/AmieHuynh2101/a2-DataVis-5ways/blob/main/altair/plot.py
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/d9ce3ccc-9abc-400e-b60c-7dd92bb8e572" />
 
-- If you're using d3, key to this assignment is knowing how to load data.
-You will likely use the [`d3.json` or `d3.csv` functions](https://d3js.org/d3-dsv) to load the data you found.
 
-**Beware that these functions are *asynchronous*, meaning it's possible to "build" an empty visualization before the data actually loads. Figuring out how to do this properly can be a major hiccup if you haven't used async functions before. If this means you, start part of this project early so you don't end up in a rush!**
+I found Altair easier to work with than Matplotlib in some ways because I could directly choose which data columns controlled the position, color, and size of the points. Adding tooltips was also simple, which made the chart more interactive. The harder part was figuring out how to change the axis scales and customize the design. I think Altair would be a good choice for exploring data and making interactive charts without needing too much code.
 
-- `penglings.csv` has a few rows with `NA` values (two have no measurements at all). Filter them out before you plot (in d3, converting `"NA"` to a number gives `NaN`, which breaks scales and circle positions).
-
-- *For web languages like d3* Don't forget to run a local webserver when you're debugging.
-Same as A1: run `python3 -m http.server` in your repo folder and visit http://localhost:8000.
-Being able to host a local webserver is an essential web development skill and very common in visualization design as well.
-
-Readme Requirements
 ---
+# D3.js (JavaScript)
+Code: https://github.com/AmieHuynh2101/a2-DataVis-5ways/blob/main/d3/index.html
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b34a5315-2803-47dd-a0d5-3229e158e37d" />
 
-A good readme with screenshots and structured documentation is required for this project. 
-It should be possible to scroll through your readme to get an overview of all the tools and visualizations you produced.
 
-- Each visualization should start with a top-level heading (e.g. `# d3`)
-- Each visualization should include a screenshot. Put these in an `img` folder and link through the readme (markdown command: `![caption](img/<imgname>)`.
-- Write a paragraph for each visualization tool you use. What was easy? Difficult? Where could you see the tool being useful in the future? Did you have to use any hacks or data manipulation to get the right chart?
+D3.js took more time because I had to build most parts of the chart myself, including the axes, scales, circles, and legends. I also needed to figure out how to load the csv file and remove missing values so the chart would display correctly. Even though it was more difficult. I like having the freedom to change almost every part of the visualization. I added tooltips to show information about each penguin and a dropdown menu to filter different species. I think D3.js would be useful for building interactive charts on websites where I want more control over the design.
 
-Other Requirements
 ---
+# ggplot2 (R)
+Code: https://github.com/AmieHuynh2101/a2-DataVis-5ways/blob/main/ggplot2/plot.R
+<img width="1500" height="900" alt="image" src="https://github.com/user-attachments/assets/1b814d99-306c-4364-ba51-23b0799c579c" />
 
-0. Your code should be forked from the GitHub repo.
-1. Place all code, Excel sheets, etcetera in a named folder. For example, `r-ggplot, matlab, mathematica, excel` and so on.
-2. Your writeup (readme.md in the repo) should also contain the following:
 
-- Description of the Technical achievements you attempted with this visualization.
-  - Some ideas include interaction, such as mousing over to see more detail about the point selected.
-- Description of the Design achievements you attempted with this visualization.
-  - Some ideas include consistent color choice, font choice, element size (e.g. the size of the circles).
+I like how ggplot2 allowed me to create the chart by adding different layers. Once I understood how to connect the dataset columns to the axes, colors, and circle sizes, the visualization was not too difficult to make. The biggest challenge was getting R to work in VS Code and installing the package correctly. After solving those, the rest of the process was much easier. I think ggplot2 would be helpful for research, statistical analysis, and making charts for reports.
 
-GitHub Details
 ---
+# Flourish
+Visualization link: https://public.flourish.studio/visualisation/30886275/
+<img width="794" height="545" alt="image" src="https://github.com/user-attachments/assets/03768b5c-7923-4d2e-be0a-162c78e66c02" />
 
-- Fork the GitHub Repository. You now have a copy associated with your username.
-- Make changes to fulfill the project requirements. 
-- To submit, make a [Pull Request](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) on the original repository, and put the link to your pull request in the A2 assignment on Canvas.
-- Note: name your pull request using the following scheme: 
-```
-a2-your Gh username-your first name-your lastname
-```
+Flourish was different from the previous tools because I could make the visualization without writing any code. I uploaded the penguin dataset and selected the columns for the axes, colors, and circle sizes. I like being able to see the chart update as I changed the settings. However, it took some time to find options for changing the colors, axis ranges, and other details. I think Flourish would be useful when I need to make an interactive chart quickly, especially for presentations or websites.
 
-Grading
 ---
+# Tableau
+Tableau workbook: https://github.com/AmieHuynh2101/a2-DataVis-5ways/blob/main/tableau/tableau.twb
+<img width="962" height="529" alt="image" src="https://github.com/user-attachments/assets/5daaf4a2-13f9-48c6-9884-155747325585" />
 
-Grades on a 120 point scale. 
-24 points will be based on your Technical and Design achievements, as explained in your readme. 
+I also tried Tableau as an extra tool beyond the five required visualizations. Instead of writing code, I could drag the data columns into different areas to build the scatterplot. I used flipper length and body mass for the axes, species for the colors, and bill length for the circle sizes. Creating the basic chart was easy, but finding the settings for the axis ranges, colors, and opacity took more time. I think Tableau would be helpful for exploring large datasets and creating dashboards without having to write much code. 
 
-Make sure you include the files necessary to reproduce your plots.
-You should structure these in folders if helpful.
-We will choose some at random to run and test.
+---
+# Technical Achievements
 
-**NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
++ Five required tools and one additional tool: I created visualizations using Matplotlib, Altair, D3.js, ggplot2, and Flourish. I also explored Tableau to learn another way of making charts
++ D3.js interactions: I added hover tooltips that show penguin measurements and a dropdown menu that allows users to focus on different species.
++ Altair tooltips: I made the Altair chart interactive so users can hover over points to see more information
++ Handling missing data: I removed rows with missing measurements to prevent errors and make sure the points were displayed correctly
++ Different programming languages: I worked with Python, JavaScript, and R, Flourish, and Tableau
+---
+# Design Achievements
 
-# R + ggplot2 + R Markdown
++ Consistent chart design: I kept flipper length on the X-axis and body mass on the Y-axis for all six visualizations. I also used colors to represent species and circle sizes to represent bill length.
++ Clear species colors: I chose different colors for each penguin species so they would be easy to tell apart.
++ Adjusted axis ranges: I made the axes start above zero to focus more on the actual measurements and make the differences easier to see
++ Circle transparency: I used around 80% opacity to help show points that overlap
++ Clear Charts: I added clear axis labels, tick marks, and legend where possible so the reader could understand the visualization more easily
+---
+# Conclusion
 
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
+Through this assignment, I learned that different visualization tools have their own strengths and challenges. Matplotlib and ggplot2 were useful for making charts with code, while Altair made it easier to add interactive features. D3.js was more challenging because I had to build many parts myself, but it gave me more freedom to customize the chart. Flourish and Tableau were easier to use because I could create visualizations through their interfaces. Overall, trying these tools helped me understand which tool might be more useful for different projects.
 
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
-
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
-
-![ggplot2](img/ggplot2.png)
-
-# d3...
-
-(And so on...)
-
-
-## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
-
-### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
