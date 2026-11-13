@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(knitr)
 library(ggplot2)
 library(tidyr)
+library(plotly)
 ```
 
 
@@ -23,12 +24,19 @@ penguins <- read.csv("../penglings.csv") |> drop_na(flipper_length_mm, body_mass
 
 ggplot 
 ```{r}
-ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species, size = bill_length_mm)) +
+p <- ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species, size = bill_length_mm,
+                            text = paste(
+                              "Species:", species,
+                              "<br>Flipper Length:", flipper_length_mm, "mm",
+                              "<br>Body Mass:", body_mass_g, "g",
+                              "<br>Bill Length:", bill_length_mm, "mm"))) +
   geom_point(alpha = 0.8) +
   scale_color_manual(values = c(Adelie = "darkorange", Chinstrap = "darkorchid", Gentoo = "cadetblue4")) +
   scale_size(breaks = c(40, 50)) +
   labs(title="Scatterplot in R using ggplot",
        y = "Body Mass (g)", x = "Flipper Length (mm)") +
   guides(size = guide_legend(order = 1), color = guide_legend(order = 2, override.aes = list(size = 2)))
+
+  ggplotly(p, tooltip = "text")
 ```
 

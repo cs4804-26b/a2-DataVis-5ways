@@ -92,6 +92,41 @@
         .domain(d3.extent(data, function(d) { return d.bill_length_mm; }))
         .range([5, 20]);
 
+      // AI assisted - trying to make a tooltip feature
+      var tooltip = d3.select("body")
+        .append("div")
+        .style("position", "absolute")
+        .style("pointer-events", "none")
+        .style("opacity", 0)
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px");
+
+      var mouseover = function(event, d) {
+        tooltip.style("opacity", 1);
+        d3.select(this)
+          .style("stroke", "black")
+          .style("opacity", 1);
+      };  
+
+      var mousemove = function(event, d) {
+      tooltip.html("<b>" + d.species + "</b><br>" +
+              "Flipper: " + d.flipper_length_mm + " mm<br>" +
+              "Body mass: " + d.body_mass_g + " g<br>" +
+              "Bill length: " + d.bill_length_mm + " mm")
+        .style("left", (event.pageX + 15) + "px")
+        .style("top", (event.pageY - 10) + "px");
+    };
+
+    var mouseleave = function(event, d) {
+      tooltip.style("opacity", 0);
+      d3.select(this)
+        .style("stroke", "none")
+        .style("opacity", 0.8);
+    };
+
       // Add dots
       svg.append("g")
         .selectAll("dot")
@@ -102,7 +137,10 @@
           .attr("cy", function(d) { return y(d.body_mass_g); })
           .attr("r", function(d) { return size(d.bill_length_mm); })
           .style("fill", function(d) { return color(d.species); })
-          .style("opacity", 0.8);
+          .style("opacity", 0.8)
+          .on("mouseover", mouseover)
+          .on("mousemove", mousemove)
+          .on("mouseleave", mouseleave);
 
     })
 
