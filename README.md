@@ -16,8 +16,9 @@ Many of these libraries are useful for processing and visualizing data.
 Because of that, creating a basic chart only takes a few lines of code when using these libraries, creating a low barrier to entry. 
 I also know that if I wanted to expand the visualization further or use it within a website in the future, I would be able to due to Python and its libraries' great flexibility and wide range of features.  
 For my chart, I used Pandas to convert the CSV to a dataframe. 
-Then, I used Matplotlib's scatter function to create the graph, and used its built in show function to display the graph in a new window after running the program. 
+Then, I used Matplotlib's scatter function to create the graph, and used its built in show function to display the graph in a new window after running the program. Since the scatter function uses area for circle size which is difficult to see small differences in size for, I created a new equation to make the size differences for the circles easier to see.
 
+![python](img/python.png)
 
 ## Technical Achievements
 - **Proved P=NP**: Using a combination of...
