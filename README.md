@@ -81,8 +81,15 @@ are nice). It's definitely the most limiting tool in terms of customization, but
 ![dataWrapper](img/dataWrapper.png)
 
 ## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
+Except R+ggplot, all graphs feature a tooltip. This allows user to be able to hover over a specific point and 
+see what the other attributes of that point are (to the exact number). Additionally, all graphs feature a legend and background
+grid. Also, not sure if this counts as a technical achievement, but I made an extra graph (so I have 6 total, instead of 5).
+Finally, the Altair graph is interactive, and allows zoom in to better see parts of the graph. 
 
 ### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+As far as design went, it was mostly a matter of keeping the colors consistent across all the charts. I will say I chose the color scheme
+because I thought that it was the colors that would show easily for a person with tritanopia, but it turns out it was just how 
+a person with that type of colorblindness would see the original colors I had selected. Regardless, I liked the colors and I thought 
+it would be nice to show it for all graphs to keep them consistent, having the same species be linked to the same color
+regardless of the graph. Additionally, I made sure that the legend titles were all uppercase, and did not include the underscores from the 
+original `bill_length_mm`.
