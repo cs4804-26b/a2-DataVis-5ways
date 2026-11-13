@@ -14,6 +14,7 @@ Using d3's documentation, I was also able to find the d3 way of adding hoverable
 
 ### Technical Achievements
 - Hoverable interactivity: when a user hovers over a given point, then can look at the popup in the lower right of the graph to see the exact values that points represents
+- All points are generated with a join that applies every piece of formatting needed, including the interactivity
 
 ### Design Achievements
 - Legend: I manually created a legend in d3, using basic svg tag types. I wasn't able to find any automatic legend creation values in the docs, so I manually drew one out myself.
@@ -29,7 +30,7 @@ Python is a general purpose high level programming language that has a variety o
 - Visualization is rendered to html, making the visualization's generation independent of its display
 
 ### Design Achievements
-By rendering to html, instead of directly displaying the visualization from the script, 
+By rendering to html, instead of directly displaying the visualization from the script, I was able to seperate the visualization's generation from it's display, which would allow me to modify it further, or embed it within something else as I wanted.
 
 ## Excel
 
@@ -46,3 +47,14 @@ color issues. I think this is reasonable because Excel is not primarily focused 
 - I found the work around for coloring points by their species on Stack Overflow, which let me get around the limit mentioned above
 
 
+## Python + Plotly
+
+Plotly is a python package written fro creating interactive visualizations. I specificaly used the express subpackage, which is a very high level way of creating graphs. In writing the graph this way,
+I was able to get several features, such as graph interactvitiy (zooming in and out, hovering over data points for popups with information, export). However, to do things outside the scope of the high level API, workarounds have to be used, or you have the use the laternate lower level API. For example, I had to manually scale the range of values for the 'Bill Length' variable to achieve a noticeable difference in
+the graph.
+
+### Technical Achievements
+- Working around high level API to displays sizes more accurately
+
+### Design Achievments
+None, as all graph features were provided by the library
