@@ -23,7 +23,7 @@ D3 was also one of the few libraries where I had to manually create and move aro
 It does mean there's more that can be edited and for more complex or unique visualizations it's definitely a top choice, 
 but when creating something simple like this scatterplot, I don't think it is worth the time or effort.
 
-![d3](img/d3Graph.png)
+![d3](img/Screenshot 2026-11-13 at 1.50.03 PM.png.png)
 
 ## 3. Altair (Python)
 

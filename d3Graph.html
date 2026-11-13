@@ -52,11 +52,11 @@
 
         // adding x axis to be flipper length
         var x = d3.scaleLinear()
-            .domain(d3.extent(data, d =>d.flipper_length_mm))
+            .domain([170, d3.max(data, d => d.flipper_length_mm)]) // making sure it starts at 170
             .range([ 0, width ])
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x).tickSize(-height*1.3).ticks(10))
+            .call(d3.axisBottom(x).tickSize(-height*1.3).ticks(10)) // 10 tick marks
             .select(".domain").remove()
 
         // adding y axis to be body mass (edited)
@@ -71,7 +71,7 @@
         // to make strokes visible on gray background
         svg.selectAll(".tick line").attr("stroke", "white")
 
-        // x axis label: (edited to be centered
+        // x axis label: (edited to be centered)
         svg.append("text")
             .attr("x", width/2 - margin.left)
             .attr("y", height + margin.top + 20)
