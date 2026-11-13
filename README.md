@@ -2,9 +2,10 @@
 ### Param Amre
 
 ## View Files
-For all library based visualizations, please run an http server at the root of the project, bound to localhost:8000. Run anything needed to generate the html file (see relevant section for directions), and navigate to localhost:8000/folder-name/ to see and interact with the graph.
+For all library based visualizations, please run an http server at the root of the project. Run anything needed to generate the html file (see relevant section for directions), and navigate to localhost:8000/folder-name/ to see and interact with the graph.
 
 ## Javascript + d3
+Navigate to [server-url]/d3/.
 
 ![d3-based visualization](./img/d3.png)
 
@@ -20,6 +21,7 @@ Using d3's documentation, I was also able to find the d3 way of adding hoverable
 - Legend: I manually created a legend in d3, using basic svg tag types. I wasn't able to find any automatic legend creation values in the docs, so I manually drew one out myself.
 
 ## Python + Altair
+To view the page, run altair/main.py with any [PEP 723](https://peps.python.org/pep-0723/) compatible tool (uv, hatch, poetry, pipx, etc), and navigate to [server-url]/altair/
 
 ![altair-based visualization](./img/altair.png)
 
@@ -33,6 +35,7 @@ Python is a general purpose high level programming language that has a variety o
 By rendering to html, instead of directly displaying the visualization from the script, I was able to seperate the visualization's generation from it's display, which would allow me to modify it further, or embed it within something else as I wanted.
 
 ## Excel
+Open the file in ./excel/a2-excel-Param-Amre.xlsx in Excel to see the graph.
 
 ![excel-based visualization](./img/excel.png)
 
@@ -44,10 +47,10 @@ create a data series for each one. Excel doesn't natively let you color or size 
 color issues. I think this is reasonable because Excel is not primarily focused on creating visualizations, it's aimed at a non Computer/Data Science audience.
 
 ### Technical Achievements
-- I found the work around for coloring points by their species on Stack Overflow, which let me get around the limit mentioned above
-
+- The workaround for displaying colors of multiple types on mentioned above
 
 ## Python + Plotly
+To view the page, run altair/main.py with any [PEP 723](https://peps.python.org/pep-0723/) compatible tool, and navigate to [server-url]/altair/
 
 Plotly is a python package written for creating interactive visualizations. I specificaly used the express subpackage, which is a very high level way of creating graphs. In writing the graph this way,
 I was able to get several features, such as graph interactvitiy (zooming in and out, hovering over data points for popups with information, export) without having to write any code. However, to do things outside the scope of the high level API, workarounds have to be used, or you have the use the alternate lower level API. For example, the API doesn't let the user seperate the scale from values plotted, so I
@@ -57,4 +60,4 @@ had to manually set the size mode (area to diamter) of the size markers. Even th
 - Working around high level API to provie more a visual difference between marker sizes
 
 ### Design Achievments
-- None, as all graph features were provided by the library
+- None, as all graph design features were provided by the library
