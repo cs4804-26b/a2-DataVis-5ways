@@ -10,7 +10,7 @@ Throughout the assignment, I tried to maintain consistent axis ranges, colors, a
 
 # D3.js
 
-img/d3.png
+![Matplotlib Penguin Scatterplot](img/d3.png)
 
 D3.js is a JavaScript library used to create customizable visualizations for websites. Since I had already worked with D3.js in Assignment 1, I was familiar with some of its basic functions. However, creating a scatterplot using real data was more challenging than manually positioning shapes.
 
