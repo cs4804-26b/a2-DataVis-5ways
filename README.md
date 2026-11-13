@@ -78,6 +78,8 @@ could affect how the graph looks like to them. I accidentally misunderstood that
 all my graphs how a person with tritanopia sees a red, orange, and blue chart (regardless, I feel like these colors
 are nice). It's definitely the most limiting tool in terms of customization, but it was definitely the fastest to create.
 
+[Link to Data Wrapper (I had to remake it since it lost my work, so it might be slightly different than screenshot)](https://datawrapper.dwcdn.net/A3xe8/1/)
+
 ![dataWrapper](img/dataWrapper.png)
 
 ## Technical Achievements
