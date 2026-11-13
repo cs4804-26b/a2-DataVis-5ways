@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2: D3 Penguin Chart</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      #graph {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      #graph svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+    <div id="graph"></div>
+
+    <script type="module">
+      const svg = d3
+        .select("#graph")
+        .append("svg")
+        .attr("viewBox", "0 0 600 510")
+        .attr("role", "img")
+        .attr(
+          "aria-label",
+          "Penguin flipper length versus body mass. Color represents species and circle size represents bill length.",
+        );
+
+      const x = d3.scaleLinear().domain([170, 235]).range([60, 570]);
+
+      const y = d3.scaleLinear().domain([2500, 6500]).range([350, 10]);
+
+      svg
+        .append("g")
+        .attr("transform", "translate(0,350)")
+        .call(d3.axisBottom(x).tickValues(d3.range(170, 231, 10)));
+
+      svg
+        .append("g")
+        .attr("transform", "translate(60,0)")
+        .call(
+          d3
+            .axisLeft(y)
+            .tickValues(d3.range(3000, 6001, 1000))
+            .tickFormat(d3.format("d")),
+        );
+
+      svg
+        .append("text")
+        .attr("x", 315)
+        .attr("y", 392)
+        .attr("text-anchor", "middle")
+        .text("Flipper Length (mm)");
+
+      svg
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -180)
+        .attr("y", 18)
+        .attr("text-anchor", "middle")
+        .text("Body Mass (g)");
+
+      const data = await d3.csv("../penglings.csv", (d) => ({
+        flipper_length_mm: parseFloat(d.flipper_length_mm),
+        body_mass_g: parseFloat(d.body_mass_g),
+        species: d.species,
+        bill_length_mm: parseFloat(d.bill_length_mm),
+      }));
+
+      const clean = data.filter(
+        (d) =>
+          Number.isFinite(d.flipper_length_mm) &&
+          Number.isFinite(d.body_mass_g) &&
+          Number.isFinite(d.bill_length_mm) &&
+          d.species,
+      );
+
+      // Cool colors: blue, purple, and teal.
+      const color = d3
+        .scaleOrdinal()
+        .domain(["Adelie", "Chinstrap", "Gentoo"])
+        .range(["#2563eb", "#9333ea", "#0d9488"]);
+
+      const size = d3
+        .scaleSqrt()
+        .domain(d3.extent(clean, (d) => d.bill_length_mm))
+        .range([3, 12]);
+
+      svg
+        .append("g")
+        .selectAll("circle")
+        .data(clean)
+        .join("circle")
+        .attr("cx", (d) => x(d.flipper_length_mm))
+        .attr("cy", (d) => y(d.body_mass_g))
+        .attr("r", (d) => size(d.bill_length_mm))
+        .attr("fill", (d) => color(d.species))
+        .attr("opacity", 0.8)
+        .append("title")
+        .text(
+          (d) =>
+            `${d.species}\n` +
+            `Flipper: ${d.flipper_length_mm} mm\n` +
+            `Mass: ${d.body_mass_g} g\n` +
+            `Bill: ${d.bill_length_mm} mm`,
+        );
+
+      // Species legend.
+      const speciesLegend = svg
+        .append("g")
+        .attr("transform", "translate(60,425)");
+
+      speciesLegend.append("text").attr("font-weight", "bold").text("Species");
+
+      color.domain().forEach((species, i) => {
+        const item = speciesLegend
+          .append("g")
+          .attr("transform", `translate(${i * 150},22)`);
+
+        item
+          .append("circle")
+          .attr("r", 6)
+          .attr("fill", color(species))
+          .attr("opacity", 0.8);
+
+        item.append("text").attr("x", 12).attr("dy", "0.35em").text(species);
+      });
+
+      // Bill-length legend uses the same size scale as the points.
+      const sizeLegend = svg.append("g").attr("transform", "translate(60,485)");
+
+      sizeLegend
+        .append("text")
+        .attr("dy", "0.35em")
+        .attr("font-weight", "bold")
+        .text("Bill Length (mm)");
+
+      [35, 45, 55].forEach((length, i) => {
+        const item = sizeLegend
+          .append("g")
+          .attr("transform", `translate(${175 + i * 110},0)`);
+
+        item
+          .append("circle")
+          .attr("r", size(length))
+          .attr("fill", "#666")
+          .attr("opacity", 0.8);
+
+        item.append("text").attr("x", 18).attr("dy", "0.35em").text(length);
+      });
+    </script>
+  </body>
+</html>
