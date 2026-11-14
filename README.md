@@ -51,6 +51,7 @@ This was my least favorite tool out of the bunch- the customizable ability was v
 ## Technical Achievements
 - **CSV Handling**: Filtering Data (d3) + making a clean CSV for web app tools + using excel formulas to scale the difference of bill length for dot sizing on Flourish.
 - **Tooltips on hover**: Availiable in the Flourish visualization and Datawrapper.
+- **HTTP Server**: HTTP Server to be able to display the d3 chart in real time on refresh when building the chart.
 
 ### Design Achievements
 - **Color Palette**: Used online photoshop editor (photopea) to pull the exact colors from the example chart to be able to accurately use across my five charts.
