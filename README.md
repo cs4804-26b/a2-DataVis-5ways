@@ -57,3 +57,4 @@ This was my least favorite tool out of the bunch- the customizable ability was v
 - **Legend**: Added legends for datawrapper, flourish, R + ggplot2, and vega-lite to match original chart.
 - **Custom Labels**: Labels didn't match the raw column names so where possible, I updated and even made a modified .csv for that specific tool (Datawrapper, Flourish).
 - **Custom Ticks**: Applied custom ticks to match the spacing and increment of the original chart.
+- **Circle Size**: Enforced circle size based on bill length across charts (even making custom csv to show the difference if it was not clear with the base dataset).
