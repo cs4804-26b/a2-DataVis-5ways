@@ -32,6 +32,8 @@ To replicate the scale and axes I used the following
 
 The Altair implementation uses Python and Pandas for data processing and Altair for visualization. Below we ans ee the full scatterplot with a tooltip over the highlighted data point.
 
+This one was definitely the most friendly to work with, as well as the most visually appealing to me. Its ease of use in both the coding aspect and its easy interactability definitley allows more flexible creation.
+
 ![Altair](img/Altair.png)
 
 Below as well is the Filter functionality available with Altiar interactive charts.
@@ -41,6 +43,8 @@ Below as well is the Filter functionality available with Altiar interactive char
 ### 2. R (ggplot2 and Plotly)
 
 The R implementation uses ggplot2 to construct the scatterplot and Plotly to add interactive functionality.
+
+This one was harder due to the problems I had with setup and integreation into VScode, but once I started working with it I can see why its very standard and why its seen continual use. Its very readable, and simple to implement.
 
 The full graph below has the size, color, and tooltip function.
 ![R_full](img/R_full_graph.png)
@@ -52,13 +56,15 @@ Simiarly, it can also be filtered to remove certain data points, and by species.
 
 The D3.js implementation uses JavaScript to create the scatterplot directly through SVG elements.
 
-Below is the d3 implementation which also has tooltip funcitonality, and the size differnces. 
+Below is the d3 implementation which also has tooltip funcitonality, and the size differnces. This was also very easy to implement, but I can see how more complex impleemntations can easily become tedious. To add the species filtering and legend it would requrie defining more divs, and specific buttons and mapping to actions, all which the others were able do do easier. However I assume this is in favor of more customizability.
 
 ![d3_full](img/d3_full.png)
 
 ### 4. Datawrapper
 
 The Datawrapper implementation explores creating the same visualization throught the GUI.
+
+This was very easy to work with and also more detailed than I initally thought, and the graphs came out very good. It allowed a lot of customizability and differing depictions, I couldnt get the size differences in points to show up more dramatically so its not very noticable, but there is an option to add that. Due to the ease of access and the amount of options you have, I can see this being used more widespread.
 
 The full data wrapper chart can be seen below.
 
@@ -70,7 +76,7 @@ Here is the fitlering and tool tip I was able to define manually.
 
 ### 5. Flourish
 
-Flourish was the most limiting one, but I was still able ot recreate the basic strcuture of the graph, and include the tooltip, however I could not seem to add datapoints to tooltip that werent already present in the graph.
+Flourish was the most limiting one, but I was still able ot recreate the basic strcuture of the graph, and include the tooltip, however I could not seem to add datapoints to tooltip that werent already present in the graph. So it still lacks some capabilities or I may not have been able to find them, but overall I think it still did a good job, and there may be a difference in the paid version.  
 
 ![Flourish](img/Floursih_full_popup.png)
 
