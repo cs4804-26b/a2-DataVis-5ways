@@ -1,5 +1,37 @@
 Assignment 2 - Data Visualization, 5 Ways  
 ===
+Mikayla Bishop 
+
+For this assignment i used D3, python Altair, R ggplot, matplotlib and excel to create the penguin graph in 5 different ways 
+# D3
+D3 was the most time consuming one because of how many lines of code it took to get the graph. I enjoyed how much freedom i had over the graph i was creating because everything was customizable. This required the most debugging but it will be really usful when i want a specific graph in the future. 
+
+to run: in the terminal "python -m http.server 8000
+this will open a browser window where the graph will appear 
+
+# python altair
+altair was definatly easier then D3 and still allowed for the same customazation. Making this one interactive was also straight forward. It is less customizable then D3 but good for something quick and easy 
+
+## how to run
+in the terminal: python altair/penguin_chart.py 
+
+# R + ggplot2
+this was the one i had most experience in because this is what we used to make graphs in stats. I personally like R graphs the best because they are simple yet still customizable. I think for someone just starting out R is the best choice
+
+# how to run
+If you already have R and ggplot2 packages installed you just need to select the code and run it. 
+
+# excel
+Excel is probably what most people are most familiar with but i am not the best at excel. I think this is a great option for a quick graph of a data set but it is far less cutomizable then the rest of the, 
+
+# python matplot
+This was new to me and i had not used it before. I did like how simple it was while still allowing customizations 
+
+## how to run 
+in the terminal: python matplotlib/penguin_chart.py
+
+# technical and design achievenments 
+I used a cinsistent color theme through all graphs and in D3 and altair i used tooltip which allowed for the user to hover over a dot and get the data fir a specific penguin. 
 
 Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
 

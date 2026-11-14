@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, inital-scale=1">
+         <title>Penguin Scatterplot 1</title>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <style>
+            body{
+                font-family: Arial, snas-serif; 
+                margin: 30px;
+                color: #222; 
+            }
+
+            svg {
+                max-width: 100%; 
+                height: auto; 
+            }
+            .tooltip {
+                position: absolute; 
+                background: white; 
+                border: 1px solid #aaa; 
+                border-radius: 5px; 
+                padding: 10px; 
+                pointer-events: none; 
+                opacity: 0; 
+                font-size: 14px; 
+            }
+        </style>
+    </head>
+
+    <body> 
+        <h1>penguin flipper length and body mass</h1>
+        <p>color = species. larger circler = longer bills. </p>
+
+        <div id="chart"></div>
+        <div class="tooltip"></div>
+
+        <script>
+            async function drawchart(params) {
+                const rawdata = await d3.csv("../penglings.csv"); 
+                const data = rawdata.map (d => ({
+                    species:d.species, flipper: Number(d.flipper_length_mm), mass: Number(d.body_mass_g), bill: Number(d.bill_length_mm)
+                })) .filter(d => Number.isFinite(d.flipper) && Number.isFinite(d.mass) && Number.isFinite(d.bill) && d.flipper > 0 && d.mass > 0 && d.bill > 0); 
+                const width = 850; 
+                const height = 550; 
+                const margin = {top: 25, right: 30, bottom: 70, left: 85}; 
+                const svg = d3.select("#chart")
+                .append("svg") .attr("viewBox", `0 0 ${width} ${height}`) .attr("role", "img") .attr("aria-label", "scatterplot of penguin flipperlength vs mass"); 
+
+                const x = d3.scaleLinear() .domain(d3.extent(data, d => d.flipper)) .nice() .range([margin.left, width - margin.right]); 
+                const y = d3.scaleLinear() .domain(d3.extent(data, d => d.mass)) .nice() .range([height - margin.bottom, margin.top]); 
+                const color = d3.scaleOrdinal() .domain ([...new Set(data.map(d => d.species))]) .range(["#e76f51", "#8b6bb1", "#2a9d87"]); 
+
+                const size = d3.scaleSqrt() .domain([0, d3.max(data, d => d.bill)]) .range([0,9]); 
+                svg.append("g") .attr("transform", `translate(0,${height - margin.bottom})`) .call(d3.axisBottom(x).ticks(8)); 
+                svg.append("g") .attr("transform", `translate(${margin.left},0)`) .call(d3.axisLeft(y).ticks(8)); 
+                svg.append("text") .attr("x", (margin.left + width - margin.right) / 2) .attr("y", height - 20) .attr("text-anchor", "middle") .text("flipper length (mm)"); 
+                svg.append("text") .attr("transform", "rotate(-90)") .attr("x", -(margin.top + height - margin.bottom) / 2) .attr("y", 22) .attr("text-anchor", "middle") .text("body mass (g)"); 
+
+                const tooltip = d3.select(".tooltip");
+                svg.selectAll("circle") .data(data) .join("circle") .attr("cx", d => x(d.flipper)) .attr("cy", d => y(d.mass)) .attr("r", d => size(d.bill)) .attr("fill", d => color(d.species)) .attr("opacity", 0.8) .on ("mousemove", function(event,d){
+                    d3.select(this) .attr("stroke", "#222") .attr("stroke-width", 1.5);
+
+                    tooltip .style("opacity", 1) .style("left", `${event.pageX +12}px`) .style("top", `${event.pageY +12}px`) .html(`<strong>${d.species}</strong><br> Flipper length: ${d.flipper} mm<br> Body mass: ${d.mass} g<br> Bill length: ${d.bill} mm`);
+                })
+                .on("mouseleave", function(){
+                    d3.select(this).attr("stroke", null); 
+                    tooltip.style("opacity", 0);
+                });
+
+                const legend = d3.select("#chart") .append("div") .style("display", "flex") .style("gap", "20px");
+                color.domain().forEach(species => {
+                    const item = legend.append("div"); 
+                    item.append("span") .style("display", "inline-block") .style("width", "12px") .style("height", "12px") .style("margin-right", "6px") .style("boarder-radius", "50%") .style("background-color", color(species));
+                    item.append("span").text(species); 
+                    
+                });
+                
+            }
+            drawchart().catch(error => {
+                console.error(error); 
+                d3.select("$chart")
+                .append("p")
+                .text("could not load"); 
+            }); 
+
+        </script>
+       </body>
+
+
+</html>
