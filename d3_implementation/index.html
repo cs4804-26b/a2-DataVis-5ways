@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A2: Penglings 5 ways</title>
+  <style type="text/css">
+    
+    #container h1 { 
+      text-align: center; 
+    }
+
+    .tick text {
+      font-size: large;
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1> Penguin Data </h1>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+            
+  <script type = "text/javascript">
+    console.log("d3 version", d3.version); // test that d3 loaded
+
+    const w = 1200, h = 900;
+
+    const margin = {
+            top: 50,
+            right: 50,
+            bottom: 100,
+            left: 100
+        };
+
+    // axes values with gaps
+    const axes_x ={
+        x_min: 165,
+        x_max: 235,
+        gap: 5
+    }
+    
+    const axes_y = {
+      y_min: 2500,
+      y_max: 6500,
+      gap: 500
+    }
+
+    var svg = d3.select("#container")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+    d3.csv("../penglings.csv").then(function(data) {
+      
+      // turn data into numbers for processing
+      data.forEach(
+        d => {
+          d.bill_length_mm = Number(d.bill_length_mm);
+          d.flipper_length_mm = Number(d.flipper_length_mm);
+          d.body_mass_g = Number(d.body_mass_g);
+        });
+
+      data = data.filter(d =>
+        d.species &&
+        d.island &&
+        Number.isFinite(d.bill_length_mm) &&
+        Number.isFinite(d.flipper_length_mm) &&
+        Number.isFinite(d.body_mass_g)
+      );
+          
+      // axes and scale
+
+      const x = d3.scaleLinear().domain([axes_x.x_min,axes_x.x_max]).range([margin.left, w - margin.right])
+
+      const y = d3.scaleLinear().domain([axes_y.y_min, axes_y.y_max]).range([h - margin.bottom, margin.top])
+
+      // species color
+      const color = d3.scaleOrdinal()
+          .domain(["Adelie", "Chinstrap", "Gentoo"])
+          .range(["#F56C27", "#88219E", "#685CE0"]);
+
+      // circle magnitude
+      const size = d3.scaleLinear()
+          .domain(d3.extent(data, d => d.bill_length_mm))
+          .range([8, 24]);
+
+      // x-axis gap and pull the x-axis down to bottom
+      svg.append("g")
+          .attr("transform",`translate(0,${h - margin.bottom})`)
+          .call(d3.axisBottom(x).tickValues(d3.range(axes_x.x_min + axes_x.gap,axes_y.y_max, 10)));
+
+      // y axis gap and place y correctly
+      svg.append("g")
+          .attr("transform",`translate(${margin.left},0)`)
+          .call(d3.axisLeft(y).tickValues(
+            d3.range(
+              axes_y.y_min + axes_y.gap,
+              axes_y.y_max,
+              axes_y.gap
+          )));
+
+
+      // Axes labels
+      svg.append("text")
+          .attr("x", w / 2)
+          .attr("y", h - 30)
+          .attr("text-anchor", "middle")
+          .style("font-weight", "Bold")
+          .style("font-size", "Large")
+          .text("Flipper Length (mm)");
+
+      svg.append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("x", -h / 2)
+          .attr("y", 30)
+          .attr("text-anchor", "middle")
+          .style("font-weight", "Bold")
+          .style("font-size", "Large")
+          .text("Body Mass (g)");
+
+
+      // Scatterplot data dispaly
+      svg.selectAll("circle")
+          .data(data)
+          .enter()
+          .append("circle")
+
+          .attr("cx", d => x(d.flipper_length_mm))
+          .attr("cy", d => y(d.body_mass_g))
+
+          // size magnitude 
+          .attr("r", d => size(d.bill_length_mm))
+
+          .attr("fill", d => color(d.species))
+          .attr("fill-opacity", 0.8)
+          .append("title")
+              .text(d =>
+                  "Species: " + d.species +
+                  "\nIsland: " + d.island +
+                  "\nFlipper Length: " + d.flipper_length_mm + " mm" +
+                  "\nBody Mass: " + d.body_mass_g + " g" +
+                  "\nBill Length: " + d.bill_length_mm + " mm"
+              );
+        
+			}).catch(function(error){
+        console.log("Error with Json", error)
+      })
+  </script>
+</body>
+</html>
