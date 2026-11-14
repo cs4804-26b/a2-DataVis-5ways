@@ -46,7 +46,6 @@
       gap: 500
     }
 
-
     var svg = d3.select("#container")
 						.append("svg")
 						.attr("width", w)
@@ -61,7 +60,15 @@
           d.flipper_length_mm = Number(d.flipper_length_mm);
           d.body_mass_g = Number(d.body_mass_g);
         });
-     
+
+      data = data.filter(d =>
+        d.species &&
+        d.island &&
+        Number.isFinite(d.bill_length_mm) &&
+        Number.isFinite(d.flipper_length_mm) &&
+        Number.isFinite(d.body_mass_g)
+      );
+          
       // axes and scale
 
       const x = d3.scaleLinear().domain([axes_x.x_min,axes_x.x_max]).range([margin.left, w - margin.right])

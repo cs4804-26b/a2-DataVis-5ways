@@ -15,6 +15,14 @@ numeric_columns = [
 for column in numeric_columns:
     data[column] = pd.to_numeric(data[column], errors="coerce")
 
+data = data.dropna(subset=[
+    "species",
+    "island",
+    "bill_length_mm",
+    "flipper_length_mm",
+    "body_mass_g"
+])
+
 
 species_selection = alt.selection_point(
     fields = ["species"],

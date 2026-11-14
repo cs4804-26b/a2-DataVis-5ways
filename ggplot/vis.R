@@ -17,6 +17,16 @@ data[numeric_columns] <- lapply(
   data[numeric_columns],
   as.numeric
 )
+
+data <- data %>%
+  filter(
+    !is.na(species),
+    !is.na(island),
+    !is.na(bill_length_mm),
+    !is.na(flipper_length_mm),
+    !is.na(body_mass_g)
+  )
+
 # build the hoverable interaction 
 chart <- ggplot(
   data,
