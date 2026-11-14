@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 50, left: 70},
+    width = 700 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Read the data
+d3.csv("../penglings.csv").then(function(data) {
+
+  // Convert text to numbers and drop rows with missing values
+  data.forEach(function(d) {
+    d.flipper_length_mm = +d.flipper_length_mm;
+    d.body_mass_g = +d.body_mass_g;
+    d.bill_length_mm = +d.bill_length_mm;
+  });
+  data = data.filter(function(d) {
+    return !isNaN(d.flipper_length_mm) && !isNaN(d.body_mass_g) && !isNaN(d.bill_length_mm);
+  });
+
+  // Add X axis
+  var xExtent = d3.extent(data, function(d) { return d.flipper_length_mm; });
+  var xPad = (xExtent[1] - xExtent[0]) * 0.05;
+  var x = d3.scaleLinear()
+    .domain([ xExtent[0] - xPad, xExtent[1] + xPad ])
+    .range([ 0, width ]);
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).ticks(6));
+
+  // X axis label
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", height + 40)
+    .attr("text-anchor", "middle")
+    .text("Flipper Length (mm)");
+
+  // Add Y axis
+  var yExtent = d3.extent(data, function(d) { return d.body_mass_g; });
+  var yPad = (yExtent[1] - yExtent[0]) * 0.05;
+  var y = d3.scaleLinear()
+    .domain([ yExtent[0] - yPad, yExtent[1] + yPad ])
+    .range([ height, 0]);
+  svg.append("g")
+    .call(d3.axisLeft(y).ticks(5).tickFormat(d3.format("d")));
+
+  // Y axis label
+  svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -height / 2)
+    .attr("y", -55)
+    .attr("text-anchor", "middle")
+    .text("Body Mass (g)");
+
+  // add colors per species
+  var color = d3.scaleOrdinal()
+    .domain(["Adelie", "Chinstrap", "Gentoo"])
+    .range(["#fa9037", "#9a3dca", "#3c9190"]);
+
+  // add size variable so that circle area grows based on bill length
+  var size = d3.scaleSqrt()
+    .domain(d3.extent(data, function(d) { return d.bill_length_mm; }))
+    .range([2, 8]);
+
+  // Add dots
+  svg.append('g')
+    .selectAll("dot")
+    .data(data)
+    .enter()
+    .append("circle")
+      .attr("cx", function (d) { return x(d.flipper_length_mm); } )
+      .attr("cy", function (d) { return y(d.body_mass_g); } )
+      .attr("r", function (d) { return size(d.bill_length_mm); } )
+      .style("fill", function (d) { return color(d.species); } )
+      .style("opacity", 0.8)
+
+})
+</script>
