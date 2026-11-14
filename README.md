@@ -28,7 +28,7 @@ To replicate the scale and axes I used the following
 - X-axis range: 160–240 mm, with 10 mm intervals.
 - Y-axis range: 2,500–6,500 g, with 500 g intervals.
 
-### 1. Altair (Python)
+# 1. Altair (Python)
 
 The Altair implementation uses Python and Pandas for data processing and Altair for visualization. Below we ans ee the full scatterplot with a tooltip over the highlighted data point.
 
@@ -40,7 +40,7 @@ Below as well is the Filter functionality available with Altiar interactive char
 
 ![Altair_filtered](img/Altair_fitlered.png)
 
-### 2. R (ggplot2 and Plotly)
+# 2. R (ggplot2 and Plotly)
 
 The R implementation uses ggplot2 to construct the scatterplot and Plotly to add interactive functionality.
 
@@ -52,7 +52,7 @@ The full graph below has the size, color, and tooltip function.
 Simiarly, it can also be filtered to remove certain data points, and by species. Also it can be zoomed in for finer selection of data points.
 ![R_Filtered](img/R_filtered.png)
 
-### 3. D3.js (JavaScript)
+# 3. D3.js (JavaScript)
 
 The D3.js implementation uses JavaScript to create the scatterplot directly through SVG elements.
 
@@ -60,7 +60,7 @@ Below is the d3 implementation which also has tooltip funcitonality, and the siz
 
 ![d3_full](img/d3_full.png)
 
-### 4. Datawrapper
+# 4. Datawrapper
 
 The Datawrapper implementation explores creating the same visualization throught the GUI.
 
@@ -74,7 +74,7 @@ Here is the fitlering and tool tip I was able to define manually.
 
 ![DataWrapper_filter](img/DataWrapper.png)
 
-### 5. Flourish
+# 5. Flourish
 
 Flourish was the most limiting one, but I was still able ot recreate the basic strcuture of the graph, and include the tooltip, however I could not seem to add datapoints to tooltip that werent already present in the graph. So it still lacks some capabilities or I may not have been able to find them, but overall I think it still did a good job, and there may be a difference in the paid version.  
 
