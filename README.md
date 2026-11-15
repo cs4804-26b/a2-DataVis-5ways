@@ -124,21 +124,34 @@ We will choose some at random to run and test.
 
 **NOTE: THE BELOW IS A SAMPLE ENTRY TO GET YOU STARTED ON YOUR README. YOU MAY DELETE THE ABOVE.**
 
-# R + ggplot2 + R Markdown
 
-R is a language primarily focused on statistical computing.
-ggplot2 is a popular library for charting in R.
-R Markdown is a document format that compiles to HTML or PDF and allows you to include the output of R code directly in the document.
+# d3
+<img width="2138" height="1306" alt="image" src="https://github.com/user-attachments/assets/d264f8d1-171b-4bf5-8601-4a7ffe5e723e" />
 
-To visualize the penguins dataset, I made use of ggplot2's `geom_point()` layer, with aesthetics functions for the color and size.
+By using d3, I implemented interactive hover tooltips that display each penguin's species, flipper length, body mass, and bill length. I also used D3 scaling to map the dataset to circle positions, sizes, and colors. I used the same orange, purple, and teal color scheme to show the three different types of penguins(Adelie, Chinstrap, and Gentoo), along with circles with the opacity of 0.8 to improve readability when data points overlap. I have a legend of the color species and bill length as well. 
 
-While it takes time to find the correct documentation, these functions made the effort creating this chart minimal.
 
-![ggplot2](img/ggplot2.png)
+# Seaborn
+<img width="1996" height="1070" alt="image" src="https://github.com/user-attachments/assets/08140c6f-9d5b-4999-81ea-b3a4a26d8e79" />
 
-# d3...
+By using seaborn, I created a scatterplot that maps the penguin species to colors and bill length to circle sizes. I also used Pandas to remove missing values from the dataset before plotting. Within seaborn, I also used Matplotlib to plot the figure. I used the same orange, purple, and teal color scheme to show the three different types of penguins(Adelie, Chinstrap, and Gentoo), along with circles with the opacity(in this case alpha) of 0.8 to improve readability when data points overlap. The picture is 10 inches wide, and 6 inches high. I also have a legend of the color species and for the bill length. 
 
-(And so on...)
+
+# Plotly
+<img width="2034" height="1332" alt="image" src="https://github.com/user-attachments/assets/75a21292-a91f-4953-ab77-f7b22abd6cdc" />
+
+Using Plotly Express, I created an interactive scatterplot that allows users to hover over the individual penguins to view their measurements. I also customized the axis tick intervals and adjusted the chart dimensions to improve the visualization. I used the same orange, purple, and teal color scheme to show the three different types of penguins(Adelie, Chinstrap, and Gentoo), along with circles with the opacity of 0.8 to improve readability when data points overlap. I also have a legend of the color species. 
+
+# Altair
+<img width="1522" height="930" alt="image" src="https://github.com/user-attachments/assets/bcdffb4a-8320-42b2-a327-41933c6c5bd4" />
+Using Altair, I created an interactive scatterplot that allows users to hover over the individual penguins to view their measurements, flipper length, body mass, and bill length. I also customized the axis scales to prevent them from starting at zero.  I used the same orange, purple, and teal color scheme to show the three different types of penguins(Adelie, Chinstrap, and Gentoo), along with circles with the opacity of 0.8 to improve readability when data points overlap. I also have a legend of the color species and for the bill length
+
+
+# DataWrapper
+<img width="1256" height="812" alt="image" src="https://github.com/user-attachments/assets/91be44cf-b59c-449d-a65c-6e93cae911d9" />
+
+Using Datawrapper, I created a scatterplot without writing any code by uploading the penguin dataset and mapping the variables to the axes, colors, and circle sizes. I also adjusted the maximum circle size to reduce overlapping data points. I used the same orange, purple, and teal color scheme to show the three different types of penguins(Adelie, Chinstrap, and Gentoo), along with circles with the opacity of 0.8 to improve readability when data points overlap. I also have a legend of the color species. 
+
 
 
 ## Technical Achievements
