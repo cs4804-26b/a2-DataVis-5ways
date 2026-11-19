@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<script src="https://d3js.org/d3.v6.js"></script>
+
+<div id="dataviz"></div>
+
+<style>
+  .bubbles:hover {
+    stroke: white;
+    stroke-width: 2px;
+  }
+</style> 
+  
+<script>
+
+const margin = {top: 40, right: 150, bottom: 60, left: 50},
+    width = 500 - margin.left - margin.right,
+    height = 420 - margin.top - margin.bottom;
+
+const svg = d3.select("#dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+d3.csv("./penglings.csv").then(function(data) {
+  svg.append("rect")
+    .attr("x",0)
+    .attr("y",0)
+    .attr("width", width)
+    .attr("height", height)
+    .attr("fill", "#ebebeb")
+
+  const x = d3.scaleLinear()
+    .domain([170, 235])
+    .range([ 0, width ])
+
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).tickSize(-height*1.3).ticks(7))
+    .select(".domain").remove()
+
+  svg.append("text")
+      .attr("text-anchor", "end")
+      .attr("x", width/2 +50)
+      .attr("y", height+40)
+      .text("Flipper Length (mm)")
+
+  const y = d3.scaleLinear()
+    .domain([2500, 6500])
+    .range([ height, 0])
+
+  svg.append("g")
+    .call(d3.axisLeft(y).tickSize(-width*1.3).ticks(7))
+    .select(".domain").remove()
+
+  svg.append("text")
+      .attr("text-anchor", "end")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -height/2 - 50)
+      .attr("y", -35)
+      .text("Body Mass (g)")
+      .attr("text-anchor", "start")
+
+  svg.selectAll(".tick line").attr("stroke", "#fdfdfd")
+
+  const size = d3.scaleSqrt()
+    .domain([30, 60])
+    .range([1, 10])
+
+  const myColor = d3.scaleOrdinal()
+    .domain(["Adelie", "Chinstrap", "Gentoo"])
+    .range(["#ff8e08","#9933cc","#158f8f"])
+
+  const tooltip = d3.select("#dataviz")
+    .append("div")
+      .style("opacity", 0)
+      .attr("class", "tooltip")
+      .style("background-color", "black")
+      .style("border-radius", "5px")
+      .style("padding", "10px")
+      .style("color", "white")
+
+  const showTooltip = function(event, d) {
+    tooltip
+      .transition()
+      .duration(200)
+    tooltip
+      .style("opacity", 1)
+      .html("Flipper Length (mm) : " + d.flipper_length_mm 
+        + "<br> Body Mass (g): " + d.body_mass_g
+        + "<br> Bill Length (mm): " + d.bill_length_mm)
+      .style("left", (event.x)/2 + "px")
+      .style("top", (event.y)/2 + "px")
+  }
+  const moveTooltip = function(event, d) {
+    tooltip
+      .style("left", (event.x)/2 + "px")
+      .style("top", (event.y)/2+30 + "px")
+  }
+  const hideTooltip = function(event, d) {
+    tooltip
+      .transition()
+      .duration(200)
+      .style("opacity", 0)
+  }    
+
+  svg.append('g')
+    .selectAll("dot")
+    .data(data)
+    .join("circle")
+      .attr("class", "bubbles")
+      .attr("cx", d => x(d.flipper_length_mm))
+      .attr("cy", d => y(d.body_mass_g))
+      .attr("r", d => size(d.bill_length_mm))
+      .style("fill", d => myColor(d.species))
+      .style("opacity", "0.8")
+    .on("mouseover", showTooltip )
+    .on("mousemove", moveTooltip )
+    .on("mouseleave", hideTooltip )
+
+  const valuesToShow = [40, 50]
+  const ybase = height-40
+
+  svg.append("text")
+    .attr("x", 400)
+    .attr("y", ybase - 100)
+    .text("bill_length_mm")
+    .attr("text-anchor", "middle")
+
+  svg
+    .selectAll(".size-legend")
+    .data(valuesToShow)
+    .join("circle")
+      .attr("cx", 360)
+      .attr("cy", d => ybase - size(d)*10)
+      .attr("r", d => size(d)*2)
+      .style("fill", "gray")
+      .attr("stroke", "black")
+
+  svg
+    .selectAll(".size-text")
+    .data(valuesToShow)
+    .join("text")
+      .attr('x', 390)
+      .attr('y', d => ybase - size(d)*10)
+      .text( d => d)
+      .style("font-size", "10px")
+      .attr('alignment-baseline', 'middle')
+
+  const leg_size = 20
+  const allgroups = ["Adelie", "Chinstrap", "Gentoo"]
+  svg.selectAll("colorleg")
+    .data(allgroups)
+    .join("circle")
+      .attr("cx", 350)
+      .attr("cy", (d,i) => 10 + i*(leg_size+5))
+      .attr("r", 5)
+      .style("fill", d =>  myColor(d))
+
+  svg.selectAll("colorlabels")
+    .data(allgroups)
+    .enter()
+    .append("text")
+      .attr("x", 350 + leg_size*.8)
+      .attr("y", (d,i) =>  i * (leg_size + 5) + (leg_size/2))
+      .style("fill", d => myColor(d))
+      .text(d => d)
+      .attr("text-anchor", "left")
+      .style("alignment-baseline", "middle")
+
+  svg.append("text")
+    .attr('x', 350 + leg_size*.8)
+    .attr("y", -10)
+    .text("species")
+    .attr("text-anchor", "middle")
+  })
+
+</script>
